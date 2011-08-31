@@ -1,5 +1,10 @@
 # Application dependencies
 
 require:
-    - play
-    - play -> scala 0.9
+    - play -> play 1.2.3
+    - play -> scala 0.9.1
+    - play -> coffee 1.0
+    - org.fusesource.scalate -> scalate-core 1.4.1:
+        transitive: false
+    - org.fusesource.scalate -> scalate-util 1.4.1:
+        transitive: false
