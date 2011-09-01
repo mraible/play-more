@@ -3,7 +3,7 @@ package controllers
 import play.mvc._
 import models._
 
-object Application extends ScalateController {
+object Application extends Controller with Scalate {
 
   def index = {
     render('user -> User("Raible"))
