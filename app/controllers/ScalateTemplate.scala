@@ -9,7 +9,7 @@ object ScalateTemplate {
 
   lazy val scalateEngine = {
     val engine = new TemplateEngine
-    engine.resourceLoader = new FileResourceLoader(Some(Play.getFile("/app/views")))
+    engine.resourceLoader = new FileResourceLoader(Some(Play.getFile("/app/templates")))
     engine.classpath = Play.getFile("/tmp/classes").getAbsolutePath
     engine.workingDirectory = Play.getFile("tmp")
     engine.combinedClassPath = true
