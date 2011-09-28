@@ -25,7 +25,7 @@ head
   -# Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons
 
   -# CSS: implied media=all
-  link(rel="stylesheet" href={uri("public/stylesheets/style.css")})
+  link(rel="stylesheet" href={uri("/public/stylesheets/style.css")})
   -# end CSS
 
   -# More ideas for your <head> here: h5bp.com/d/head-Tips 
@@ -34,7 +34,7 @@ head
     Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
     For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ 
 
-  script(type="text/javascript" src={uri("public/javascripts/libs/modernizr-2.0.6.min.js")})
+  script(type="text/javascript" src={uri("/public/javascripts/libs/modernizr-2.0.6.min.js")})
 body
   #container
     header = header
@@ -43,11 +43,12 @@ body
     footer = footer
 
   -# JavaScript at the bottom for fast page loading 
-
+  script(type="text/javascript" src={uri("/public/javascripts/libs/coffee-script.js")})
+  
   / Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline 
-  script(src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js")
+  script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js")
   :javascript
-    window.jQuery || document.write('<script src="public/javascripts/libs/jquery-1.6.2.min.js"><\/script>')
+    window.jQuery || document.write('<script src={uri("/public/javascripts/libs/jquery-1.6.2.min.js")}><\/script>')
 
   -# Change UA-XXXXX-X to be your site's ID 
   :javascript
