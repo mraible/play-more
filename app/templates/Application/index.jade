@@ -1,12 +1,13 @@
-- attributes("title") = "Counting"
-- attributes("header") = "HTML5 Rocks!"
+- attributes("title") = "Welcome"
 -@ var user: models.User
-p Hi #{user.name},
-- for(i <- 1 to 3)
-  p(style="margin-left: 10px") = i
-p See, I can count!
+
+:css
+  button { width: 33%; height: 30px; padding: 10px }
+  #clock { margin: 20px auto }
+
+#clock 
 
 :plain
   <script type="text/coffeescript">
-    alert 'Hello World from CoffeeScript.'
+    $('#clock').stopwatch()
   </script>

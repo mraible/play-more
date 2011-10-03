@@ -26,6 +26,7 @@ head
 
   -# CSS: implied media=all
   link(rel="stylesheet" href={uri("/public/stylesheets/style.css")})
+  link(rel="stylesheet" href={uri("/public/stylesheets/jquery.stopwatch.css")})
   -# end CSS
 
   -# More ideas for your <head> here: h5bp.com/d/head-Tips 
@@ -50,6 +51,8 @@ body
   :javascript
     window.jQuery || document.write('<script src={uri("/public/javascripts/libs/jquery-1.6.2.min.js")}><\/script>')
 
+  script(type="text/javascript" src={uri("/public/javascripts/libs/jquery.stopwatch.js")})
+  
   -# Change UA-XXXXX-X to be your site's ID 
   :javascript
     window._gaq = [['_setAccount','UA-25859875-1'],['_trackPageview'],['_trackPageLoadTime']];

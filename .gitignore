@@ -1,7 +1,9 @@
 /lib/
+/logs/
 *.pyc
 /tmp
 /precompiled
+/test-result
 .DS_Store
 # IntelliJ files
 /.idea
