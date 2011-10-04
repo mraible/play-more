@@ -42,13 +42,13 @@ formatTime = (rawTime, roundType) ->
   ds = ds.charAt(ds.length - 1)
   start() if hour >= 24
   sec = sec - 60 * min + ""
-  sec = appendZeroIfNecessary sec
+  sec = prependZeroCheck sec
   min = min - 60 * hour + ""
-  min = appendZeroIfNecessary min
-  hour = appendZeroIfNecessary hour
+  min = prependZeroCheck min
+  hour = prependZeroCheck hour
   hour + ":" + min + ":" + sec + "." + ds
   
-appendZeroIfNecessary = (time) ->
+prependZeroCheck = (time) ->
   time = time + "" # convert from int to string
   unless time.charAt(time.length - 2) == ""
     time = time.charAt(time.length - 2) + time.charAt(time.length - 1)
