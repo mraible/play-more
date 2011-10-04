@@ -1,11 +1,6 @@
 - attributes("title") = "Welcome"
-- attributes("scripts") = {uri("/public/javascripts/stopwatch.coffee")}
+- attributes.list("scripts") += uri("/public/javascripts/stopwatch.coffee")
 -@ var user: models.User
-
-:css
-  body { text-align: center }
-  #clock { margin: 20px auto; font-size: 4em; width: 50%; border: 0; text-align: center }
-  button { width: 50%; height: 50px; padding: 10px; margin-top: 10px; font-size: 2em }
 
 #display
   input(id="clock" type="text" value="00:00:00.0" readonly="readonly")

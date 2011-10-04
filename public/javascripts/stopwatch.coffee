@@ -43,6 +43,7 @@ formatTime = (rawTime, roundType) ->
   start() if hour >= 24
   sec = sec - 60 * min + ""
   sec = appendZeroIfNecessary sec
+  min = min - 60 * hour + ""
   min = appendZeroIfNecessary min
   hour = appendZeroIfNecessary hour
   hour + ":" + min + ":" + sec + "." + ds

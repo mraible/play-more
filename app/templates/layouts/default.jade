@@ -1,6 +1,5 @@
 -@ val body: String 
 -@ val title: String = "Play More"
--@ var scripts: String = ""
 !!! 5
 / paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ 
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
@@ -43,6 +42,7 @@ body
     footer
 
   -# JavaScript at the bottom for fast page loading 
+  -# TODO: Remove this when Scalate supports CoffeeScript filter
   script(type="text/javascript" src={uri("/public/javascripts/libs/coffee-script.js")})
   
   / Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline 
@@ -53,8 +53,8 @@ body
   script(type="text/javascript" src={uri("/public/javascripts/libs/jquery.stopwatch.js")})
   
   -# Import scripts specified in child pages
-  - if (scripts != "")
-    script(type="text/javascript" src=scripts)
+  - for (script: String <- attributes.list("scripts"))
+    script(type="text/javascript" src=script)
   
   -# Change UA-XXXXX-X to be your site's ID 
   :javascript
