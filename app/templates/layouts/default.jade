@@ -1,7 +1,6 @@
 -@ val body: String 
--@ var title: String = "Play More"
--@ var header: String = ""
--@ var footer: String = ""
+-@ val title: String = "Play More"
+-@ var scripts: String = ""
 !!! 5
 / paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ 
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
@@ -25,7 +24,7 @@ head
   -# Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons
 
   -# CSS: implied media=all
-  link(rel="stylesheet" href={uri("/public/stylesheets/style.css")})
+  link(rel="stylesheet" href={uri("/public/stylesheets/style.scss")})
   link(rel="stylesheet" href={uri("/public/stylesheets/jquery.stopwatch.css")})
   -# end CSS
 
@@ -38,10 +37,10 @@ head
   script(type="text/javascript" src={uri("/public/javascripts/libs/modernizr-2.0.6.min.js")})
 body
   #container
-    header = header
+    header
     #main(role="main")
-      != body
-    footer = footer
+      !~~ body
+    footer
 
   -# JavaScript at the bottom for fast page loading 
   script(type="text/javascript" src={uri("/public/javascripts/libs/coffee-script.js")})
@@ -52,6 +51,10 @@ body
     window.jQuery || document.write('<script src={uri("/public/javascripts/libs/jquery-1.6.2.min.js")}><\/script>')
 
   script(type="text/javascript" src={uri("/public/javascripts/libs/jquery.stopwatch.js")})
+  
+  -# Import scripts specified in child pages
+  - if (scripts != "")
+    script(type="text/javascript" src=scripts)
   
   -# Change UA-XXXXX-X to be your site's ID 
   :javascript

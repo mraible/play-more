@@ -1,25 +1,23 @@
 - attributes("title") = "Welcome"
+- attributes("scripts") = {uri("/public/javascripts/stopwatch.coffee")}
 -@ var user: models.User
 
 :css
-  button { width: 33%; height: 30px; padding: 10px }
-  #clock { margin: 20px auto }
+  body { text-align: center }
+  #clock { margin: 20px auto; font-size: 4em; width: 50%; border: 0; text-align: center }
+  button { width: 50%; height: 50px; padding: 10px; margin-top: 10px; font-size: 2em }
 
-#clock 
+#display
+  input(id="clock" type="text" value="00:00:00.0" readonly="readonly")
+button(id="start" type="button") Start
+button(id="reset" type="button") Reset
 
 :plain
   <script type="text/coffeescript">
-    # TODO, if mobile, Hide the address bar!
-    #setTimeout (->
-    #  window.scrollTo(0, 1)
-    #  , 0)
+    $(document).ready ->
+      $('#start').click ->
+        StopWatch.start this, $('#clock')
     
-    $('#clock').stopwatch()
-    
-    # http://www.thecssninja.com/javascript/geolocation-iphone
-    navigator.geolocation.getCurrentPosition(success, fail)
-    
-    success = (position) ->
-    	alert("Your latitude: " + position.coords.latitude + "longitude: "
-     		+ position.coords.longitude);
+      $('#reset').click ->
+        StopWatch.reset()
   </script>
