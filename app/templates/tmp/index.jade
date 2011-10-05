@@ -1,0 +1,21 @@
+-@ var user: models.User
+- attributes("title") = "Hello " + user.firstName + "!"
+- attributes.list("scripts") += uri("/public/javascripts/stopwatch.coffee")
+
+#display
+  input(id="clock" type="text" value="00:00:00.0" readonly="readonly")
+button(id="start" type="button") Start
+button(id="reset" type="button") Reset
+
+p
+  a(href={uri("/where")}) Where am I?
+
+:plain
+  <script type="text/coffeescript">
+    $(document).ready ->
+      $('#start').click ->
+        StopWatch.start this, $('#clock')
+    
+      $('#reset').click ->
+        StopWatch.reset()
+  </script>
