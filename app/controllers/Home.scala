@@ -10,7 +10,7 @@ object Home extends Controller with Scalate {
     render('user -> user)
   }
 
-  def sayHello(name: String) = {
-    render('name -> name)
+  def where() = {
+    render()
   }
 }

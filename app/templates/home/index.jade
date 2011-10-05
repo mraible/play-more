@@ -1,13 +1,14 @@
-- attributes("title") = "Welcome"
-- attributes.list("scripts") += uri("/public/javascripts/stopwatch.coffee")
 -@ var user: models.User
+- attributes("title") = "Hello " + user.firstName + "!"
+- attributes.list("scripts") += uri("/public/javascripts/stopwatch.coffee")
 
 #display
   input(id="clock" type="text" value="00:00:00.0" readonly="readonly")
 button(id="start" type="button") Start
 button(id="reset" type="button") Reset
 
-p Hello #{user.firstName}!
+p
+  a(href={uri("/where")}) Where am I?
 
 :plain
   <script type="text/coffeescript">
