@@ -13,4 +13,8 @@ object Home extends Controller with Scalate {
   def where() = {
     render()
   }
+  
+  def distance() = {
+    render()
+  }
 }

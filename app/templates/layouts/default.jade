@@ -24,7 +24,6 @@ head
 
   -# CSS: implied media=all
   link(rel="stylesheet" href={uri("/public/stylesheets/style.scss")})
-  link(rel="stylesheet" href={uri("/public/stylesheets/jquery.stopwatch.css")})
   -# end CSS
 
   -# More ideas for your <head> here: h5bp.com/d/head-Tips 
@@ -49,8 +48,6 @@ body
   script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js")
   :javascript
     window.jQuery || document.write('<script src={uri("/public/javascripts/libs/jquery-1.6.2.min.js")}><\/script>')
-
-  script(type="text/javascript" src={uri("/public/javascripts/libs/jquery.stopwatch.js")})
   
   -# Import scripts specified in child pages
   - for (script: String <- attributes.list("scripts"))
