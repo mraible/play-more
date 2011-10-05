@@ -3,10 +3,10 @@
 # ~~~~
 
 # Home page
-GET     /                                       Application.index
+GET     /                                       Home.index
 
-# Ignore favicon requests
-GET     /favicon.ico                            404
+# Map favicon requests to public
+GET     /favicon.ico                            staticFile:public/favicon.ico
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public

@@ -3,10 +3,11 @@ package controllers
 import play.mvc._
 import models._
 
-object Application extends Controller with Scalate {
+object Home extends Controller with Scalate {
 
   def index = {
-    render('user -> User("Raible"))
+    var user = User("Matt")
+    render('user -> user)
   }
 
   def sayHello(name: String) = {
