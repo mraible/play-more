@@ -2,7 +2,7 @@
 - attributes("title") = "Where am I?"
 
 script(type="text/javascript" src="http://www.google.com/jsapi")
-script(src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAB3GKjQsvdRmXH5V2JVkjMRSvn2gY85EGq7XaMqjruVQ18BGsPBQFinPSIRO1oeErheXdyJayxb4V7Q" type="text/javascript")
+script(src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript")
 
 :css
   .demo-map {
@@ -99,24 +99,34 @@ p
   	geocoder.getLocations(latitude+','+longitude, addAddressToMap);
   }
 
+  var map;
+  var latlng;
+  
   function mapThisGoogle(latitude,longitude) {
-  	var mapCenter = new GLatLng(latitude,longitude);
-  	map = new GMap2(document.getElementById("map"));
-  	map.setCenter(mapCenter, 15);
-  	map.addOverlay(new GMarker(mapCenter));
-
-  	// Start up a new reverse geocoder for addresses?
-  	geocoder = new GClientGeocoder();
-  	geocoder.getLocations(latitude+','+longitude, addAddressToMap);
+    var mapOptions = {
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    latlng = new google.maps.LatLng(latitude, longitude);
+    map.setCenter(latlng);
+  
+    geocoder = new google.maps.Geocoder();
+    geocoder.geocode({'latLng': latlng}, addAddressToMap);
   }
 
-  function addAddressToMap(response) {
-  	if (!response || response.Status.code != 200) {
-  		alert("Sorry, we were unable to geocode that address");
-  	} else {
-  		place = response.Placemark[0];
-  		$('#address').html('Your address: '+place.address);
-  	}
+  function addAddressToMap(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      if (results[1]) {
+        marker = new google.maps.Marker({
+            position: latlng,
+            map: map
+        });
+        $('#address').html('Your address: ' + results[0].formatted_address);
+      }
+    } else {
+      alert("Sorry, we were unable to geocode that address.");
+    }
   }
 
   window.location.querystring = (function() {
