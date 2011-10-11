@@ -26,17 +26,18 @@ start = ->
       lng = position.coords.longitude
       $("#currentLat").html(lat)
       $("#currentLon").html(lng)
-      distance = calculateDistance(lastPos.coords.latitude, lastPos.coords.longitude, lat, lng)
-      lastPos = position
-      $("#distance").html(distance)
-      time = new Date
-      if ($('#log').length == 0)
-        $('<div/>').attr('id', 'log').appendTo($('body'));
-      hours = appendZero time.getHours()
-      minutes = appendZero time.getMinutes()
-      seconds = appendZero time.getHours()
-      $('#log').append(time.toDateString() + ' ' + hours + ':' + minutes + ':' + seconds)
-      $('#log').append(' | <strong>' + distance + '</strong> | ' + lat + '/' + lng + '<br/>')
+      if (lastPos)
+        distance = calculateDistance(lastPos.coords.latitude, lastPos.coords.longitude, lat, lng)
+        lastPos = position
+        $("#distance").html(distance)
+        time = new Date
+        if ($('#log').length == 0)
+          $('<div/>').attr('id', 'log').appendTo($('body'));
+        hours = appendZero time.getHours()
+        minutes = appendZero time.getMinutes()
+        seconds = appendZero time.getHours()
+        $('#log').append(time.toDateString() + ' ' + hours + ':' + minutes + ':' + seconds)
+        $('#log').append(' | <strong>' + distance + '</strong> | ' + lat + '/' + lng + '<br/>')
 
 Number::toRad = ->
   this * Math.PI / 180
