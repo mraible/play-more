@@ -69,4 +69,5 @@ reset = ->
 @StopWatch = {
   start: start
   reset: reset
+  addZero: prependZeroCheck
 }

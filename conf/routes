@@ -5,7 +5,7 @@
 # Home page
 GET     /                                       Home.index
 GET     /where                                  Home.where
-GET     /distance                               Home.distance
+GET     /track                                  Home.track
 
 # Map favicon requests to public
 GET     /favicon.ico                            staticFile:public/favicon.ico

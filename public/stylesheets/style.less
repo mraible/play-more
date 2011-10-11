@@ -210,31 +210,28 @@ td { vertical-align: top; }
 /* ==|== primary styles =====================================================
    Author: 
    ========================================================================== */
-$grey: #eee;
+@grey: #eee;
 
 body {
-  background: $grey;
-  text-align: center
+  text-align: center;
+  padding-top: 50px;
+}
+
+.brand {
+  font-style: italic
 }
 
 #clock { 
   margin: 20px auto; 
   font-size: 4em; 
-  width: 100%; 
+  height: 60px;
   border: 0; 
   text-align: center;
-  background: $grey
 }
 
-button { 
-  width: 90%; 
-  height: 50px; 
-  padding: 10px; 
-  margin-top: 10px; 
-  font-size: 2em 
+#controls {
+  margin-bottom: 10px;
 }
-
-
 
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.

@@ -1,6 +1,5 @@
 -# http://www.html5rocks.com/en/tutorials/geolocation/trip_meter/
 - attributes("title") = "How far have I gone?"
-- attributes.list("scripts") += uri("/public/javascripts/odometer.coffee")
 
 :css
   #tripmeter {
@@ -32,4 +31,9 @@
     | &deg;
   p
     | Distance from starting location:<br/>
-    span#distance 0 km
+    span#distance 0 mi
+    
+script(type="text/javascript" src={uri("/public/javascripts/odometer.coffee")})
+
+:javascript
+  Odometer.start();

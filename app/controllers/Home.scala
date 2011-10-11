@@ -14,7 +14,7 @@ object Home extends Controller with Scalate {
     render()
   }
   
-  def distance() = {
+  def track() = {
     render()
   }
 }

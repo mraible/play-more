@@ -23,7 +23,8 @@ head
   -# Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons
 
   -# CSS: implied media=all
-  link(rel="stylesheet" href={uri("/public/stylesheets/style.scss")})
+  link(rel="stylesheet" type="text/css" href={uri("/public/stylesheets/libs/bootstrap.min.css")})
+  link(rel="stylesheet" type="text/css" href={uri("/public/stylesheets/style.less")})
   -# end CSS
 
   -# More ideas for your <head> here: h5bp.com/d/head-Tips 
@@ -36,6 +37,20 @@ head
 body
   #container
     header
+      .topbar-wrapper(style="z-index: 5")
+        .topbar
+          .topbar-inner
+            .container
+              a(class="brand" href={uri("/")}) Play More!
+              ul.nav(data-tabs="tabs")
+                li.active
+                  a(href={uri("/")}) Play
+                li 
+                  a(href={uri("/track")}) Map
+                li 
+                  a(href="#settings") Settings
+                li 
+                  a(href="#about") About
     #main(role="main")
       !~~ body
     footer
@@ -48,10 +63,12 @@ body
   script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js")
   :javascript
     window.jQuery || document.write('<script src={uri("/public/javascripts/libs/jquery-1.6.2.min.js")}><\/script>')
-  
+      
   -# Import scripts specified in child pages
   - for (script: String <- attributes.list("scripts"))
     script(type="text/javascript" src=script)
+  
+  script(type="text/javascript" src={uri("/public/javascripts/libs/bootstrap-tabs.js")})
   
   -# Change UA-XXXXX-X to be your site's ID 
   :javascript
@@ -59,6 +76,7 @@ body
     Modernizr.load({
       load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
     });
+    $('.nav').tabs()
 
   -# Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6. 
   -# http://chromium.org/developers/how-tos/chrome-frame-getting-started 
