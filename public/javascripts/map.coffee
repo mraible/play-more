@@ -7,11 +7,9 @@ mapCenter = null
 geocoder = null
 latlng = null
 
-
 initialize = ->	
   if navigator.geolocation
     navigator.geolocation.getCurrentPosition showMap
-			
 
 showMap = (position) ->
   latitude = position.coords.latitude
@@ -34,7 +32,7 @@ addAddressToMap = (results, status) ->
           position: latlng,
           map: map
       })
-      $('#address').html('Your address: ' + results[0].formatted_address)
+      $('#location').html('Your location: ' + results[0].formatted_address)
   else 
     alert "Sorry, we were unable to geocode that address."
 
@@ -45,6 +43,7 @@ reset = ->
   alert 'reset'
   
 @Map = {
-  start: start,
+  start: start
   reset: reset
+  getMap: map
 }

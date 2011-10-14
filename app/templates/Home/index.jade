@@ -1,6 +1,7 @@
 -@ var user: models.User
 - attributes("title") = "Hello " + user.firstName + "!"
 - attributes.list("scripts") += uri("/public/javascripts/stopwatch.coffee")
+- attributes.list("scripts") += uri("/public/javascripts/odometer.coffee")
 
 #display
   input(id="clock" class="xlarge" type="text" value="00:00:00.0" readonly="readonly")
@@ -10,21 +11,39 @@
 
 :plain
   <script type="text/coffeescript">
+    tripCoordinates = []
+    drawMap = (lastPos, newPos) ->
+      tripCoordinates push new google.maps.LatLng(lastPos.coords.latitude, lastPos.coords.latitude)
+      tripCoordinates push new google.maps.LatLng(newPos.coords.latitude, newPos.coords.latitude)
+      tripPath = new google.maps.Polyline({
+        path: tripCoordinates,
+        strokeColor: "#FF0000",
+        strokeOpacity: 1.0,
+        strokeWeight: 2
+      })
+
+      tripPath.setMap Map.getMap()
+
+
     $(document).ready ->
       $('#start').click ->
         StopWatch.start this, $('#clock')
-        $('#where,#distance').show()
+        $('#where,#track').show()
         Map.start()
+        Odometer.start({callback: drawMap})
     
       $('#reset').click ->
         StopWatch.reset()
-        $('#where,#distance').hide()
+        $('#where,#track').hide()
   </script>
   
 #where(style="display: none")
   =include("where.jade")
-  
-#distance(style="display: none")
-  -# include("distance.jade")
-  
-  -# fonts: http://www.html5rocks.com/en/tutorials/webfonts/quick/
+
+#track(style="display: none")
+  | Distance Traveled: <span id="distance"></span> mile(s)
+
+  #actions
+    button(id="save" type="submit" class="btn success") Save
+
+-# fonts: http://www.html5rocks.com/en/tutorials/webfonts/quick/

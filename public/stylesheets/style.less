@@ -10,6 +10,8 @@
  * ==|== normalize ==========================================================
  */
 
+/* Variables from Bootstrap */
+@import "libs/variables.less";
 
 /* =============================================================================
    HTML5 display definitions
@@ -210,7 +212,6 @@ td { vertical-align: top; }
 /* ==|== primary styles =====================================================
    Author: 
    ========================================================================== */
-@grey: #eee;
 
 body {
   text-align: center;
@@ -218,7 +219,7 @@ body {
 }
 
 a:visited {
-  color: #BFBFBF;
+  color: @grayDark;
 }
 
 .brand {
@@ -237,6 +238,21 @@ a:visited {
 
 #controls {
   margin-bottom: 10px;
+}
+
+#actions {
+  margin-top: 10px;
+}
+
+#distance {
+  color: @blueDark;
+  font-weight: bold;
+}
+
+#save {
+  width: 300px;
+  height: 30px;
+  font-weight: bold;
 }
 
 /* ==|== non-semantic helper classes ========================================

@@ -10,11 +10,11 @@ object Home extends Controller with Scalate {
     render('user -> user)
   }
 
-  def where() = {
+  def where = {
     render()
   }
   
-  def track() = {
+  def track = {
     render()
   }
 }

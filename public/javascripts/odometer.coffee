@@ -10,8 +10,12 @@ calculateDistance = (lat1, lon1, lat2, lon2) ->
 
 startPos = null
 lastPos = null
+distance = 0
 
-start = ->
+start = (config) ->
+  log = config.log
+  callback = config.callback
+
   if navigator.geolocation
     navigator.geolocation.getCurrentPosition ((position) ->
       startPos = position
@@ -27,9 +31,12 @@ start = ->
       $("#currentLat").html(lat)
       $("#currentLon").html(lng)
       if (lastPos)
-        distance = calculateDistance(lastPos.coords.latitude, lastPos.coords.longitude, lat, lng)
-        lastPos = position
-        $("#distance").html(distance)
+        distance += calculateDistance(lastPos.coords.latitude, lastPos.coords.longitude, lat, lng)
+        $("#distance").html(distance.toFixed(2))
+
+      lastPos = position
+
+      if (log)
         time = new Date
         if ($('#log').length == 0)
           $('<div/>').attr('id', 'log').appendTo($('body'));
