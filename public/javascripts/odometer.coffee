@@ -24,7 +24,13 @@ start = (config) ->
       $("#startLat").html(startPos.coords.latitude)
       $("#startLon").html(startPos.coords.longitude)
     ), (error) ->
-      alert "Error occurred. Error code: " + error.code
+      msg = 'Unable to locate position. '
+      switch error.code
+        when error.TIMEOUT then msg += 'Timeout.'
+        when error.POSITION_UNAVAILABLE then msg += 'Position unavailable.'
+        when error.PERMISSION_DENIED then msg += 'Please turn on location services.'
+        when error.UNKNOWN_ERROR then msg += error.code
+      alert msg
     
     navigator.geolocation.watchPosition (position) ->
       lat = position.coords.latitude
@@ -57,7 +63,12 @@ appendZero = (time) ->
     time = time.charAt(time.length - 2) + time.charAt(time.length - 1)
   else
     time = 0 + time.charAt(time.length - 1)
-      
+
+reset = ->
+  $('#log').html('')
+  $('#distance').html('0')
+
 @Odometer = {
   start: start
+  reset: reset
 }

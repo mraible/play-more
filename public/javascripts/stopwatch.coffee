@@ -3,8 +3,8 @@
 flagClock = 0
 flagStop = 0
 stopTime = 0
-refresh = ""
-clock = ""
+refresh = null
+clock = null
 
 start = (button, display) ->
   clock = display

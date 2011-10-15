@@ -57,6 +57,7 @@ reset = ->
   map = null
   tripCoordinates = []
   $('#location').html('')
+  Odometer.reset()
 
 @Map = {
   start: start
