@@ -33,6 +33,7 @@ start = (config) ->
       if (lastPos)
         distance += calculateDistance(lastPos.coords.latitude, lastPos.coords.longitude, lat, lng)
         $("#distance").html(distance.toFixed(2))
+        callback(lastPos, position)
 
       lastPos = position
 

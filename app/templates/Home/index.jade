@@ -13,8 +13,8 @@
   <script type="text/coffeescript">
     tripCoordinates = []
     drawMap = (lastPos, newPos) ->
-      tripCoordinates push new google.maps.LatLng(lastPos.coords.latitude, lastPos.coords.latitude)
-      tripCoordinates push new google.maps.LatLng(newPos.coords.latitude, newPos.coords.latitude)
+      tripCoordinates.push new google.maps.LatLng(lastPos.coords.latitude, lastPos.coords.latitude)
+      tripCoordinates.push new google.maps.LatLng(newPos.coords.latitude, newPos.coords.latitude)
       tripPath = new google.maps.Polyline({
         path: tripCoordinates,
         strokeColor: "#FF0000",
@@ -22,8 +22,7 @@
         strokeWeight: 2
       })
 
-      tripPath.setMap Map.getMap()
-
+      tripPath.setMap Map.map
 
     $(document).ready ->
       $('#start').click ->

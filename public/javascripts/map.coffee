@@ -45,5 +45,5 @@ reset = ->
 @Map = {
   start: start
   reset: reset
-  getMap: map
+  map: map
 }
