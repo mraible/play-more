@@ -65,6 +65,9 @@ appendZero = (time) ->
     time = 0 + time.charAt(time.length - 1)
 
 reset = ->
+  startPos = null
+  lastPos = null
+  distance = 0
   $('#log').html('')
   $('#distance').html('0')
 

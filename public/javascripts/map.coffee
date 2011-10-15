@@ -39,15 +39,20 @@ addAddressToMap = (results, status) ->
 
 tripCoordinates = []
 drawMap = (lastPos, newPos, map) ->
-  tripCoordinates.push new google.maps.LatLng(lastPos.coords.latitude, lastPos.coords.latitude)
-  tripCoordinates.push new google.maps.LatLng(newPos.coords.latitude, newPos.coords.latitude)
+  if console.log
+    console.log 'last lat: ' + lastPos.coords.latitude
+    console.log 'last long: ' + lastPos.coords.longitude
+    console.log 'new lat: ' + newPos.coords.latitude
+    console.log 'new long: ' + newPos.coords.longitude
+
+  tripCoordinates.push new google.maps.LatLng(lastPos.coords.latitude, lastPos.coords.longitude)
+  tripCoordinates.push new google.maps.LatLng(newPos.coords.latitude, newPos.coords.longitude)
   tripPath = new google.maps.Polyline({
     path: tripCoordinates,
     strokeColor: "#FF0000",
     strokeOpacity: 1.0,
     strokeWeight: 2
   })
-
   tripPath.setMap map
 
 start = ->
