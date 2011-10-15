@@ -11,38 +11,25 @@
 
 :plain
   <script type="text/coffeescript">
-    tripCoordinates = []
-    drawMap = (lastPos, newPos) ->
-      tripCoordinates.push new google.maps.LatLng(lastPos.coords.latitude, lastPos.coords.latitude)
-      tripCoordinates.push new google.maps.LatLng(newPos.coords.latitude, newPos.coords.latitude)
-      tripPath = new google.maps.Polyline({
-        path: tripCoordinates,
-        strokeColor: "#FF0000",
-        strokeOpacity: 1.0,
-        strokeWeight: 2
-      })
-
-      tripPath.setMap Map.map
-
     $(document).ready ->
       $('#start').click ->
         StopWatch.start this, $('#clock')
         $('#where,#track').show()
         Map.start()
-        Odometer.start({callback: drawMap})
     
       $('#reset').click ->
         StopWatch.reset()
+        Map.reset()
         $('#where,#track').hide()
   </script>
-  
-#where(style="display: none")
-  =include("where.jade")
 
 #track(style="display: none")
   | Distance Traveled: <span id="distance"></span> mile(s)
 
   #actions
     button(id="save" type="submit" class="btn success") Save
+
+#where(style="display: none")
+  =include("where.jade")
 
 -# fonts: http://www.html5rocks.com/en/tutorials/webfonts/quick/

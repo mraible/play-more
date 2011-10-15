@@ -21,6 +21,7 @@ showMap = (position) ->
   map = new google.maps.Map(document.getElementById("map"), mapOptions)
   latlng = new google.maps.LatLng(latitude, longitude)
   map.setCenter(latlng)
+  Odometer.start({callback: drawMap, map: map})
 
   geocoder = new google.maps.Geocoder()
   geocoder.geocode({'latLng': latlng}, addAddressToMap)
@@ -36,14 +37,28 @@ addAddressToMap = (results, status) ->
   else 
     alert "Sorry, we were unable to geocode that address."
 
+tripCoordinates = []
+drawMap = (lastPos, newPos, map) ->
+  tripCoordinates.push new google.maps.LatLng(lastPos.coords.latitude, lastPos.coords.latitude)
+  tripCoordinates.push new google.maps.LatLng(newPos.coords.latitude, newPos.coords.latitude)
+  tripPath = new google.maps.Polyline({
+    path: tripCoordinates,
+    strokeColor: "#FF0000",
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  })
+
+  tripPath.setMap map
+
 start = ->
   setTimeout initialize, 500
 
 reset = ->
-  alert 'reset'
-  
+  map = null
+  tripCoordinates = []
+  $('#location').html('')
+
 @Map = {
   start: start
   reset: reset
-  map: map
 }

@@ -15,6 +15,7 @@ distance = 0
 start = (config) ->
   log = config.log
   callback = config.callback
+  map = config.map
 
   if navigator.geolocation
     navigator.geolocation.getCurrentPosition ((position) ->
@@ -33,7 +34,7 @@ start = (config) ->
       if (lastPos)
         distance += calculateDistance(lastPos.coords.latitude, lastPos.coords.longitude, lat, lng)
         $("#distance").html(distance.toFixed(2))
-        callback(lastPos, position)
+        callback(lastPos, position, map)
 
       lastPos = position
 
