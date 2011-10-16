@@ -1,5 +1,7 @@
 -@ val body: String 
 -@ val title: String = "Play More!"
+-@ val bodyClass: String
+-@ val params: play.mvc.Scope.Params
 !!! 5
 / paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ 
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
@@ -34,7 +36,7 @@ head
     For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ 
 
   script(type="text/javascript" src={uri("/public/javascripts/libs/modernizr-2.0.6.min.js")})
-body
+body(class=bodyClass)
   #container
     header
       .topbar-wrapper(style="z-index: 5")
@@ -44,13 +46,13 @@ body
               a(class="brand" href={uri("/")}) 
                 img(src={uri("/public/images/play-more.png")} alt="Play More!" class="logo")
               ul.nav(data-tabs="tabs")
-                li.active
+                li(id="nav-index")
                   a(href={uri("/")}) Play
-                li
-                  a(href={uri("/friends")}) Friends
-                li 
-                  a(href={uri("/settings")}) Settings
-                li
+                li(id="nav-friends")
+                  a(href="#friends") Friends
+                li(id="nav-settings")
+                  a(href="#settings") Settings
+                li(id="nav-about")
                   a(href={uri("/about")}) About
 
     #main(role="main")

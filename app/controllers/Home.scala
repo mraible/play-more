@@ -6,7 +6,7 @@ import models._
 object Home extends Controller with Scalate {
 
   def index = {
-    var user = User("Matt")
+    val user = User("Matt")
     render('user -> user)
   }
 

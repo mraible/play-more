@@ -1,6 +1,8 @@
 package controllers
 
 import play.Play
+import play.data.validation.Validation
+import play.mvc.{Http, Scope}
 
 object ScalateTemplate {
 
@@ -9,7 +11,7 @@ object ScalateTemplate {
   import org.fusesource.scalate.layout._
 
   val scalateType = "." + Play.configuration.get("scalate")
-  
+
   lazy val scalateEngine = {
     val engine = new TemplateEngine
     engine.resourceLoader = new FileResourceLoader(Some(Play.getFile("/app/templates")))
@@ -17,18 +19,42 @@ object ScalateTemplate {
     engine.workingDirectory = Play.getFile("tmp")
     engine.combinedClassPath = true
     engine.classLoader = Play.classloader
-    engine.layoutStrategy = new DefaultLayoutStrategy(engine, 
+    engine.layoutStrategy = new DefaultLayoutStrategy(engine,
       Play.getFile("/app/templates/layouts/default" + scalateType).getAbsolutePath)
     engine
   }
 
   case class Template(name: String) {
-  
+
+    import scala.collection.JavaConversions._
+
     def render(args: (Symbol, Any)*) = {
-      scalateEngine.layout(name + scalateType, args.map {
-        case (k, v) => k.name -> v
-      } toMap)
+      populateRenderArgs(args: _*)
+      val convertedArgs: Map[String, Any] = Scope.RenderArgs.current().data.toMap
+      val argsMap = convertedArgs.map {
+        case (k, v) => k -> v
+      }.toMap
+
+      scalateEngine.layout(name + scalateType, argsMap)
     }
+  }
+
+  def populateRenderArgs(args: (Symbol, Any)*) = {
+    val renderArgs = Scope.RenderArgs.current();
+
+    args.foreach {
+      o =>
+        renderArgs.put(o._1.name, o._2)
+    }
+
+    renderArgs.put("session", Scope.Session.current());
+    renderArgs.put("request", Http.Request.current());
+    renderArgs.put("flash", Scope.Flash.current());
+    renderArgs.put("params", Scope.Params.current());
+    renderArgs.put("errors", Validation.errors());
+
+    // CSS class to add to body
+    renderArgs.put("bodyClass", Http.Request.current().action.replace(".", " "))
   }
 
   def apply(template: String) = Template(template)

@@ -53,7 +53,7 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
    ========================================================================== */
 
 a { color: #00e; }
-a:visited { color: #551a8b; }
+a:visited { color: @linkColor }
 a:hover { color: #06e; }
 a:focus { outline: thin dotted; }
 
@@ -218,10 +218,6 @@ body {
   padding-top: 50px;
 }
 
-a:visited {
-  color: @linkColor;
-}
-
 .brand {
   font-style: italic;
   margin: 3px 0 0 10px !important;
@@ -278,7 +274,7 @@ a:visited {
 // iphone http://broadcast.oreilly.com/2010/04/using-css-media-queries-ipad.html
 @media all and (max-device-width: 480px) {
     .linkedin .wrapper {
-        width: 200px !important; // doesn't work
+        width: 200px !important; // doesn't
     }
 }
 
@@ -290,6 +286,24 @@ a:visited {
 .talk {
   font-weight: bold;
   font-style: italic;
+}
+
+/* Can't figure out why visited link is blue */
+.nav > li a:visited {
+  color: @grayLight;
+}
+
+.active {
+  /* Copied from .topbar ul .active > a */
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* Selector for active menu items. */
+.Home #nav-index a,
+.Settings #nav-about a {
+  .active
 }
 
 /* ==|== non-semantic helper classes ========================================
