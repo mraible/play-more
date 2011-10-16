@@ -26,20 +26,16 @@ object ScalateTemplate {
 
   case class Template(name: String) {
 
-    import scala.collection.JavaConversions._
-
     def render(args: (Symbol, Any)*) = {
-      populateRenderArgs(args: _*)
-      val convertedArgs: Map[String, Any] = Scope.RenderArgs.current().data.toMap
-      val argsMap = convertedArgs.map {
-        case (k, v) => k -> v
-      }.toMap
+      val argsMap = populateRenderArgs(args: _*)
 
       scalateEngine.layout(name + scalateType, argsMap)
     }
   }
 
-  def populateRenderArgs(args: (Symbol, Any)*) = {
+  import scala.collection.JavaConversions._
+
+  def populateRenderArgs(args: (Symbol, Any)*): Map[String, Any] = {
     val renderArgs = Scope.RenderArgs.current();
 
     args.foreach {
@@ -55,6 +51,7 @@ object ScalateTemplate {
 
     // CSS class to add to body
     renderArgs.put("bodyClass", Http.Request.current().action.replace(".", " "))
+    renderArgs.data.toMap
   }
 
   def apply(template: String) = Template(template)
