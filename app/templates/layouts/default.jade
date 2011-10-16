@@ -1,5 +1,5 @@
 -@ val body: String 
--@ val title: String = "Play More"
+-@ val title: String = "Play More!"
 !!! 5
 / paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ 
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
@@ -46,11 +46,11 @@ body
               ul.nav(data-tabs="tabs")
                 li.active
                   a(href={uri("/")}) Play
+                li
+                  a(href={uri("/friends")}) Friends
                 li 
-                  a(href={uri("/track")}) Map
-                li 
-                  a(href="#settings") Settings
-                li 
+                  a(href={uri("/settings")}) Settings
+                li
                   a(href={uri("/about")}) About
 
     #main(role="main")

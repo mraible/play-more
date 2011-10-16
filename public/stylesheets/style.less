@@ -224,8 +224,12 @@ a:visited {
 
 .brand {
   font-style: italic;
-  margin-left: 0 !important;
+  margin: 3px 0 0 10px !important;
   padding: 0 !important;
+}
+
+.btn {
+  font-size: @basefont * 2.5;
 }
 
 #clock { 
@@ -237,11 +241,20 @@ a:visited {
 }
 
 #controls {
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
+  width: 320px;
+
+  .btn {
+    width: 40%;
+  }
 }
 
 #actions {
   margin-top: 10px;
+}
+
+#track {
+  font-size: @basefont * 1.5;
 }
 
 #distance {
@@ -251,20 +264,32 @@ a:visited {
 
 #save {
   width: 300px;
-  height: 30px;
   font-weight: bold;
 }
 
 #about, #frameworks {
-  min-width: 300px;
+  min-width: 280px;
   max-width: 600px;
   margin: 0 auto;
-  text-align: left
+  text-align: left;
+  padding: 10px;
+}
+
+// iphone http://broadcast.oreilly.com/2010/04/using-css-media-queries-ipad.html
+@media all and (max-device-width: 480px) {
+    .linkedin .wrapper {
+        width: 200px !important; // doesn't work
+    }
 }
 
 .linkedin {
   text-align: center;
   height: 175px;
+}
+
+.talk {
+  font-weight: bold;
+  font-style: italic;
 }
 
 /* ==|== non-semantic helper classes ========================================
