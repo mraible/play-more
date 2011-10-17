@@ -7,10 +7,57 @@
     password:       beer
     firstName:      Matt
     lastName:       Raible
-    
+
 - !!models.User
     id:             !!Id[Long] 2
     email:          trishmcginity@gmail.com
     password:       whiskey
     firstName:      Trish
     lastName:       McGinity
+
+- !!models.Workout
+    id:             !!Id[Long] 1
+    title:          Chainsaw Trail
+    distance:       7
+    duration:       90
+    user_id:        1
+    postedAt:       2011-10-13
+    content:        >
+                    A beautiful fall ride: cool breezes, awesome views and yellow leaves.
+
+- !!models.Workout
+    id:             !!Id[Long] 2
+    title:          Monarch Lake Trail
+    distance:       4
+    duration:       90
+    user_id:        1
+    postedAt:       2011-10-15
+    content:        >
+                    A beautiful afternoon of hiking with fishing along the way.
+
+- !!models.Workout
+    id:             !!Id[Long] 3
+    title:          Creekside to Flume to Chainsaw
+    distance:       12
+    duration:       150
+    user_id:        2
+    postedAt:       2011-10-16
+    content:        >
+                    Awesome morning ride through falling yellow leaves and cool fall breezes.
+
+- !!models.Comment
+    id:             !!NotAssigned
+    author:         Jim
+    content:        >
+                    Nice day for it!
+    postedAt:       2011-10-16
+    workout_id:     1
+
+- !!models.Comment
+    id:             !!NotAssigned
+    author:         Joe
+    content:        >
+                    Love that trail.
+    postedAt:       2011-10-15
+    workout_id:     2
+

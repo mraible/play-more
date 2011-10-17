@@ -3,11 +3,8 @@
 *.pyc
 /tmp
 /precompiled
-/test-result
+/test-result/
 .DS_Store
-# IntelliJ files
-/.idea
-*.iml
 # Modules and libs (dep managed)
 /lib
 /modules

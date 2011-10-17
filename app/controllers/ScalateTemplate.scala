@@ -43,14 +43,14 @@ object ScalateTemplate {
         renderArgs.put(o._1.name, o._2)
     }
 
-    renderArgs.put("session", Scope.Session.current());
-    renderArgs.put("request", Http.Request.current());
-    renderArgs.put("flash", Scope.Flash.current());
-    renderArgs.put("params", Scope.Params.current());
-    renderArgs.put("errors", Validation.errors());
+    renderArgs.put("session", Scope.Session.current())
+    renderArgs.put("request", Http.Request.current())
+    renderArgs.put("flash", Scope.Flash.current())
+    renderArgs.put("params", Scope.Params.current())
+    renderArgs.put("errors", Validation.errors())
 
     // CSS class to add to body
-    renderArgs.put("bodyClass", Http.Request.current().action.replace(".", " "))
+    renderArgs.put("bodyClass", Http.Request.current().action.replace(".", " ").toLowerCase)
     renderArgs.data.toMap
   }
 
