@@ -1,8 +1,9 @@
 # Users schema
  
 # --- !Ups
- 
-CREATE TABLE User (
+# --- Quotes around user needed for PostgreSQL
+
+CREATE TABLE "user" (
     id bigint(20) NOT NULL AUTO_INCREMENT,
     email varchar(255) NOT NULL,
     password varchar(255) NOT NULL,
@@ -13,4 +14,4 @@ CREATE TABLE User (
  
 # --- !Downs
  
-DROP TABLE User;
+DROP TABLE "user";
