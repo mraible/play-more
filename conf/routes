@@ -3,6 +3,8 @@
 # ~~~~
 
 GET     /                                       Home.index
+GET     /timeline                               Timeline.index
+GET     /workouts                               Timeline.show
 GET     /where                                  Home.where
 GET     /track                                  Home.track
 GET     /settings                               Settings.settings

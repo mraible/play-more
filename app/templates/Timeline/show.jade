@@ -1,0 +1,5 @@
+-@ val workout:(models.Workout,models.User,Seq[models.Comment])
+- attributes("title") = workout._1.title
+
+= render("workout.jade", Map('workout -> workout, 'mode -> "full"))
+

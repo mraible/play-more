@@ -12,7 +12,7 @@ case class Workout (
     postedAt: Date, user_id: Long
 )
 
-object Workout extends Magic[Workout](Some("workout")) {
+object Workout extends Magic[Workout] {
 
   def allWithUser:List[(Workout,User)] =
     SQL(

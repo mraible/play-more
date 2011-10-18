@@ -22,7 +22,7 @@ showMap = (position) ->
   map = new google.maps.Map(document.getElementById("map"), mapOptions)
   latlng = new google.maps.LatLng(latitude, longitude)
   map.setCenter(latlng)
-  Odometer.start({callback: drawMap, map: map})
+  Odometer.start({position: position, callback: drawMap, map: map})
 
   geocoder = new google.maps.Geocoder()
   geocoder.geocode({'latLng': latlng}, addAddressToMap)

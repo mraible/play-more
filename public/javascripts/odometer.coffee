@@ -22,13 +22,17 @@ start = (config) ->
   map = config.map
 
   if navigator.geolocation
-    navigator.geolocation.getCurrentPosition ((position) ->
+    if not config.position
+      navigator.geolocation.getCurrentPosition ((position) ->
+        startPos = position
+        lastPos = position
+        $("#startLat").html(startPos.coords.latitude)
+        $("#startLon").html(startPos.coords.longitude)
+      ), geolocationError, geolocationOptions
+    else
       startPos = position
       lastPos = position
-      $("#startLat").html(startPos.coords.latitude)
-      $("#startLon").html(startPos.coords.longitude)
-    ), geolocationError, geolocationOptions
-    
+
     navigator.geolocation.watchPosition showDistance, geolocationError, geolocationOptions
 
 showDistance = (position) ->

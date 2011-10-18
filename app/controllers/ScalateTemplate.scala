@@ -55,4 +55,11 @@ object ScalateTemplate {
   }
 
   def apply(template: String) = Template(template)
+
+  // --- ROUTERS
+  def action(action: => Any) = {
+    new play.mvc.results.ScalaAction(action).actionDefinition.url
+  }
+
+  def asset(path:String) = play.mvc.Router.reverse(play.Play.getVirtualFile(path))
 }

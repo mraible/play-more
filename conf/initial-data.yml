@@ -25,6 +25,8 @@
     description:    >
                     A beautiful fall ride: cool breezes, awesome views and yellow leaves.
 
+                    Would do it again in a heartbeat.
+
 - !!models.Workout
     id:             !!Id[Long] 2
     title:          Monarch Lake Trail
@@ -60,3 +62,4 @@
                     Love that trail.
     postedAt:       2011-10-15
     workout_id:     2
+

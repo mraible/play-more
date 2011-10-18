@@ -9,7 +9,7 @@ case class Comment(
     author: String, content: String, postedAt: Date, workout_id: Long
 )
 
-object Comment extends Magic[Comment](Some("comment")) {
+object Comment extends Magic[Comment] {
   def apply(workout_id: Long, author: String, content: String) = {
     new Comment(NotAssigned, author, content, new Date(), workout_id)
   }
