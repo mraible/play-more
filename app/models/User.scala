@@ -9,7 +9,7 @@ case class User (
 ) {
 }
 
-object User extends Magic[User] {
+object User extends Magic[User](Some("user")) {
     def connect(email: String, password: String) = {
         User.find("email = {email} and password = {password}")
             .on("email" -> email, "password" -> password)
