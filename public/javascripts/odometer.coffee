@@ -11,6 +11,10 @@ calculateDistance = (lat1, lon1, lat2, lon2) ->
 startPos = null
 lastPos = null
 distance = 0
+geolocationOptions = { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }
+callback = null
+map = null
+log = null
 
 start = (config) ->
   log = config.log
@@ -23,36 +27,40 @@ start = (config) ->
       lastPos = position
       $("#startLat").html(startPos.coords.latitude)
       $("#startLon").html(startPos.coords.longitude)
-    ), (error) ->
-      msg = 'Unable to locate position. '
-      switch error.code
-        when error.TIMEOUT then msg += 'Timeout.'
-        when error.POSITION_UNAVAILABLE then msg += 'Position unavailable.'
-        when error.PERMISSION_DENIED then msg += 'Please turn on location services.'
-        when error.UNKNOWN_ERROR then msg += error.code
-      alert msg
+    ), geolocationError, geolocationOptions
     
-    navigator.geolocation.watchPosition (position) ->
-      lat = position.coords.latitude
-      lng = position.coords.longitude
-      $("#currentLat").html(lat)
-      $("#currentLon").html(lng)
-      if (lastPos)
-        distance += calculateDistance(lastPos.coords.latitude, lastPos.coords.longitude, lat, lng)
-        $("#distance").html(distance.toFixed(2))
-        callback(lastPos, position, map)
+    navigator.geolocation.watchPosition showDistance, geolocationError, geolocationOptions
 
-      lastPos = position
+showDistance = (position) ->
+  lat = position.coords.latitude
+  lng = position.coords.longitude
+  $("#currentLat").html(lat)
+  $("#currentLon").html(lng)
+  if (lastPos)
+    distance += calculateDistance(lastPos.coords.latitude, lastPos.coords.longitude, lat, lng)
+    $("#distance").html(distance.toFixed(2))
+    callback(lastPos, position, map)
 
-      if (log)
-        time = new Date
-        if ($('#log').length == 0)
-          $('<div/>').attr('id', 'log').appendTo($('body'));
-        hours = appendZero time.getHours()
-        minutes = appendZero time.getMinutes()
-        seconds = appendZero time.getHours()
-        $('#log').append(time.toDateString() + ' ' + hours + ':' + minutes + ':' + seconds)
-        $('#log').append(' | <strong>' + distance + '</strong> | ' + lat + '/' + lng + '<br/>')
+  lastPos = position
+
+  if (log)
+    time = new Date
+    if ($('#log').length == 0)
+      $('<div/>').attr('id', 'log').appendTo($('body'));
+    hours = appendZero time.getHours()
+    minutes = appendZero time.getMinutes()
+    seconds = appendZero time.getHours()
+    $('#log').append(time.toDateString() + ' ' + hours + ':' + minutes + ':' + seconds)
+    $('#log').append(' | <strong>' + distance + '</strong> | ' + lat + '/' + lng + '<br/>')
+
+geolocationError = (error) ->
+  msg = 'Unable to locate position. '
+  switch error.code
+    when error.TIMEOUT then msg += 'Timeout.'
+    when error.POSITION_UNAVAILABLE then msg += 'Position unavailable.'
+    when error.PERMISSION_DENIED then msg += 'Please turn on location services.'
+    when error.UNKNOWN_ERROR then msg += error.code
+  alert msg
 
 Number::toRad = ->
   this * Math.PI / 180
