@@ -1,11 +1,11 @@
-/lib/
-/logs/
+/lib
+/logs
 *.pyc
+/out
 /tmp
 /precompiled
-/test-result/
+/test-result
 .DS_Store
 # Modules and libs (dep managed)
-/lib
 /modules
 /.ivy2
