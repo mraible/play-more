@@ -3,9 +3,9 @@
 -@ val title: String = "Play More!"
 -@ val pageHeader: String = ""
 -@ val pageTagline: String = ""
--@ val mainHeader: String = ""
--@ val menuHeader: String = ""
+-@ val sidebar: String = ""
 -@ val params: play.mvc.Scope.Params
+-@ val config: java.util.Properties
 !!! 5
 / paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ 
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
@@ -70,13 +70,11 @@ body(class=bodyClass)
             = pageTagline
       .row
         .span10
-          h2 #{mainHeader}
           !~~ body
         .span4
-          h3 #{menuHeader}
-
+          = unescape(sidebar)
     footer
-      p &copy; Raible Designs 2011
+      p &copy; 2011 Raible Designs
 
   -# JavaScript at the bottom for fast page loading 
   -# TODO: Remove this when Scalate supports CoffeeScript filter
