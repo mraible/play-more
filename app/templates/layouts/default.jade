@@ -37,27 +37,41 @@ head
 
   script(type="text/javascript" src={uri("/public/javascripts/libs/modernizr-2.0.6.min.js")})
 body(class=bodyClass)
-  #container
-    header
-      .topbar-wrapper(style="z-index: 5")
-        .topbar
-          .topbar-inner
-            .container
-              a(class="brand" href={uri("/")}) 
-                img(src={uri("/public/images/play-more.png")} alt="Play More!" class="logo")
-              ul.nav(data-tabs="tabs")
-                li(id="nav-index")
-                  a(href={uri("/")}) Play
-                li(id="nav-timeline")
-                  a(href={uri("/timeline")}) Timeline
-                li(id="nav-settings")
-                  a(href="#settings") Settings
-                li(id="nav-about")
-                  a(href={uri("/about")}) About
+  -# from http://twitter.github.com/bootstrap/examples/container-app.html
+  .topbar
+    .fill
+      .container
+        a(class="brand" href={uri("/")})
+          img(src={uri("/public/images/play-more.png")} alt="Play More!" class="logo")
+        ul.nav(data-tabs="tabs")
+          li(id="nav-index")
+            a(href={uri("/")}) Play
+          li(id="nav-timeline")
+            a(href={uri("/timeline")}) Timeline
+          li(id="nav-settings")
+            a(href="#settings") Settings
+          li(id="nav-about")
+            a(href={uri("/about")}) About
+        form(action="" class="pull-right")
+          input(class="input-small" type="text" placeholder="Username")
+          input(class="input-small" type="password" placeholder="Password")
+          button(class="btn" type="submit") Sign in
 
-    #main(role="main")
-      !~~ body
-    footer
+    .container
+      .content
+        .page-header
+          h1
+            | Page name
+            small Supporting text or tagline
+        .row
+          .span10
+            h2 Main Content
+            !~~ body
+          .span4
+            h3 Secondary Content
+
+      footer
+        p &copy; Raible Designs 2011
 
   -# JavaScript at the bottom for fast page loading 
   -# TODO: Remove this when Scalate supports CoffeeScript filter
