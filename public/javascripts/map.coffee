@@ -6,7 +6,8 @@ map = null
 mapCenter = null
 geocoder = null
 latlng = null
-geolocationOptions = { maximumAge: 60000, timeout: 30000, enableHighAccuracy: true }
+# geolocationOptions = { maximumAge: 10000, timeout: 30000, enableHighAccuracy: true }
+geolocationOptions = { }
 
 initialize = ->	
   if Modernizr.geolocation

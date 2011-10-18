@@ -11,7 +11,8 @@ calculateDistance = (lat1, lon1, lat2, lon2) ->
 startPos = null
 lastPos = null
 distance = 0
-geolocationOptions = { maximumAge: 10000, timeout: 30000, enableHighAccuracy: true }
+# geolocationOptions = { maximumAge: 10000, timeout: 30000, enableHighAccuracy: true }
+geolocationOptions = { }
 callback = null
 map = null
 log = null
@@ -21,7 +22,7 @@ start = (config) ->
   callback = config.callback
   map = config.map
 
-  if navigator.geolocation
+  if Modernizr.geolocation
     if not config.position
       navigator.geolocation.getCurrentPosition ((position) ->
         startPos = position
