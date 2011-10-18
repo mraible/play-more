@@ -9,7 +9,7 @@ class BootStrap extends Job {
         import play.test._
 
         // Import initial data if the database is empty
-        if(User.count().single() == 0) {
+        /*if(User.count().single() == 0) {
             Yaml[List[Any]]("initial-data.yml").foreach {
                 _ match {
                     case u:User => User.create(u)
@@ -17,7 +17,7 @@ class BootStrap extends Job {
                     case c:Comment => Comment.create(c)
                 }
             }
-        }
+        }*/
 
     }
 
