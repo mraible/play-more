@@ -6,10 +6,10 @@ map = null
 mapCenter = null
 geocoder = null
 latlng = null
-geolocationOptions = { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }
+geolocationOptions = { maximumAge: 60000, timeout: 30000, enableHighAccuracy: true }
 
 initialize = ->	
-  if navigator.geolocation
+  if Modernizr.geolocation
     navigator.geolocation.getCurrentPosition showMap, geolocationError, geolocationOptions
 
 showMap = (position) ->
@@ -40,12 +40,6 @@ addAddressToMap = (results, status) ->
 
 tripCoordinates = []
 drawMap = (lastPos, newPos, map) ->
-  if console.log
-    console.log 'last lat: ' + lastPos.coords.latitude
-    console.log 'last long: ' + lastPos.coords.longitude
-    console.log 'new lat: ' + newPos.coords.latitude
-    console.log 'new long: ' + newPos.coords.longitude
-
   tripCoordinates.push new google.maps.LatLng(lastPos.coords.latitude, lastPos.coords.longitude)
   tripCoordinates.push new google.maps.LatLng(newPos.coords.latitude, newPos.coords.longitude)
   tripPath = new google.maps.Polyline({
@@ -63,7 +57,10 @@ geolocationError = (error) ->
     when error.POSITION_UNAVAILABLE then msg += 'Position unavailable.'
     when error.PERMISSION_DENIED then msg += 'Please turn on location services.'
     when error.UNKNOWN_ERROR then msg += error.code
-  alert msg
+  $('.alert-message').alert('close')
+  alert = $('<div class="alert-message error fade in" data-alert="alert">')
+  alert.html('<a class="close" href="#">&times;</a>' + msg);
+  alert.insertAfter($('.span10 h2'))
 
 start = ->
   setTimeout initialize, 500

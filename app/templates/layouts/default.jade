@@ -1,6 +1,10 @@
--@ val body: String 
--@ val title: String = "Play More!"
+-@ val body: String
 -@ val bodyClass: String
+-@ val title: String = "Play More!"
+-@ val pageHeader: String = ""
+-@ val pageTagline: String = ""
+-@ val mainHeader: String = ""
+-@ val menuHeader: String = ""
 -@ val params: play.mvc.Scope.Params
 !!! 5
 / paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ 
@@ -46,7 +50,7 @@ body(class=bodyClass)
         ul.nav(data-tabs="tabs")
           li(id="nav-index")
             a(href={uri("/")}) Play
-          li(id="nav-timeline")
+          -#li(id="nav-timeline")
             a(href={uri("/timeline")}) Timeline
           li(id="nav-settings")
             a(href="#settings") Settings
@@ -57,21 +61,22 @@ body(class=bodyClass)
           input(class="input-small" type="password" placeholder="Password")
           button(class="btn" type="submit") Sign in
 
-    .container
-      .content
-        .page-header
-          h1
-            | Page name
-            small Supporting text or tagline
-        .row
-          .span10
-            h2 Main Content
-            !~~ body
-          .span4
-            h3 Secondary Content
+  .container
+    .content
+      .page-header
+        h1
+          = pageHeader
+          small
+            = pageTagline
+      .row
+        .span10
+          h2 #{mainHeader}
+          !~~ body
+        .span4
+          h3 #{menuHeader}
 
-      footer
-        p &copy; Raible Designs 2011
+    footer
+      p &copy; Raible Designs 2011
 
   -# JavaScript at the bottom for fast page loading 
   -# TODO: Remove this when Scalate supports CoffeeScript filter
@@ -86,8 +91,9 @@ body(class=bodyClass)
   - for (script: String <- attributes.list("scripts"))
     script(type="text/javascript" src=script)
   
+  script(type="text/javascript" src={uri("/public/javascripts/libs/bootstrap-alerts.js")})
   script(type="text/javascript" src={uri("/public/javascripts/libs/bootstrap-tabs.js")})
-  
+
   -# Change UA-XXXXX-X to be your site's ID 
   :javascript
     window._gaq = [['_setAccount','UA-25859875-1'],['_trackPageview'],['_trackPageLoadTime']];

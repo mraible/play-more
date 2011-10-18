@@ -11,7 +11,7 @@ calculateDistance = (lat1, lon1, lat2, lon2) ->
 startPos = null
 lastPos = null
 distance = 0
-geolocationOptions = { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }
+geolocationOptions = { maximumAge: 10000, timeout: 30000, enableHighAccuracy: true }
 callback = null
 map = null
 log = null
@@ -28,12 +28,12 @@ start = (config) ->
         lastPos = position
         $("#startLat").html(startPos.coords.latitude)
         $("#startLon").html(startPos.coords.longitude)
-      ), geolocationError, geolocationOptions
+      ), null, geolocationOptions
     else
-      startPos = position
-      lastPos = position
+      startPos = config.position
+      lastPos = config.position
 
-    navigator.geolocation.watchPosition showDistance, geolocationError, geolocationOptions
+    navigator.geolocation.watchPosition showDistance, null, geolocationOptions
 
 showDistance = (position) ->
   lat = position.coords.latitude
@@ -56,15 +56,6 @@ showDistance = (position) ->
     seconds = appendZero time.getHours()
     $('#log').append(time.toDateString() + ' ' + hours + ':' + minutes + ':' + seconds)
     $('#log').append(' | <strong>' + distance + '</strong> | ' + lat + '/' + lng + '<br/>')
-
-geolocationError = (error) ->
-  msg = 'Unable to locate position. '
-  switch error.code
-    when error.TIMEOUT then msg += 'Timeout.'
-    when error.POSITION_UNAVAILABLE then msg += 'Position unavailable.'
-    when error.PERMISSION_DENIED then msg += 'Please turn on location services.'
-    when error.UNKNOWN_ERROR then msg += error.code
-  alert msg
 
 Number::toRad = ->
   this * Math.PI / 180
