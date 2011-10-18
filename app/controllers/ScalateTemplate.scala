@@ -48,6 +48,7 @@ object ScalateTemplate {
     renderArgs.put("flash", Scope.Flash.current())
     renderArgs.put("params", Scope.Params.current())
     renderArgs.put("errors", Validation.errors())
+    renderArgs.put("config", Play.configuration)
 
     // CSS class to add to body
     renderArgs.put("bodyClass", Http.Request.current().action.replace(".", " ").toLowerCase)
