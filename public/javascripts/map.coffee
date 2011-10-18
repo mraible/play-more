@@ -6,10 +6,11 @@ map = null
 mapCenter = null
 geocoder = null
 latlng = null
+geolocationOptions = { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }
 
 initialize = ->	
   if navigator.geolocation
-    navigator.geolocation.getCurrentPosition showMap
+    navigator.geolocation.getCurrentPosition showMap, geolocationError, geolocationOptions
 
 showMap = (position) ->
   latitude = position.coords.latitude
@@ -54,6 +55,15 @@ drawMap = (lastPos, newPos, map) ->
     strokeWeight: 2
   })
   tripPath.setMap map
+
+geolocationError = (error) ->
+  msg = 'Unable to locate position. '
+  switch error.code
+    when error.TIMEOUT then msg += 'Timeout.'
+    when error.POSITION_UNAVAILABLE then msg += 'Position unavailable.'
+    when error.PERMISSION_DENIED then msg += 'Please turn on location services.'
+    when error.UNKNOWN_ERROR then msg += error.code
+  alert msg
 
 start = ->
   setTimeout initialize, 500
