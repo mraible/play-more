@@ -45,14 +45,14 @@ class BasicTests extends UnitFlatSpec with ShouldMatchers with BeforeAndAfterEac
 
     Workout.count().single() should be (1)
 
-    val workouts = Workout.find("user_id={id}").on("id" -> 1).as(Workout*)
+    val workouts = Workout.find("athlete_id={id}").on("id" -> 1).as(Workout*)
 
     workouts.length should be (1)
 
     val firstWorkout = workouts.headOption
 
     firstWorkout should not be (None)
-    firstWorkout.get.user_id should be (1)
+    firstWorkout.get.athlete_id should be (1)
     firstWorkout.get.title should be ("My first run")
     firstWorkout.get.description should be ("With a hangover")
   }

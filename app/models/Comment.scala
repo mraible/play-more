@@ -5,8 +5,8 @@ import play.db.anorm.defaults._
 import java.util.Date
 
 case class Comment(
-    id: Pk[Long],
-    author: String, content: String, postedAt: Date, workout_id: Long
+  id: Pk[Long],
+  author: String, content: String, postedAt: Date, workout_id: Long
 )
 
 object Comment extends Magic[Comment] {

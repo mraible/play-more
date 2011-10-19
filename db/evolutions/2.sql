@@ -7,8 +7,8 @@ CREATE TABLE Workout (
     distance double(10) NOT NULL,
     duration double(10) NOT NULL,
     postedAt date NOT NULL,
-    user_id bigint(20) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES User(id),
+    athlete_id bigint(20) NOT NULL,
+    FOREIGN KEY (athlete_id) REFERENCES Athlete(id),
     PRIMARY KEY (id)
 );
 

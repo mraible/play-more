@@ -11,10 +11,10 @@ class BootStrap extends Job {
 
     if (Play.configuration.get("db") != null) {
       // Import initial data if the database is empty
-      if (User.count().single() == 0) {
+      if (Athlete.count().single() == 0) {
         Yaml[List[Any]]("initial-data.yml").foreach {
           _ match {
-            case u: User => User.create(u)
+            case a: Athlete => Athlete.create(a)
             case w: Workout => Workout.create(w)
             case c: Comment => Comment.create(c)
           }

@@ -6,8 +6,8 @@ import models._
 object Home extends Controller with Scalate {
 
   def index = {
-    val user = User("Matt")
-    render('user -> user)
+    val athlete = Athlete("Matt")
+    render('athlete -> athlete)
   }
 
   def where = {

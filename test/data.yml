@@ -20,7 +20,7 @@
     title:          Chainsaw Trail
     distance:       7
     duration:       90
-    user_id:        1
+    athlete_id:        1
     postedAt:       2011-10-13
     description:    >
                     A beautiful fall ride: cool breezes, awesome views and yellow leaves.
@@ -30,7 +30,7 @@
     title:          Monarch Lake Trail
     distance:       4
     duration:       90
-    user_id:        1
+    athlete_id:        1
     postedAt:       2011-10-15
     description:    >
                     A beautiful afternoon of hiking with fishing along the way.
@@ -40,7 +40,7 @@
     title:          Creekside to Flume to Chainsaw
     distance:       12
     duration:       150
-    user_id:        2
+    athlete_id:        2
     postedAt:       2011-10-16
     description:    >
                     Awesome morning ride through falling yellow leaves and cool fall breezes.
