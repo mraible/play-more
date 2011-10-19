@@ -7,11 +7,10 @@ mapCenter = null
 geocoder = null
 latlng = null
 # geolocationOptions = { maximumAge: 10000, timeout: 30000, enableHighAccuracy: true }
-geolocationOptions = { }
 
-initialize = ->	
+initialize = ->
   if Modernizr.geolocation
-    navigator.geolocation.getCurrentPosition showMap, geolocationError, geolocationOptions
+    navigator.geolocation.getCurrentPosition showMap, geolocationError
 
 showMap = (position) ->
   latitude = position.coords.latitude

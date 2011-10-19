@@ -12,7 +12,6 @@ startPos = null
 lastPos = null
 distance = 0
 # geolocationOptions = { maximumAge: 10000, timeout: 30000, enableHighAccuracy: true }
-geolocationOptions = { }
 callback = null
 map = null
 log = null
@@ -34,7 +33,7 @@ start = (config) ->
       startPos = config.position
       lastPos = config.position
 
-    navigator.geolocation.watchPosition showDistance, null, geolocationOptions
+    navigator.geolocation.watchPosition showDistance
 
 showDistance = (position) ->
   lat = position.coords.latitude
