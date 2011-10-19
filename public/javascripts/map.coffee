@@ -6,11 +6,12 @@ map = null
 mapCenter = null
 geocoder = null
 latlng = null
-# geolocationOptions = { maximumAge: 10000, timeout: 30000, enableHighAccuracy: true }
+geolocationOptions = { timeout: 10000, enableHighAccuracy: true }
+timeoutId = null
 
 initialize = ->
   if Modernizr.geolocation
-    navigator.geolocation.getCurrentPosition showMap, geolocationError
+    navigator.geolocation.getCurrentPosition showMap, geolocationError, geolocationOptions
 
 showMap = (position) ->
   latitude = position.coords.latitude
@@ -57,19 +58,20 @@ geolocationError = (error) ->
     when error.POSITION_UNAVAILABLE then msg += 'Position unavailable.'
     when error.PERMISSION_DENIED then msg += 'Please turn on location services.'
     when error.UNKNOWN_ERROR then msg += error.code
-  $('.alert-message').alert('close')
+  $('.alert-message').remove()
   alert = $('<div class="alert-message error fade in" data-alert="alert">')
   alert.html('<a class="close" href="#">&times;</a>' + msg);
-  alert.insertAfter($('.span10 h2'))
+  alert.insertBefore($('.span10'))
 
 start = ->
-  setTimeout initialize, 500
+  timeoutId = setTimeout initialize, 500
 
 reset = ->
-  map = null
   tripCoordinates = []
-  $('#location').html('')
+  $('#location').empty()
   Odometer.reset()
+  if (timeoutId)
+    clearTimeout timeoutId
 
 @Map = {
   start: start

@@ -11,10 +11,11 @@ calculateDistance = (lat1, lon1, lat2, lon2) ->
 startPos = null
 lastPos = null
 distance = 0
-# geolocationOptions = { maximumAge: 10000, timeout: 30000, enableHighAccuracy: true }
+geolocationOptions = { timeout: 10000, enableHighAccuracy: true }
 callback = null
 map = null
 log = null
+watchId = null
 
 start = (config) ->
   log = config.log
@@ -33,7 +34,7 @@ start = (config) ->
       startPos = config.position
       lastPos = config.position
 
-    navigator.geolocation.watchPosition showDistance
+    watchId = navigator.geolocation.watchPosition showDistance, null, geolocationOptions
 
 showDistance = (position) ->
   lat = position.coords.latitude
@@ -71,8 +72,10 @@ reset = ->
   startPos = null
   lastPos = null
   distance = 0
-  $('#log').html('')
+  $('#log').empty()
   $('#distance').html('0')
+  if (watchId)
+    navigator.geolocation.clearWatch watchId
 
 @Odometer = {
   start: start
