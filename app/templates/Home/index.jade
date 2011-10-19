@@ -1,7 +1,11 @@
 -@ var user: models.User
 - attributes("title") = "Hello " + user.firstName + "!"
+- attributes.list("scripts") += "http://www.google.com/jsapi"
+- attributes.list("scripts") += "http://maps.googleapis.com/maps/api/js?sensor=false"
+- attributes.list("scripts") += uri("/public/javascripts/map.coffee")
 - attributes.list("scripts") += uri("/public/javascripts/stopwatch.coffee")
 - attributes.list("scripts") += uri("/public/javascripts/odometer.coffee")
+- attributes.list("scripts") += uri("/public/javascripts/map.coffee")
 
 #display
   input(id="clock" class="xlarge" type="text" value="00:00:00.0" readonly="readonly")
@@ -25,11 +29,12 @@
 
 #track(style="display: none")
   | Distance Traveled: <span id="distance">0</span> mile(s)
-
   #actions
     button(id="save" type="submit" class="btn success") Save
-
 #where(style="display: none")
-  =include("where.jade")
+  #map(class="odometer-map")
+  p(id="location")
+    span(class="label success") New
+    | Fetching your location with HTML 5 geolocation...
 
 -# fonts: http://www.html5rocks.com/en/tutorials/webfonts/quick/
