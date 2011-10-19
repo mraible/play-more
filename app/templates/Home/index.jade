@@ -18,13 +18,13 @@
     $(document).ready ->
       $('#start').click ->
         StopWatch.start this, $('#clock')
-        $('#where,#track').show()
+        $('#track,#where').show()
         Map.start()
     
       $('#reset').click ->
         StopWatch.reset()
         Map.reset()
-        $('#where,#track').hide()
+        $('#track,#where').hide()
   </script>
 
 #track(style="display: none")
