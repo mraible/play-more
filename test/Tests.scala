@@ -15,12 +15,12 @@ class BasicTests extends UnitFlatSpec with ShouldMatchers with BeforeAndAfterEac
       Fixtures.deleteDatabase()
   }
 
-  it should "create and retrieve a User" in {
+  it should "create and retrieve a Athlete" in {
 
-      var user = User(NotAssigned, "jim@gmail.com", "secret", "Jim", "Smith")
-      User.create(user)
+      var user = Athlete(NotAssigned, "jim@gmail.com", "secret", "Jim", "Smith")
+      Athlete.create(user)
 
-      val jim = User.find(
+      val jim = Athlete.find(
           "email={email}").on("email" -> "jim@gmail.com"
       ).first()
 
@@ -29,18 +29,18 @@ class BasicTests extends UnitFlatSpec with ShouldMatchers with BeforeAndAfterEac
 
   }
 
-  it should "connect a User" in {
+  it should "connect a Athlete" in {
 
-      User.create(User(NotAssigned, "bob@gmail.com", "secret", "Bob", "Johnson"))
+      Athlete.create(Athlete(NotAssigned, "bob@gmail.com", "secret", "Bob", "Johnson"))
 
-      User.connect("bob@gmail.com", "secret") should not be (None)
-      User.connect("bob@gmail.com", "badpassword") should be(None)
-      User.connect("tom@gmail.com", "secret") should be(None)
+      Athlete.connect("bob@gmail.com", "secret") should not be (None)
+      Athlete.connect("bob@gmail.com", "badpassword") should be(None)
+      Athlete.connect("tom@gmail.com", "secret") should be(None)
   }
 
   it should "create a Workout" in {
 
-    User.create(User(Id(1), "bob@gmail.com", "secret", "Bob", "Johnson"))
+    Athlete.create(Athlete(Id(1), "bob@gmail.com", "secret", "Bob", "Johnson"))
     Workout.create(Workout(NotAssigned, "My first run", "With a hangover", 4, 38, new Date, 1))
 
     Workout.count().single() should be (1)
@@ -59,10 +59,10 @@ class BasicTests extends UnitFlatSpec with ShouldMatchers with BeforeAndAfterEac
 
   it should "retrieve Workouts by user" in {
 
-    User.create(User(Id(1), "bob@gmail.com", "secret", "Bob", "Johnson"))
+    Athlete.create(Athlete(Id(1), "bob@gmail.com", "secret", "Bob", "Johnson"))
     Workout.create(Workout(NotAssigned, "My 1st workout", "Yee Haw!", 3.20, 70, new Date, 1))
 
-    val workouts = Workout.allWithUser
+    val workouts = Workout.allWithAthlete
 
     workouts.length should be (1)
 
@@ -74,22 +74,21 @@ class BasicTests extends UnitFlatSpec with ShouldMatchers with BeforeAndAfterEac
 
   it should "support Comments" in {
 
-    User.create(User(Id(1), "bob@gmail.com", "secret", "Bob", "Johnson"))
+    Athlete.create(Athlete(Id(1), "bob@gmail.com", "secret", "Bob", "Johnson"))
     Workout.create(Workout(Id(1), "My first workout", "Yee Haw!", 2, 10, new Date, 1))
     Comment.create(Comment(NotAssigned, "Jim", "Nice workout!", new Date, 1))
     Comment.create(Comment(NotAssigned, "Bryan", "Great weather today!", new Date, 1))
 
-    User.count().single() should be (1)
+    Athlete.count().single() should be (1)
     Workout.count().single() should be (1)
     Comment.count().single() should be (2)
 
-    val Some( (post,user,comments) ) = Workout.byIdWithUserAndComments(1)
+    val Some( (post,user,comments) ) = Workout.byIdWithAthleteAndComments(1)
 
     post.title should be ("My first workout")
     user.firstName should be ("Bob")
     comments.length should be (2)
     comments(0).author should be ("Jim")
     comments(1).author should be ("Bryan")
-
   }
 }
