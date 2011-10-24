@@ -320,17 +320,29 @@ footer {
   font-weight: bold;
 }
 
-#about, #frameworks {
-  min-width: 280px;
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: left;
-  padding: 10px;
+.about .span10 {
+  padding-top: 12px;
 }
 
-.linkedin {
+.about #linkedin {
   text-align: center;
   height: 175px;
+}
+
+.about .photo {
+  float: right;
+  border: 1px solid black;
+  display: none;
+}
+
+.about .span4 {
+  
+  ul {
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 20px;
+  }
 }
 
 .talk {
@@ -388,8 +400,24 @@ footer {
   .home .span4, .home .page-header, .topbar form {
     display: none
   }
-  .container {
+  .home .container {
     width: 320px;
+  } 
+  .about {
+    .container, .span10 {
+      width: 280px;
+    }
+    .span10 {
+      padding-top: 0px;
+    }
+  }
+  .about .photo {
+    display: block;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+  .about #linkedin {
+    display: none;
   }
 }
 
