@@ -1,7 +1,7 @@
-# --- !Ups
+--- !Ups
 
 CREATE TABLE Comment (
-    id bigint(20) NOT NULL AUTO_INCREMENT,
+    id bigint(20) NOT NULL SERIAL,
     author varchar(255) NOT NULL,
     content text NOT NULL,
     postedAt date NOT NULL,
@@ -10,6 +10,6 @@ CREATE TABLE Comment (
     PRIMARY KEY (id)
 );
 
-# --- !Downs
+--- !Downs
 
 DROP TABLE Comment;

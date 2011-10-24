@@ -1,9 +1,9 @@
-# Athletes schema
+-- Athletes schema
  
-# --- !Ups
+--- !Ups
 
 CREATE TABLE Athlete (
-    id bigint(20) NOT NULL AUTO_INCREMENT,
+    id bigint(20) NOT NULL SERIAL,
     email varchar(255) NOT NULL,
     password varchar(255) NOT NULL,
     firstName varchar(100) NOT NULL,
@@ -11,6 +11,6 @@ CREATE TABLE Athlete (
     PRIMARY KEY (id)
 );
  
-# --- !Downs
+--- !Downs
  
 DROP TABLE Athlete;

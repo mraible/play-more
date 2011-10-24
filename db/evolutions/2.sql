@@ -1,7 +1,7 @@
-# --- !Ups
+--- !Ups
 
 CREATE TABLE Workout (
-    id bigint(20) NOT NULL AUTO_INCREMENT,
+    id bigint(20) NOT NULL SERIAL,
     title varchar(255) NOT NULL,
     description text NOT NULL,
     distance double(10) NOT NULL,
@@ -12,6 +12,6 @@ CREATE TABLE Workout (
     PRIMARY KEY (id)
 );
 
-# --- !Downs
+--- !Downs
 
 DROP TABLE Workout;
