@@ -1,36 +1,40 @@
 - attributes.list("scripts") += "http://platform.linkedin.com/in.js"
-- attributes("pageHeader") = "About"
-- attributes("pageTagline") = "Why is this app so awesome?"
+- attributes("pageHeader") = "About Play More"
 
-#about
-  p
-    | This application was built by me, <a href="http://about.me/mraible">Matt Raible</a>,
-    | using some of the best web frameworks of 2011.
+p
+  | <a href="http://www.linkedin.com/in/mraible"><img src=#{uri("/public/images/me.jpg")}
+  | alt="Matt Raible" width="80" height="80" class="photo"></a>
+  | This application was built by me, <a href="http://about.me/mraible">Matt Raible</a>,
+  | using some of the most-hyped web frameworks of <span class="copy-year">2011</span>.
 
-  p.linkedin
-    script(type="IN/MemberProfile" data-id="http://www.linkedin.com/in/mraible"
-           data-format="inline" data-related="false")
+p#linkedin
+  script(type="IN/MemberProfile" data-id="http://www.linkedin.com/in/mraible"
+         data-format="inline" data-related="false")
 
-  p
-    | I created this application because I wanted a better fitness tracker. I've
-    | used RunKeeper and iWander, but I wanted to see if I could build a webapp with the
-    | same capabilities. I'd like to be able to click "Start" and have my time and distance
-    | tracked, as well as some good tunes flowing to my ears.
+p
+  | I created this application because I wanted to see if I could create a fitness tracker with HTML5.
+  | I've used native apps RunKeeper and iWander, but I wanted to see if I could build a webapp with the
+  | same capabilities. I'd like to be able to click "Start" and have my time and distance tracked,
+  | as well as some good tunes flowing to my ears.
 
-  p
-    | If you'd like to hear more about how I built this app, please attend my
-    | <a href="http://www.devoxx.com/display/DV11/Home">Devoxx 2011</a> talk titled
-    span.talk
-      a(href="http://www.devoxx.com/display/DV11/HTML5+with+Play+Scala%2C+CoffeeScript+and+Jade")
-        | HTML5 with Play/Scala, CoffeeScript and Jade.
+p
+  | If you'd like to hear more about how I built this app, please attend my
+  | <a href="http://www.devoxx.com/display/DV11/Home">Devoxx 2011</a> talk titled
+  span.talk
+    a(href="http://www.devoxx.com/display/DV11/HTML5+with+Play+Scala%2C+CoffeeScript+and+Jade")
+      | HTML5 with Play/Scala, CoffeeScript and Jade
+  | or <a href="http://raibledesigns.com/rd/tags/devoxx2011">read my articles</a> about building it.
+
 
 - captureAttribute("sidebar")
-  #frameworks
-    h3 Technologies Used
-    ul
-      li <a href="http://www.scala-lang.org/">Scala</a>
-      li <a href="http://www.w3.org/html/logo/">HTML5</a>
-      li <a href="http://playframework.org">Play! Framework</a>
-      li <a href="http://scalate.org">Scalate</a> and <a href="http://jade-lang.com">Jade</a>
-      li <a href="http://jashkenas.github.com/coffee-script/">CoffeeScript</a>
-      li <a href="http://code.google.com/apis/maps/documentation/javascript/">Google Maps API</a>
+  h3 Technologies Used { &rArr;
+  ul
+    li <a href="http://scala.playframework.org/">Play! Framework with Scala</a>
+    li <a href="http://scalate.org">Scalate</a> and <a href="http://jade-lang.com">Jade</a>
+    li <a href="http://www.w3.org/html/logo/">HTML5</a> and <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>
+    li <a href="http://jashkenas.github.com/coffee-script/">CoffeeScript</a> and <a href="http://jquery.org/">jQuery</a>
+    li <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> and <a href="http://lesscss.org/">LESS</a>
+    li <a href="http://code.google.com/apis/maps/documentation/javascript/">Google Maps API</a>
+    li <a href="http://www.heroku.com/">Heroku</a> and <a href="http://www.postgresql.org/">PostgreSQL</a>
+    li <a href="http://www.jetbrains.com/idea/">IntelliJ IDEA</a> and <a href="http://macromates.com/">TextMate</a>
+  h3 }
