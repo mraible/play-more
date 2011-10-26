@@ -74,7 +74,7 @@ body(class=bodyClass)
         .span4
           = unescape(sidebar)
     footer
-      p &copy; 2011 Raible Designs
+      p &copy; <span class="copy-year">2011</span> <a href="http://raibledesigns.com">Raible Designs</a>
 
   -# JavaScript at the bottom for fast page loading 
   -# TODO: Remove this when Scalate supports CoffeeScript filter
@@ -99,6 +99,10 @@ body(class=bodyClass)
       load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
     });
     $('.nav').tabs()
+    var year = (new Date()).getFullYear();
+    if (year > 2011) {
+      $('.copy-year').html(year);
+    }
 
   -# Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6. 
   -# http://chromium.org/developers/how-tos/chrome-frame-getting-started 
