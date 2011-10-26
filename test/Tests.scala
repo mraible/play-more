@@ -57,7 +57,7 @@ class BasicTests extends UnitFlatSpec with ShouldMatchers with BeforeAndAfterEac
     firstWorkout.get.description should be ("With a hangover")
   }
 
-  it should "retrieve Workouts by user" in {
+  it should "retrieve Workouts by athlete" in {
 
     Athlete.create(Athlete(Id(1), "bob@gmail.com", "secret", "Bob", "Johnson"))
     Workout.create(Workout(NotAssigned, "My 1st workout", "Yee Haw!", 3.20, 70, new Date, 1))
@@ -90,5 +90,50 @@ class BasicTests extends UnitFlatSpec with ShouldMatchers with BeforeAndAfterEac
     comments.length should be (2)
     comments(0).author should be ("Jim")
     comments(1).author should be ("Bryan")
+  }
+
+  it should "load a complex graph from Yaml" in {
+
+    Yaml[List[Any]]("data.yml").foreach {
+      _ match {
+        case a:Athlete => Athlete.create(a)
+        case w:Workout => Workout.create(w)
+        case c:Comment => Comment.create(c)
+      }
+    }
+
+    Athlete.count().single() should be (2)
+    Workout.count().single() should be (3)
+    Comment.count().single() should be (3)
+
+    Athlete.connect("mraible@gmail.com", "beer") should not be (None)
+    Athlete.connect("trishmcginity@gmail.com", "whiskey") should not be (None)
+    Athlete.connect("trishmcginity@gmail.com", "badpassword") should be (None)
+    Athlete.connect("fred@gmail.com", "secret") should be (None)
+
+    val allWorkoutsWithAthleteAndComments = Workout.allWithAthleteAndComments
+
+    allWorkoutsWithAthleteAndComments.length should be (3)
+
+    val (workout,athlete,comments) = allWorkoutsWithAthleteAndComments(1)
+    workout.title should be ("Monarch Lake Trail")
+    athlete.firstName should be ("Matt")
+    comments.length should be (2)
+
+    // We have a referential integrity error
+    evaluating {
+      Athlete.delete("email={email}")
+        .on("email" -> "mraible@gmail.com").executeUpdate()
+    } should produce[java.sql.SQLException]
+
+    Workout.delete("athlete_id={id}")
+      .on("id" -> 1).executeUpdate() should be (2)
+
+    Athlete.delete("email={email}")
+      .on("email" -> "mraible@gmail.com").executeUpdate() should be (1)
+
+    Athlete.count().single() should be (1)
+    Workout.count().single() should be (1)
+    Comment.count().single() should be (0)
   }
 }
