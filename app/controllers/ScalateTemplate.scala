@@ -47,7 +47,7 @@ object ScalateTemplate {
     renderArgs.put("request", Http.Request.current())
     renderArgs.put("flash", Scope.Flash.current())
     renderArgs.put("params", Scope.Params.current())
-    renderArgs.put("errors", Validation.errors())
+    renderArgs.put("errors", validationErrors)
     renderArgs.put("config", Play.configuration)
 
     // CSS class to add to body
@@ -60,6 +60,11 @@ object ScalateTemplate {
   // --- ROUTERS
   def action(action: => Any) = {
     new play.mvc.results.ScalaAction(action).actionDefinition.url
+  }
+
+  implicit def validationErrors:Map[String,play.data.validation.Error] = {
+    import scala.collection.JavaConverters._
+    Map.empty[String,play.data.validation.Error] ++ Validation.errors.asScala.map( e => (e.getKey, e) )
   }
 
   def asset(path:String) = play.mvc.Router.reverse(play.Play.getVirtualFile(path))
