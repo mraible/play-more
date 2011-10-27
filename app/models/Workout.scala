@@ -10,7 +10,29 @@ case class Workout(
   title: String, description: String,
   duration: Double, distance: Double,
   postedAt: Date, athlete_id: Long
-)
+) {
+
+  def prevNext = {
+    SQL(
+        """
+            (
+                select *, 'next' as w from workout
+                where postedAt < {date} order by postedAt desc limit 1
+            )
+                union
+            (
+                select *, 'prev' as w from workout
+                where postedAt > {date} order by postedAt asc limit 1
+            )
+
+            order by postedAt desc
+
+        """
+    ).on("date" -> postedAt).as(
+        opt('w.is("prev")~>Workout.on("")) ~ opt('w.is("next")~>Workout.on("")) ^^ flatten
+    )
+  }
+}
 
 object Workout extends Magic[Workout] {
 

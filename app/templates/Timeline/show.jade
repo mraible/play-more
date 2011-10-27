@@ -1,5 +1,71 @@
+-import controllers.ScalateTemplate._
 -@ val workout:(models.Workout,models.Athlete,Seq[models.Comment])
+-@ val pagination:(Option[models.Workout],Option[models.Workout])
 - attributes("title") = workout._1.title
+-@ val params: play.mvc.Scope.Params
+-@ val flash: play.mvc.Scope.Flash
+-@ val errors:Map[String,play.data.validation.Error]
+- attributes.list("scripts") += uri("/public/javascripts/libs/plugins/jquery.tools.min.js")
+
+ul#pagination
+- pagination._1.map { workout =>
+  li#previous
+    a(href={action(controllers.Timeline.show(workout.id()))}) #{workout.title}
+- }
+- pagination._2.map { workout =>
+  li#next
+    a(href={action(controllers.Timeline.show(workout.id()))}) #{workout.title}
+- }
+
+- if (flash.get("success") != null) {
+  div(class="alert-message success" data-alert="alert")
+    a(class="close" href="#") &times;
+    | #{flash.get("success")}
+- }
 
 = render("workout.jade", Map('workout -> workout, 'mode -> "full"))
+
+form(method="post" class="form-stacked" id="commentForm"
+     action={action(controllers.Timeline.postComment(workout._1.id()))})
+
+  - if (!errors.isEmpty()) {
+    div(class="alert-message error fade in" data-alert="alert")
+      a(class="close" href="#") &times;
+      |  All fields are required!
+  - }
+
+  fieldset
+    legend Leave a comment
+    div.clearfix
+      label(for="author") Your name:
+      input(type="text" name="author" class="xlarge" value={params.get("author")})
+    div.clearfix
+      label(for="content") Your message:
+      textarea(name="content" class="xlarge") #{params.get("content")}
+    div.actions
+      button(type="submit" class="btn primary") Submit your comment
+      button(type="reset" class="btn") Cancel
+
+  - errors.foreach { e =>
+    :&plain
+      <script type="text/coffeescript">
+        key = 'input[name="#{e.key}"],textarea[name="#{e.key}"]'
+        $(key).addClass('error')
+        $(key).closest('.clearfix').addClass('error')
+      </script>
+  - }
+
+  :plain
+    <script type="text/coffeescript">
+      $ ->
+        $("#commentForm").click ->
+          $("#commentForm").expose(api: true).load()
+
+        if $("#commentForm .error").size()
+          $("#commentForm").expose(
+            api: true
+            loadSpeed: 0
+          ).load()
+          $("#commentForm input[type=text]").get(0).focus()
+    </script>
 
