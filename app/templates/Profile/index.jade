@@ -5,6 +5,7 @@
 - front.map { front =>
   - render("workout.jade", Map('workout -> front, 'mode -> "home"))
 
+- captureAttribute("sidebar")
   - Option(older).filterNot(_.isEmpty).map { workouts =>
     .older-workouts
       h3

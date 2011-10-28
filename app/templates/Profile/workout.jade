@@ -1,16 +1,19 @@
 -import controllers.ScalateTemplate._
 -@ val workout:(models.Workout,models.Athlete,Seq[models.Comment])
 -@ val mode: String = "full"
+- attributes("pageHeader") = "Timeline"
+- attributes("pageTagline") = "The Players, gettin' out there, doin' stuff..."
 -
   var commentsTitle = "No Comments"
   if (workout._3.size > 0)
     commentsTitle = workout._3.size + " comments, lastest by " + workout._3(0).author
 
+
 div(class="workout #{mode}")
   h2.title
-    a(href={action(controllers.Timeline.show(workout._1.id()))}) #{workout._1.title}
+    a(href={action(controllers.Workoutshow(workout._1.id()))}) #{workout._1.title}
   .metadata
-    span.user by #{workout._2.firstName},
+    span.user Posted by #{workout._2.firstName} on
     span.date #{workout._1.postedAt}
     - if (mode != "full")
       .comments #{commentsTitle}

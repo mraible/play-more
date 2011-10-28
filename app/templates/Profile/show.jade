@@ -10,11 +10,11 @@
 ul#pagination
 - pagination._1.map { workout =>
   li#previous
-    a(href={action(controllers.Timeline.show(workout.id()))}) #{workout.title}
+    a(href={action(controllers.Workoutshow(workout.id()))}) #{workout.title}
 - }
 - pagination._2.map { workout =>
   li#next
-    a(href={action(controllers.Timeline.show(workout.id()))}) #{workout.title}
+    a(href={action(controllers.Workoutshow(workout.id()))}) #{workout.title}
 - }
 
 - if (flash.get("success") != null) {
@@ -26,7 +26,7 @@ ul#pagination
 = render("workout.jade", Map('workout -> workout, 'mode -> "full"))
 
 form(method="post" class="form-stacked" id="commentForm"
-     action={action(controllers.Timeline.postComment(workout._1.id()))})
+     action={action(controllers.WorkoutpostComment(workout._1.id()))})
 
   - if (!errors.isEmpty()) {
     div(class="alert-message error fade in" data-alert="alert")
