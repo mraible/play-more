@@ -1,6 +1,8 @@
 -@ val front: Option[(models.Workout,models.Athlete,Seq[models.Comment])]
 -@ val older: Seq[(models.Workout,models.Athlete,Seq[models.Comment])]
-- attributes("title") = "Timeline"
+- attributes("title") = "My Profile"
+- attributes("pageHeader") = "My Profile"
+- attributes("pageTagline") = "Gettin' out there and doin' stuff..."
 
 - front.map { front =>
   - render("workout.jade", Map('workout -> front, 'mode -> "home"))

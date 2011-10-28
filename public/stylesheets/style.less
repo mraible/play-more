@@ -250,8 +250,8 @@ footer {
 /* Page header tweaks */
 .page-header {
   background-color: #f5f5f5;
-  padding: 20px 20px 10px;
-  margin: -20px -20px 20px;
+  padding: 20px 20px 0px;
+  margin: -20px -20px 0px;
 }
 
 .content .span10,
@@ -392,6 +392,124 @@ footer {
 
 .home .row, .home [class*="span"] {
   margin-left: 0
+}
+
+.workout {
+  padding: 10px;
+
+  .title {
+    font-size: 20px;
+  }
+
+  .metadata {
+    font-size: .9em;
+    color: @gray;
+
+    .user {
+
+    }
+    .date {
+
+    }
+    .comments {
+      float: right;
+    }
+  }
+
+  .description {
+    margin: 10px 0;
+
+    .about {
+      display: none;
+    }
+  }
+}
+
+.full {
+  padding-bottom: 0;
+  border-bottom: 1px dotted @grayLighter;
+}
+
+.profile .workout {
+  padding-left: 0;
+}
+
+.show .comments {
+  margin-left: 10px;
+  border-bottom: 1px dotted @grayLight;
+  h3 {
+    font-size: 14px;
+    color: @gray;
+  }
+}
+
+#commentForm {
+  margin-top: 20px;
+}
+#commentForm legend {
+  font-size: 16px;
+}
+
+.older-workouts {
+  h3 {
+    text-transform: capitalize;
+    line-height: @baseline * 1.2;
+    margin-top: 10px;
+    width: 98%;
+    .from {
+      display: none;
+    }
+  }
+
+  .metadata {
+    .user {
+      display: none;
+    }
+    .comments {
+      float: left;
+    }
+  }
+}
+
+.span10 #pagination {
+  list-style: none;
+  margin-left: -30px;
+
+  li {
+    display: inline;
+    padding: 0;
+    width: 33%;
+  }
+  #up {
+    padding-left: 100px;
+  }
+  #next {
+    float: right;
+    text-align: right;
+    padding-right: 10px;
+  }
+}
+
+.comment {
+  .metadata {
+    margin: 0 0 10px 0;
+    font-size: .9em;
+    color: @gray;
+
+    .author {
+    }
+
+    .date {
+
+    }
+
+  }
+  .comment-content {
+    margin: 0 0 10px 0;
+    .about {
+      display: none;
+    }
+  }
 }
 
 // iphone http://broadcast.oreilly.com/2010/04/using-css-media-queries-ipad.html

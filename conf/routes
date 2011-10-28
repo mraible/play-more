@@ -3,9 +3,9 @@
 # ~~~~
 
 GET     /                                       Home.index
-GET     /timeline                               Timeline.index
-GET     /workouts                               Timeline.show
-POST    /workouts/{postId}/comments                Timeline.postComment
+GET     /me                                     Profile.index
+GET     /workout                                Profile.show
+POST    /workouts/{postId}/comments             Profile.postComment
 
 GET     /where                                  Home.where
 GET     /track                                  Home.track

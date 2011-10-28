@@ -1,17 +1,14 @@
 -import controllers.ScalateTemplate._
 -@ val workout:(models.Workout,models.Athlete,Seq[models.Comment])
 -@ val mode: String = "full"
-- attributes("pageHeader") = "Timeline"
-- attributes("pageTagline") = "The Players, gettin' out there, doin' stuff..."
 -
   var commentsTitle = "No Comments"
   if (workout._3.size > 0)
-    commentsTitle = workout._3.size + " comments, lastest by " + workout._3(0).author
-
+    commentsTitle = workout._3.size + " comments, lastest by " + workout._3(workout._3.size - 1).author
 
 div(class="workout #{mode}")
   h2.title
-    a(href={action(controllers.Workoutshow(workout._1.id()))}) #{workout._1.title}
+    a(href={action(controllers.Profile.show(workout._1.id()))}) #{workout._1.title}
   .metadata
     span.user Posted by #{workout._2.firstName} on
     span.date #{workout._1.postedAt}
@@ -25,12 +22,13 @@ div(class="workout #{mode}")
 - if (mode == "full")
   .comments
     h3 #{commentsTitle}
+    -#todo - zebra strip
     - workout._3.map { comment =>
       .comment
-        .metadata
-          .author by #{comment.author},
-          .date #{comment.postedAt}
         .comment-content
           .about Detail:
           = comment.content
+        .metadata
+          span.author #{comment.author} on
+          span.date #{comment.postedAt}
     - }

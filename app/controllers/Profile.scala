@@ -7,7 +7,7 @@ import models._
 object Profile extends Controller with Scalate {
 
   def index() = {
-    val allWorkouts = Profile.allWithAthleteAndComments
+    val allWorkouts = Workout.allWithAthleteAndComments
     render(
       'front -> allWorkouts.headOption,
       'older -> allWorkouts.drop(1)
@@ -15,7 +15,7 @@ object Profile extends Controller with Scalate {
   }
 
   def show(id: Long) = {
-    Profile.byIdWithAthleteAndComments(id).map { w =>
+    Workout.byIdWithAthleteAndComments(id).map { w =>
       render(
         'workout -> w,
         'pagination -> w._1.prevNext

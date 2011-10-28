@@ -15,7 +15,7 @@
     firstName:      Trish
     lastName:       McGinity
 
-- !!models.Workout
+- !!models.Profile
     id:             !!Id[Long] 1
     title:          Chainsaw Trail
     distance:       7
@@ -27,7 +27,7 @@
 
                     Would do it again in a heartbeat.
 
-- !!models.Workout
+- !!models.Profile
     id:             !!Id[Long] 2
     title:          Monarch Lake Trail
     distance:       4
@@ -37,7 +37,7 @@
     description:    >
                     A beautiful afternoon of hiking with fishing along the way.
 
-- !!models.Workout
+- !!models.Profile
     id:             !!Id[Long] 3
     title:          Creekside to Flume to Chainsaw
     distance:       12

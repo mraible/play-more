@@ -7,15 +7,18 @@
 -@ val errors:Map[String,play.data.validation.Error]
 - attributes.list("scripts") += uri("/public/javascripts/libs/plugins/jquery.tools.min.js")
 
-ul#pagination
+| <ul id="pagination">
 - pagination._1.map { workout =>
   li#previous
-    a(href={action(controllers.Workoutshow(workout.id()))}) #{workout.title}
+    a(href={action(controllers.Profile.show(workout.id()))}) &larr; #{workout.title}
 - }
+li#up
+  a(href={action(controllers.Profile.index())}) Up &uarr;
 - pagination._2.map { workout =>
   li#next
-    a(href={action(controllers.Workoutshow(workout.id()))}) #{workout.title}
+    a(href={action(controllers.Profile.show(workout.id()))}) #{workout.title} &rarr;
 - }
+| </ul>
 
 - if (flash.get("success") != null) {
   div(class="alert-message success" data-alert="alert")
@@ -26,7 +29,7 @@ ul#pagination
 = render("workout.jade", Map('workout -> workout, 'mode -> "full"))
 
 form(method="post" class="form-stacked" id="commentForm"
-     action={action(controllers.WorkoutpostComment(workout._1.id()))})
+     action={action(controllers.Profile.postComment(workout._1.id()))})
 
   - if (!errors.isEmpty()) {
     div(class="alert-message error fade in" data-alert="alert")
@@ -35,7 +38,7 @@ form(method="post" class="form-stacked" id="commentForm"
   - }
 
   fieldset
-    legend Leave a comment
+    legend Leave a comment &rarr;
     div.clearfix
       label(for="author") Your name:
       input(type="text" name="author" class="xlarge" value={params.get("author")})
@@ -55,9 +58,12 @@ form(method="post" class="form-stacked" id="commentForm"
       </script>
   - }
 
-  :plain
+  :&plain
     <script type="text/coffeescript">
       $ ->
+        $("button[type='reset']").click ->
+          location.href = '#{action(controllers.Profile.index())}';
+
         $("#commentForm").click ->
           $("#commentForm").expose(api: true).load()
 
