@@ -1,6 +1,7 @@
 package controllers
 
 import play.data.validation._
+import play.modules.scalate._;
 import play.mvc.Controller
 import models._
 

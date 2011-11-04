@@ -5,10 +5,7 @@ require:
     - play -> coffee 1.0
     - play -> less 0.3.compatibility
     - upgrades -> scala 0.9.1-20111025
-    - org.fusesource.scalate -> scalate-core 1.5.2-scala_2.8.1:
-        transitive: false
-    - org.fusesource.scalate -> scalate-util 1.5.2-scala_2.8.1:
-        transitive: false
+    - upgrades -> play-scalate 0.1
 
 repositories:
     - upgrades:
@@ -16,3 +13,9 @@ repositories:
         artifact: "http://static.raibledesigns.com/[module]-[revision].zip"
         contains:
             - upgrades -> *
+
+    #- playCustomModules:
+    #    type:       local
+    #    artifact:   "/Users/mraible/dev/play-scalate/dist/[module]-[revision].zip"
+    #    contains:
+    #        - localModules -> *
