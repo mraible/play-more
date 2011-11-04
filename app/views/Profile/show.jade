@@ -7,18 +7,26 @@
 -@ val errors:Map[String,play.data.validation.Error]
 - attributes.list("scripts") += uri("/public/javascripts/libs/plugins/jquery.tools.min.js")
 
-| <ul id="pagination">
-- pagination._1.map { workout =>
-  li#previous
+| <div class="pagination">
+| <ul>
+- if (pagination._1 isEmpty) {
+  li(class="prev disabled")
+    a(href="#") &larr; Previous
+- } else pagination._1.map { workout =>
+  li.prev
     a(href={action(controllers.Profile.show(workout.id()))}) &larr; #{workout.title}
 - }
-li#up
-  a(href={action(controllers.Profile.index())}) Up &uarr;
-- pagination._2.map { workout =>
-  li#next
+li.active
+  a(href={action(controllers.Profile.show(workout._1.id()))}) #{workout._1.title}
+- if (pagination._2 isEmpty) {
+  li(class="next disabled")
+    a(href="#") &rarr; Next
+- } else pagination._2.map { workout =>
+  li.next
     a(href={action(controllers.Profile.show(workout.id()))}) #{workout.title} &rarr;
 - }
 | </ul>
+| </div>
 
 - if (flash.get("success") != null) {
   div(class="alert-message success" data-alert="alert")
