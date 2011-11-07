@@ -12,28 +12,36 @@
 #controls
   button(id="start" type="button" class="btn primary") Start
   button(id="reset" type="button" class="btn :disabled") Reset
+
+#app(style="display: none")
+  #track
+    | Distance Traveled: <span id="distance">0</span> mile(s)
+    #actions
+      button(id="save" type="submit" class="btn success") Save
+  #where
+    #map(class="odometer-map")
+    p(id="location")
+      span(class="label success") New
+      | Fetching your location with HTML 5 geolocation...
+
+  #music
+    audio(controls="controls" id="player" preload="auto" autobuffer="true")
+      source(src="http://dl.dropbox.com/u/3486601/Music/Thunderstruck.ogg" type="audio/ogg")
+      source(src="http://dl.dropbox.com/u/3486601/Music/Thunderstruck.mp3" type="audio/mp3")
+      | Your browser does not support the audio tag.
+-# fonts: http://www.html5rocks.com/en/tutorials/webfonts/quick/
+
 :plain
   <script type="text/coffeescript">
     $(document).ready ->
       $('#start').click ->
         StopWatch.start this, $('#clock')
-        $('#track,#where').show()
+        $('#app').show()
         Map.start()
     
       $('#reset').click ->
         StopWatch.reset()
         Map.reset()
-        $('#track,#where').hide()
+        $('#app').hide()
+        $("#player")[0].currentTime = 0
   </script>
-
-#track(style="display: none")
-  | Distance Traveled: <span id="distance">0</span> mile(s)
-  #actions
-    button(id="save" type="submit" class="btn success") Save
-#where(style="display: none")
-  #map(class="odometer-map")
-  p(id="location")
-    span(class="label success") New
-    | Fetching your location with HTML 5 geolocation...
-
--# fonts: http://www.html5rocks.com/en/tutorials/webfonts/quick/

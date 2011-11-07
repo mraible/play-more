@@ -14,10 +14,12 @@ start = (button, display) ->
     $(button).html("Stop")
     flagClock = 1
     counter startTime, display
+    $("#player")[0].play()
   else
     $(button).html("Start")
     flagClock = 0
     flagStop = 1
+    $("#player")[0].pause()
 
 counter = (startTime) ->
   currentTime = new Date()
