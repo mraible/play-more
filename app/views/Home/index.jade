@@ -7,28 +7,30 @@
 - attributes.list("scripts") += uri("/public/javascripts/odometer.coffee")
 - attributes.list("scripts") += uri("/public/javascripts/map.coffee")
 
-#display
-  input(id="clock" class="xlarge" type="text" value="00:00:00.0" readonly="readonly")
-#controls
-  button(id="start" type="button" class="btn primary") Start
-  button(id="reset" type="button" class="btn :disabled") Reset
+.tab-content
+  #app(class="tab-pane active")
+    #display
+      input(id="clock" class="xlarge" type="text" value="00:00:00.0" readonly="readonly")
+    #controls
+      button(id="start" type="button" class="btn primary") Start
+      button(id="reset" type="button" class="btn :disabled") Reset
+    #dashboard(style="display: none")
+      #track
+        | Distance Traveled: <span id="distance">0</span> mile(s)
+        #actions
+          button(id="save" type="submit" class="btn success") Save
+      #where
+        #map(class="odometer-map")
+        p(id="location")
+          span(class="label success") New
+          | Fetching your location with HTML 5 geolocation...
 
-#app(style="display: none")
-  #track
-    | Distance Traveled: <span id="distance">0</span> mile(s)
-    #actions
-      button(id="save" type="submit" class="btn success") Save
-  #where
-    #map(class="odometer-map")
-    p(id="location")
-      span(class="label success") New
-      | Fetching your location with HTML 5 geolocation...
+      #music
+        audio(controls="controls" id="player" preload="auto" autobuffer="true")
+          source(src="http://dl.dropbox.com/u/3486601/Music/Thunderstruck.ogg" type="audio/ogg")
+          source(src="http://dl.dropbox.com/u/3486601/Music/Thunderstruck.mp3" type="audio/mp3")
+          | Your browser does not support the audio tag.
 
-  #music
-    audio(controls="controls" id="player" preload="auto" autobuffer="true")
-      source(src="http://dl.dropbox.com/u/3486601/Music/Thunderstruck.ogg" type="audio/ogg")
-      source(src="http://dl.dropbox.com/u/3486601/Music/Thunderstruck.mp3" type="audio/mp3")
-      | Your browser does not support the audio tag.
 -# fonts: http://www.html5rocks.com/en/tutorials/webfonts/quick/
 
 :plain
@@ -36,12 +38,12 @@
     $(document).ready ->
       $('#start').click ->
         StopWatch.start this, $('#clock')
-        $('#app').show()
+        $('#dashboard').show()
         Map.start()
     
       $('#reset').click ->
         StopWatch.reset()
         Map.reset()
-        $('#app').hide()
+        $('#dashboard').hide()
         $("#player")[0].currentTime = 0
   </script>

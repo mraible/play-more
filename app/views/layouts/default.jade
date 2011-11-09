@@ -4,6 +4,7 @@
 -@ val pageHeader: String = ""
 -@ val pageTagline: String = ""
 -@ val sidebar: String = ""
+-@ val flash: play.mvc.Scope.Flash
 -@ val params: play.mvc.Scope.Params
 -@ val config: java.util.Properties
 !!! 5
@@ -45,7 +46,7 @@ body(class=bodyClass)
   .topbar
     .fill
       .container
-        a(class="brand" href={uri("/")})
+        a(class="brand" href={uri("/#app")})
           img(src={uri("/public/images/play-more.png")} alt="Play More!" class="logo")
         ul.nav(data-tabs="tabs")
           li(id="nav-index")
@@ -56,6 +57,9 @@ body(class=bodyClass)
             a(href="#settings") Settings
           li(id="nav-about")
             a(href={uri("/about")}) About
+          li(id="form-link")
+            a(href={uri("/workout/new")})
+              img(src={uri("/public/images/icon-form.png")} width="40" height="40")
         form(action="" class="pull-right")
           input(class="input-small" type="text" placeholder="Username")
           input(class="input-small" type="password" placeholder="Password")
@@ -70,6 +74,11 @@ body(class=bodyClass)
             = pageTagline
       .row
         .span10
+          - if (flash.get("success") != null) {
+            div(class="alert-message success" data-alert="alert")
+              a(class="close" href="#") &times;
+              | #{flash.get("success")}
+          - }
           !~~ body
         .span4
           = unescape(sidebar)

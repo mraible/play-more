@@ -3,8 +3,7 @@
   <component name="FacetManager">
     <facet type="scala" name="Scala">
       <configuration>
-        <option name="compilerLibraryLevel" value="Project" />
-        <option name="compilerLibraryName" value="Unnamed" />
+        <option name="compilerLibraryLevel" value="Global" />
       </configuration>
     </facet>
   </component>
@@ -14,6 +13,18 @@
       <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
     </content>
+    <content url="file://$MODULE_DIR$/modules/coffee-1.0">
+      <sourceFolder url="file://$MODULE_DIR$/modules/coffee-1.0/app" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/modules/less-0.3.compatibility">
+      <sourceFolder url="file://$MODULE_DIR$/modules/less-0.3.compatibility/app" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/modules/play-scalate-0.1">
+      <sourceFolder url="file://$MODULE_DIR$/modules/play-scalate-0.1/app" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/modules/scala-0.9.1-20111025">
+      <sourceFolder url="file://$MODULE_DIR$/modules/scala-0.9.1-20111025/app" isTestSource="false" />
+    </content>
     <orderEntry type="jdk" jdkName="1.6" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
@@ -21,19 +32,22 @@
       <library name="Project Libraries">
         <CLASSES>
           <root url="file://$MODULE_DIR$/lib" />
-          <root url="file://$MODULE_DIR$/modules/scala-0.9.1/src" />
+          <root url="file://$MODULE_DIR$/modules/scala-0.9.1-20111025/src" />
           <root url="file://$MODULE_DIR$/modules/coffee-1.0/src" />
           <root url="file://$MODULE_DIR$/modules/less-0.3.compatibility/src" />
-          <root url="file://$MODULE_DIR$/modules/scala-0.9.1/lib" />
+          <root url="file://$MODULE_DIR$/modules/play-scalate-0.1/src" />
+          <root url="file://$MODULE_DIR$/modules/scala-0.9.1-20111025/lib" />
           <root url="file://$MODULE_DIR$/modules/coffee-1.0/lib" />
           <root url="file://$MODULE_DIR$/modules/less-0.3.compatibility/lib" />
+          <root url="file://$MODULE_DIR$/modules/play-scalate-0.1/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
         <jarDirectory url="file://$MODULE_DIR$/modules/coffee-1.0/lib" recursive="false" />
         <jarDirectory url="file://$MODULE_DIR$/modules/less-0.3.compatibility/lib" recursive="false" />
-        <jarDirectory url="file://$MODULE_DIR$/modules/scala-0.9.1/lib" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/modules/play-scalate-0.1/lib" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/modules/scala-0.9.1-20111025/lib" recursive="false" />
       </library>
     </orderEntry>
     <orderEntry type="module-library">
@@ -57,7 +71,6 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="library" name="scala-compiler-2.8.1" level="application" />
   </component>
 </module>
 

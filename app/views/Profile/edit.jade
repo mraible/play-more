@@ -1,0 +1,40 @@
+-import play.modules.scalate.ScalateTemplate._
+-@ val params: play.mvc.Scope.Params
+-@ val workout:Option[models.Workout] = None
+-@ val errors:Map[String,play.data.validation.Error]
+
+- if (!errors.isEmpty()) {
+  div(class="alert-message error fade in" data-alert="alert")
+    a(class="close" href="#") &times;
+    |  Please correct the errors below.
+- }
+
+form(method="post" class="form-stacked" id="workoutForm"
+     action={action(controllers.Profile.postWorkout(workout.flatMap(_.id.get)))})
+  input(type="hidden" name="workout.id" value="#{workout.map(_.id)}")
+
+  fieldset
+    legend Where did you do? &rarr;
+    div.clearfix
+      label(for="title") Title:
+      input(type="text" id="title" name="workout.title" class="xlarge" value="#{workout.map(_.title)}")
+    div.clearfix
+      label(for="content") Description:
+      textarea(name="workout.description" class="xlarge") #{workout.map(_.description)}
+    div.clearfix
+      label(for="duration") Duration:
+      input(type="text" name="workout.duration" id="duration" class="large" value="#{workout.map(_.duration)}")
+      label(for="distance") Distance:
+      input(type="text" name="workout.distance" id="distance" class="large" value="#{workout.map(_.distance)}")
+    div.actions
+      button(type="submit" class="btn primary") Submit
+      button(type="reset" class="btn") Cancel
+
+  - errors.foreach { e =>
+    :&plain
+      <script type="text/coffeescript">
+        key = 'input[name="#{e.key}"],textarea[name="#{e.key}"]'
+        $(key).addClass('error')
+        $(key).closest('.clearfix').addClass('error')
+      </script>
+  - }

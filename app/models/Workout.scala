@@ -5,11 +5,13 @@ import play.db.anorm._
 import play.db.anorm.defaults._
 import play.db.anorm.SqlParser._
 
+import play.data.validation.Annotations._
+
 case class Workout(
   id: Pk[Long],
   title: String, description: String,
   duration: Double, distance: Double,
-  postedAt: Date, athlete_id: Long
+  var postedAt: Date, var athleteId: Long
 ) {
 
   def prevNext = {
@@ -40,7 +42,7 @@ object Workout extends Magic[Workout] {
     SQL(
       """
           select * from Workout w
-          join Athlete a on w.athlete_id = a.id
+          join Athlete a on w.athleteId = a.id
           order by w.postedAt desc
       """
     ).as(Workout ~< Athlete ^^ flatten *)
@@ -49,8 +51,8 @@ object Workout extends Magic[Workout] {
     SQL(
       """
           select * from Workout w
-          join Athlete a on w.athlete_id = a.id
-          left join Comment c on c.workout_id = w.id
+          join Athlete a on w.athleteId = a.id
+          left join Comment c on c.workoutId = w.id
           order by w.postedAt desc
       """
     ).as(Workout ~< Athlete ~< Workout.spanM(Comment) ^^ flatten *)
@@ -59,8 +61,8 @@ object Workout extends Magic[Workout] {
     SQL(
       """
           select * from Workout w
-          join Athlete a on w.athlete_id = a.id
-          left join Comment c on c.workout_id = w.id
+          join Athlete a on w.athleteId = a.id
+          left join Comment c on c.workoutId = w.id
           where w.id = {id}
       """
     ).on("id" -> id).as(Workout ~< Athlete ~< Workout.spanM(Comment) ^^ flatten ?)

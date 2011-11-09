@@ -489,8 +489,11 @@
     </option>
   </component>
   <component name="libraryTable">
-    <library name="Unnamed">
-      <CLASSES />
+    <library name="Scala 2.8.1">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/modules/scala-0.9.1-20111025/lib/scala-compiler.jar!/" />
+        <root url="jar://$PROJECT_DIR$/modules/scala-0.9.1-20111025/lib/scala-library.jar!/" />
+      </CLASSES>
       <JAVADOC />
       <SOURCES />
     </library>

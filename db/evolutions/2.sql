@@ -7,7 +7,7 @@ CREATE TABLE Workout (
     distance float8 NOT NULL,
     duration float8 NOT NULL,
     postedAt timestamp NOT NULL,
-    athlete_id bigint REFERENCES Athlete
+    athleteId bigint REFERENCES Athlete
 );
 
 # --- !Downs

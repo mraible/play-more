@@ -3,7 +3,6 @@
 -@ val pagination:(Option[models.Workout],Option[models.Workout])
 - attributes("title") = workout._1.title
 -@ val params: play.mvc.Scope.Params
--@ val flash: play.mvc.Scope.Flash
 -@ val errors:Map[String,play.data.validation.Error]
 - attributes.list("scripts") += uri("/public/javascripts/libs/plugins/jquery.tools.min.js")
 
@@ -27,12 +26,6 @@ li.active
 - }
 | </ul>
 | </div>
-
-- if (flash.get("success") != null) {
-  div(class="alert-message success" data-alert="alert")
-    a(class="close" href="#") &times;
-    | #{flash.get("success")}
-- }
 
 = render("workout.jade", Map('workout -> workout, 'mode -> "full"))
 

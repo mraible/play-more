@@ -45,7 +45,7 @@ class BasicTests extends UnitFlatSpec with ShouldMatchers with BeforeAndAfterEac
 
     Workout.count().single() should be (1)
 
-    val workouts = Workout.find("athlete_id={id}").on("id" -> 1).as(Workout*)
+    val workouts = Workout.find("athleteId={id}").on("id" -> 1).as(Workout*)
 
     workouts.length should be (1)
 
@@ -126,7 +126,7 @@ class BasicTests extends UnitFlatSpec with ShouldMatchers with BeforeAndAfterEac
         .on("email" -> "mraible@gmail.com").executeUpdate()
     } should produce[java.sql.SQLException]
 
-    Workout.delete("athlete_id={id}")
+    Workout.delete("athleteId={id}")
       .on("id" -> 1).executeUpdate() should be (2)
 
     Athlete.delete("email={email}")

@@ -5,7 +5,7 @@ require:
     - play -> coffee 1.0
     - play -> less 0.3.compatibility
     - upgrades -> scala 0.9.1-20111025
-    - upgrades -> play-scalate 0.1
+    - localModules -> play-scalate 0.1
 
 repositories:
     - upgrades:
@@ -14,8 +14,8 @@ repositories:
         contains:
             - upgrades -> *
 
-    #- playCustomModules:
-    #    type:       local
-    #    artifact:   "/Users/mraible/dev/play-scalate/dist/[module]-[revision].zip"
-    #    contains:
-    #        - localModules -> *
+    - playCustomModules:
+        type:       local
+        artifact:   "/Users/mraible/dev/play-scalate"
+        contains:
+            - localModules -> *
