@@ -23,7 +23,12 @@
 	<key>OpenAllWhitelistURLsInWebView</key>
 	<false/>
 	<key>ExternalHosts</key>
-	<array/>
+	<array>
+		<string>*.play-more.com</string>
+		<string>*.google.com</string>
+		<string>*.googleapis.com</string>
+		<string>maps.gstatic.com</string>
+	</array>
 	<key>Plugins</key>
 	<dict>
 		<key>com.phonegap.accelerometer</key>
