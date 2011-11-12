@@ -295,6 +295,14 @@ footer {
   .btn {
     width: 40%;
   }
+
+  #options {
+    margin-top: 10px;
+
+    input {
+      margin: 5px;
+    }
+  }
 }
 
 #actions {
@@ -356,18 +364,14 @@ footer {
   color: @grayLight;
 }
 
-.active {
-  /* Copied from .topbar ul .active > a */
-  background-color: rgba(255, 255, 255, 0.05);
-  color: #FFFFFF;
-  text-decoration: none;
-  font-weight: bold;
-}
-
 /* Selector for active menu items. */
 .home #nav-index a,
 .settings #nav-about a {
-  .active
+  /* Copied from .topbar ul .active > a */
+  background-color: rgba(255, 255, 255, 0.05);
+  color: @white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .alert-message {

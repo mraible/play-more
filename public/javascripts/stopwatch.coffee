@@ -14,7 +14,7 @@ start = (button, display) ->
     $(button).html("Stop")
     flagClock = 1
     counter startTime, display
-    $("#player")[0].play()
+    $("#player")[0].play() if not $("#no-music").is(":checked")
   else
     $(button).html("Start")
     flagClock = 0

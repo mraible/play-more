@@ -12,8 +12,10 @@
     #display
       input(id="clock" class="xlarge" type="text" value="00:00:00.0" readonly="readonly")
     #controls
-      button(id="start" type="button" class="btn primary") Start
-      button(id="reset" type="button" class="btn :disabled") Reset
+      button(id="start" type="button" class="btn primary" disabled) Start
+      button(id="reset" type="button" class="btn :disabled" disabled) Reset
+      #options
+        input#no-music(type="checkbox") No Music Please
     #dashboard(style="display: none")
       #track
         | Distance Traveled: <span id="distance">0</span> mile(s)
@@ -36,6 +38,8 @@
 :plain
   <script type="text/coffeescript">
     $(document).ready ->
+      $("#start,#reset").removeAttr "disabled"
+
       $('#start').click ->
         StopWatch.start this, $('#clock')
         $('#dashboard').show()
@@ -46,4 +50,10 @@
         Map.reset()
         $('#dashboard').hide()
         $("#player")[0].currentTime = 0
+
+      $('#no-music').click ->
+        if $("#no-music").is(":checked")
+          $("#player")[0].pause()
+        else
+          $("#player")[0].play()
   </script>
