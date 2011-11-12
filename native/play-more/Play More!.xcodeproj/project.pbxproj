@@ -37,7 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2D3A75E9146CEC1E00303C0D /* play-more.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "play-more.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D3A75E9146CEC1E00303C0D /* Play More!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Play More!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3A75ED146CEC1E00303C0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2D3A75EF146CEC1E00303C0D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2D3A75F1146CEC1E00303C0D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -51,10 +51,10 @@
 		2D3A7601146CEC1E00303C0D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2D3A7603146CEC1E00303C0D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2D3A7605146CEC1E00303C0D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		2D3A7609146CEC1E00303C0D /* play-more-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "play-more-Info.plist"; sourceTree = "<group>"; };
+		2D3A7609146CEC1E00303C0D /* Play More!-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Play More!-Info.plist"; sourceTree = "<group>"; };
 		2D3A760B146CEC1E00303C0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2D3A760D146CEC1E00303C0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2D3A760F146CEC1E00303C0D /* play-more-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "play-more-Prefix.pch"; sourceTree = "<group>"; };
+		2D3A760F146CEC1E00303C0D /* Play More!-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Play More!-Prefix.pch"; sourceTree = "<group>"; };
 		2D3A7610146CEC1E00303C0D /* PhoneGap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhoneGap.framework; path = /Users/Shared/PhoneGap/Frameworks/PhoneGap.framework; sourceTree = "<absolute>"; };
 		2D3A7615146CEC1E00303C0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2D3A7619146CEC1E00303C0D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Resources/es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 		2D3A75EA146CEC1E00303C0D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2D3A75E9146CEC1E00303C0D /* play-more.app */,
+				2D3A75E9146CEC1E00303C0D /* Play More!.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,10 +156,10 @@
 		2D3A7608146CEC1E00303C0D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2D3A7609146CEC1E00303C0D /* play-more-Info.plist */,
+				2D3A7609146CEC1E00303C0D /* Play More!-Info.plist */,
 				2D3A760A146CEC1E00303C0D /* InfoPlist.strings */,
 				2D3A760D146CEC1E00303C0D /* main.m */,
-				2D3A760F146CEC1E00303C0D /* play-more-Prefix.pch */,
+				2D3A760F146CEC1E00303C0D /* Play More!-Prefix.pch */,
 				2D3A7629146CEC1E00303C0D /* PhoneGap.plist */,
 			);
 			name = "Supporting Files";
@@ -232,9 +232,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2D3A75E8146CEC1E00303C0D /* play-more */ = {
+		2D3A75E8146CEC1E00303C0D /* Play More! */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D3A7633146CEC1E00303C0D /* Build configuration list for PBXNativeTarget "play-more" */;
+			buildConfigurationList = 2D3A7633146CEC1E00303C0D /* Build configuration list for PBXNativeTarget "Play More!" */;
 			buildPhases = (
 				2D3A75E2146CEC1E00303C0D /* Sources */,
 				2D3A75E3146CEC1E00303C0D /* Frameworks */,
@@ -247,9 +247,9 @@
 			);
 			dependencies = (
 			);
-			name = "play-more";
+			name = "Play More!";
 			productName = "play-more";
-			productReference = 2D3A75E9146CEC1E00303C0D /* play-more.app */;
+			productReference = 2D3A75E9146CEC1E00303C0D /* Play More!.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -261,7 +261,7 @@
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Raible Designs, Inc.";
 			};
-			buildConfigurationList = 2D3A75E0146CEC1D00303C0D /* Build configuration list for PBXProject "play-more" */;
+			buildConfigurationList = 2D3A75E0146CEC1D00303C0D /* Build configuration list for PBXProject "Play More!" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -274,7 +274,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2D3A75E8146CEC1E00303C0D /* play-more */,
+				2D3A75E8146CEC1E00303C0D /* Play More! */,
 			);
 		};
 /* End PBXProject section */
@@ -363,6 +363,55 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2D157219146EC2D6004689E1 /* Ad Hoc Distributon */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Ad Hoc Distributon";
+		};
+		2D15721A146EC2D6004689E1 /* Ad Hoc Distributon */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = /Users/Shared/PhoneGap/Frameworks;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "play-more/Play More!-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "PHONEGAP_FRAMEWORK=YES";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "play-more/Play More!-Info.plist";
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					UIKit,
+					"-weak_framework",
+					AVFoundation,
+					"-weak_framework",
+					CoreMedia,
+					"-weak_library",
+					/usr/lib/libSystem.B.dylib,
+				);
+				PRODUCT_NAME = "Play More!";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = "Ad Hoc Distributon";
+		};
 		2D3A7631146CEC1E00303C0D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -411,13 +460,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = /Users/Shared/PhoneGap/Frameworks;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "play-more/play-more-Prefix.pch";
+				GCC_PREFIX_HEADER = "play-more/Play More!-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "PHONEGAP_FRAMEWORK=YES";
-				INFOPLIST_FILE = "play-more/play-more-Info.plist";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "play-more/Play More!-Info.plist";
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					UIKit,
@@ -428,7 +479,7 @@
 					"-weak_library",
 					/usr/lib/libSystem.B.dylib,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Play More!";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -438,13 +489,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = /Users/Shared/PhoneGap/Frameworks;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "play-more/play-more-Prefix.pch";
+				GCC_PREFIX_HEADER = "play-more/Play More!-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "PHONEGAP_FRAMEWORK=YES";
-				INFOPLIST_FILE = "play-more/play-more-Info.plist";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "play-more/Play More!-Info.plist";
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					UIKit,
@@ -455,7 +508,7 @@
 					"-weak_library",
 					/usr/lib/libSystem.B.dylib,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Play More!";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -465,22 +518,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D3A75E0146CEC1D00303C0D /* Build configuration list for PBXProject "play-more" */ = {
+		2D3A75E0146CEC1D00303C0D /* Build configuration list for PBXProject "Play More!" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D3A7631146CEC1E00303C0D /* Debug */,
 				2D3A7632146CEC1E00303C0D /* Release */,
+				2D157219146EC2D6004689E1 /* Ad Hoc Distributon */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D3A7633146CEC1E00303C0D /* Build configuration list for PBXNativeTarget "play-more" */ = {
+		2D3A7633146CEC1E00303C0D /* Build configuration list for PBXNativeTarget "Play More!" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D3A7634146CEC1E00303C0D /* Debug */,
 				2D3A7635146CEC1E00303C0D /* Release */,
+				2D15721A146EC2D6004689E1 /* Ad Hoc Distributon */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

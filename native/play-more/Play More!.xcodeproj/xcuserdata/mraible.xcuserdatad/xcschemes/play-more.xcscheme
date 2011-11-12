@@ -32,9 +32,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D3A75E8146CEC1E00303C0D"
-            BuildableName = "play-more.app"
-            BlueprintName = "play-more"
-            ReferencedContainer = "container:play-more.xcodeproj">
+            BuildableName = "Play More!.app"
+            BlueprintName = "Play More!"
+            ReferencedContainer = "container:Play More!.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -50,9 +50,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D3A75E8146CEC1E00303C0D"
-            BuildableName = "play-more.app"
-            BlueprintName = "play-more"
-            ReferencedContainer = "container:play-more.xcodeproj">
+            BuildableName = "Play More!.app"
+            BlueprintName = "Play More!"
+            ReferencedContainer = "container:Play More!.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -78,7 +78,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Ad Hoc Distributon"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

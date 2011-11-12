@@ -1,187 +1,191 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title></title>
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
-        <meta charset="utf-8">
-            
-            <link rel="stylesheet" type="text/css" href="http://play-more.com/public/stylesheets/libs/bootstrap.less"/>
-            <link rel="stylesheet" type="text/css" href="http://play-more.com/public/stylesheets/style.less"/>
-            <script type="text/javascript" src="http://play-more.com/public/javascripts/libs/modernizr-2.0.6.min.js"></script>
-            
-            <!-- iPad/iPhone specific css below, add after your main css >
-             <link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />		
-             <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />		
-             -->
-            <!-- If your application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
-            <script type="text/javascript" charset="utf-8" src="phonegap-1.2.0.js"></script>
-            <script type="text/javascript">
-                
-                
-                // If you want to prevent dragging, uncomment this section
-                /*
-                 function preventBehavior(e) 
-                 { 
-                 e.preventDefault(); 
-                 };
-                 document.addEventListener("touchmove", preventBehavior, false);
-                 */
-                
-                /* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
-                 see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
-                 for more details -jm */
-                /*
-                 function handleOpenURL(url)
-                 {
-                 // TODO: do something with the url passed in.
-                 }
-                 */
-                
-                function onBodyLoad()
-                {		
-                    document.addEventListener("deviceready", onDeviceReady, false);
+<head>
+    <title></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;"/>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="http://play-more.com/public/stylesheets/libs/bootstrap.less"/>
+    <link rel="stylesheet" type="text/css" href="http://play-more.com/public/stylesheets/style.less"/>
+    <script type="text/javascript" src="http://play-more.com/public/javascripts/libs/modernizr-2.0.6.min.js"></script>
+
+    <!-- iPad/iPhone specific css below, add after your main css >
+    <link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />
+    -->
+    <!-- If your application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
+    <script type="text/javascript" charset="utf-8" src="phonegap-1.2.0.js"></script>
+    <script type="text/javascript">
+        // If you want to prevent dragging, uncomment this section
+        /*
+         function preventBehavior(e)
+         {
+         e.preventDefault();
+         };
+         document.addEventListener("touchmove", preventBehavior, false);
+         */
+
+        /* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+         see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+         for more details -jm */
+        /*
+         function handleOpenURL(url)
+         {
+         // TODO: do something with the url passed in.
+         }
+         */
+
+        function onBodyLoad() {
+            document.addEventListener("deviceready", onDeviceReady, false);
+        }
+
+        /* When this function is called, PhoneGap has been initialized and is ready to roll */
+        /* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+         see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+         for more details -jm */
+        function onDeviceReady() {
+            $('#start,#reset').removeAttr('disabled');
+            $('#loading').hide();
+            $('#start').click(function() {
+                StopWatch.start(this, $('#clock'));
+                $('#app').show();
+                Map.start();
+                if ($('#no-music').is(':checked')) {
+                    $("#player")[0].pause();
                 }
-                
-                /* When this function is called, PhoneGap has been initialized and is ready to roll */
-                /* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
-                 see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
-                 for more details -jm */
-                function onDeviceReady()
-                {
-                    $('#start').click(function() {
-                                      StopWatch.start(this, $('#clock'));
-                                      $('#app').show();
-                                      Map.start();
-                                      });                  
-                    
-                    $('#reset').click(function() {
-                                      StopWatch.reset();
-                                      Map.reset();
-                                      $('#app').hide();
-                                      $("#player")[0].currentTime = 0;
-                                      });
+            });
+            $('#reset').click(function() {
+                StopWatch.reset();
+                Map.reset();
+                $('#app').hide();
+                $("#player")[0].currentTime = 0;
+            });
+            $('#no-music').click(function() {
+                if ($("#no-music").is(":checked")) {
+                    return $("#player")[0].pause();
+                } else {
+                    return $("#player")[0].play();
                 }
-                
-                </script>
-            </head>
-    <body class="home index" onload="onBodyLoad()">
-        <div class="topbar">
-            <div class="fill">
-                <div class="container">
-                    <a class="brand" href="/">
-                        <img class="logo" src="http://play-more.com/public/images/play-more.png" alt="Play More!"/>
-                    </a>
-                    <ul class="nav" data-tabs="tabs">
-                        <li id="nav-index">
-                            <a href="/">Play</a>
-                        </li>
-                        <li id="nav-profile">
-                            <a href="/me">Me</a>
-                        </li>
-                        <li id="nav-settings">
-                            <a href="#settings">Settings</a>
-                        </li>
-                        <li id="nav-about">
-                            <a href="/about">About</a>
-                        </li>
-                    </ul>
-                    <form action="" class="pull-right">
-                        <input class="input-small" type="text" placeholder="Username"/>
-                        <input class="input-small" type="password" placeholder="Password"/>
-                        <button class="btn" type="submit">Sign in</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+            });
+        }
+    </script>
+</head>
+<body class="home index" onload="onBodyLoad()">
+<div class="topbar">
+    <div class="fill">
         <div class="container">
-            <div class="content">
-                <div class="page-header">
-                    <h1>
-                        
-                        <small>
-                            
-                        </small>
-                    </h1>
+            <a class="brand" href="/">
+                <img class="logo" src="http://play-more.com/public/images/play-more.png" alt="Play More!"/>
+            </a>
+            <ul class="nav" data-tabs="tabs">
+                <li id="nav-index">
+                    <a href="/">Play</a>
+                </li>
+                <li id="nav-profile">
+                    <a href="/me">Me</a>
+                </li>
+                <li id="nav-settings">
+                    <a href="#settings">Settings</a>
+                </li>
+                <li id="nav-about">
+                    <a href="/about">About</a>
+                </li>
+            </ul>
+            <form action="" class="pull-right">
+                <input class="input-small" type="text" placeholder="Username"/>
+                <input class="input-small" type="password" placeholder="Password"/>
+                <button class="btn" type="submit">Sign in</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="content">
+        <div class="page-header">
+            <h1>
+
+                <small>
+
+                </small>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="span10">
+                <div id="display">
+                    <input id="clock" class="xlarge" type="text" value="00:00:00.0" readonly="readonly"/>
                 </div>
-                <div class="row">
-                    <div class="span10">
-                        <div id="display">
-                            <input id="clock" class="xlarge" type="text" value="00:00:00.0" readonly="readonly"/>
-                        </div>
-                        <div id="controls">
-                            <button id="start" type="button" class="btn primary">Start</button>
-                            <button id="reset" type="button" class="btn :disabled">Reset</button>
-                        </div>
-                        <div id="app" style="display: none">
-                            <div id="track">
-                                Distance Traveled: <span id="distance">0</span> mile(s)
-                                <div id="actions">
-                                    <button id="save" type="submit" class="btn success">Save</button>
-                                </div>
-                            </div>
-                            <div id="where">
-                                <div id="map" class="odometer-map"></div>
-                                <p id="location">
-                                <span class="label success">New</span>
-                                Fetching your location with HTML 5 geolocation...
-                                </p>
-                            </div>
-                            <div id="music">
-                                <audio controls="controls" id="player" preload="auto" autobuffer="true">
-                                    <source src="http://dl.dropbox.com/u/3486601/Music/Thunderstruck.ogg" type="audio/ogg"></source>
-                                    <source src="http://dl.dropbox.com/u/3486601/Music/Thunderstruck.mp3" type="audio/mp3"></source>
-                                    Your browser does not support the audio tag.
-                                </audio>
-                            </div>
+                <div id="controls">
+                    <button id="start" type="button" class="btn primary" disabled>Start</button>
+                    <button id="reset" type="button" class="btn :disabled" disabled>Reset</button>
+                    <div id="options"><input type="checkbox" id="no-music"> No Music Please</div>
+                </div>
+                <div id="loading"><img src="images/ajax-loader.gif" alt="Loading"> Loading...</div>
+                <div id="app" style="display: none">
+                    <div id="track">
+                        Distance Traveled: <span id="distance">0</span> mile(s)
+                        <div id="actions">
+                            <button id="save" type="submit" class="btn success">Save</button>
                         </div>
                     </div>
-                    <div class="span4">
-                        
+                    <div id="where">
+                        <div id="map" class="odometer-map"></div>
+                        <p id="location">
+                            <span class="label success">New</span>
+                            Fetching your location with HTML 5 geolocation...
+                        </p>
+                    </div>
+                    <div id="music">
+                        <audio controls="controls" id="player" preload="auto" autobuffer="true">
+                            <source src="http://dl.dropbox.com/u/3486601/Music/Thunderstruck.ogg"
+                                    type="audio/ogg"></source>
+                            <source src="http://dl.dropbox.com/u/3486601/Music/Thunderstruck.mp3"
+                                    type="audio/mp3"></source>
+                            Your browser does not support the audio tag.
+                        </audio>
                     </div>
                 </div>
             </div>
-            <footer>
-                <p>&copy; <span class="copy-year">2011</span> <a href="http://raibledesigns.com">Raible Designs</a></p>
-            </footer>
+            <div class="span4">
+
+            </div>
         </div>
-        <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-        <script type='text/javascript'>
-            //<![CDATA[
-            window.jQuery || document.write('<script src="http://play-more.com/public/javascripts/libs/jquery-1.6.2.min.js"><\/script>')
-            
-            //]]>
-            </script>
-        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-        <script type="text/javascript" src="http://play-more.com/public/javascripts/map.coffee"></script>
-        <script type="text/javascript" src="http://play-more.com/public/javascripts/stopwatch.coffee"></script>
-        <script type="text/javascript" src="http://play-more.com/public/javascripts/odometer.coffee"></script>
-        <script type="text/javascript" src="http://play-more.com/public/javascripts/map.coffee"></script>
-        <script type="text/javascript" src="http://play-more.com/public/javascripts/libs/bootstrap-alerts.js"></script>
-        <script type="text/javascript" src="http://play-more.com/public/javascripts/libs/bootstrap-tabs.js"></script>
-        <script type='text/javascript'>
-            //<![CDATA[
-            window._gaq = [['_setAccount','UA-25859875-1'],['_trackPageview'],['_trackPageLoadTime']];
-            Modernizr.load({
-                           load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-                           });
-            $('.nav').tabs()
-            var year = (new Date()).getFullYear();
-            if (year > 2011) {
-                $('.copy-year').html(year);
-            }
-            //]]>
-            </script>
-        <!--[if lt IE 7]>
-         <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-         <script type='text/javascript'>
-         //<![CDATA[
-         window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})
-         
-         //]]>
-         </script>
-         <![endif]-->
-    </body>
+    </div>
+    <footer>
+        <p>&copy; <span class="copy-year">2011</span> <a href="http://raibledesigns.com">Raible Designs</a></p>
+    </footer>
+</div>
+<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type='text/javascript'>
+    //<![CDATA[
+    window.jQuery || document.write('<script src="http://play-more.com/public/javascripts/libs/jquery-1.6.2.min.js"><\/script>')
+    //]]>
+</script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="http://play-more.com/public/javascripts/map.coffee"></script>
+<script type="text/javascript" src="http://play-more.com/public/javascripts/stopwatch.coffee"></script>
+<script type="text/javascript" src="http://play-more.com/public/javascripts/odometer.coffee"></script>
+<script type="text/javascript" src="http://play-more.com/public/javascripts/map.coffee"></script>
+<script type="text/javascript" src="http://play-more.com/public/javascripts/libs/bootstrap-alerts.js"></script>
+<script type="text/javascript" src="http://play-more.com/public/javascripts/libs/bootstrap-tabs.js"></script>
+<script type='text/javascript'>
+    //<![CDATA[
+    window._gaq = [
+        ['_setAccount','UA-25859875-1'],
+        ['_trackPageview'],
+        ['_trackPageLoadTime']
+    ];
+    Modernizr.load({
+        load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+    $('.nav').tabs()
+    var year = (new Date()).getFullYear();
+    if (year > 2011) {
+        $('.copy-year').html(year);
+    }
+    //]]>
+</script>
+</body>
 </html>

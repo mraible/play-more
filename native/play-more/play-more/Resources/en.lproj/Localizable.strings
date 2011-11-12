@@ -5,7 +5,6 @@
  * Copyright (c) 2011, IBM Corporation
  */
 
-
 // accessibility label for recording button
 "toggle audio recording" = "toggle audio recording";
 // notification spoken by VoiceOver when timed recording finishes
