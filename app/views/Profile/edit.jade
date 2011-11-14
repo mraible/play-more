@@ -14,18 +14,22 @@ form(method="post" class="form-stacked" id="workoutForm"
   input(type="hidden" name="workout.id" value="#{workout.map(_.id)}")
 
   fieldset
-    legend Where did you do? &rarr;
+    legend Where did you go? &rarr;
     div.clearfix
       label(for="title") Title:
-      input(type="text" id="title" name="workout.title" class="xlarge" value="#{workout.map(_.title)}")
+      .input
+        input(type="text" id="title" name="workout.title" class="xlarge" value="#{workout.map(_.title)}")
     div.clearfix
       label(for="content") Description:
-      textarea(name="workout.description" class="xlarge") #{workout.map(_.description)}
+      .input
+        textarea(name="workout.description" class="xlarge") #{workout.map(_.description)}
     div.clearfix
       label(for="duration") Duration:
-      input(type="text" name="workout.duration" id="duration" class="large" value="#{workout.map(_.duration)}")
+      .input
+        input(type="text" name="workout.duration" id="duration" class="large" value="#{workout.map(_.duration)}")
       label(for="distance") Distance:
-      input(type="text" name="workout.distance" id="distance" class="large" value="#{workout.map(_.distance)}")
+      .input
+        input(type="text" name="workout.distance" id="distance" class="large" value="#{workout.map(_.distance)}")
     div.actions
       button(type="submit" class="btn primary") Submit
       button(type="reset" class="btn") Cancel
