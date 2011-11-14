@@ -1,9 +1,7 @@
 import java.util.Date
-import play._
 import play.test._
 
 import org.scalatest._
-import org.scalatest.junit._
 import org.scalatest.matchers._
 
 class BasicTests extends UnitFlatSpec with ShouldMatchers with BeforeAndAfterEach {
@@ -52,7 +50,7 @@ class BasicTests extends UnitFlatSpec with ShouldMatchers with BeforeAndAfterEac
     val firstWorkout = workouts.headOption
 
     firstWorkout should not be (None)
-    firstWorkout.get.athlete_id should be (1)
+    firstWorkout.get.athleteId should be (1)
     firstWorkout.get.title should be ("My first run")
     firstWorkout.get.description should be ("With a hangover")
   }
