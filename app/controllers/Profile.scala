@@ -4,6 +4,7 @@ import play.data.validation._
 import play.modules.scalate._;
 import play.mvc.Controller
 import models._
+import play.db.anorm.NotAssigned
 
 object Profile extends Controller with Scalate {
 
@@ -47,7 +48,13 @@ object Profile extends Controller with Scalate {
   }
 
   def postWorkout(id: Option[Long]) = {
-    val workout = params.get("workout", classOf[Workout])
+
+    var workout = params.get("workout", classOf[Workout])
+
+    // change duration to time
+    var duration = params.get("workout.duration")
+    workout.duration = convertWatchToTime(duration)
+
     Validation.valid("workout", workout)
 
     if (Validation.hasErrors) {
@@ -67,5 +74,9 @@ object Profile extends Controller with Scalate {
       }
       Action(index())
     }
+  }
+
+  def convertWatchToTime(clock: String):Double = {
+    clock.replaceAll("00:", "").toDouble
   }
 }
