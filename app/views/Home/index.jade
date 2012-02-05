@@ -8,15 +8,9 @@
 - attributes.list("scripts") += uri("/public/javascripts/map.coffee")
 
 .tab-content
-  ul.nav(data-tabs="tabs" style="position: absolute; width: 50px")
-    li
-      a(href="#app")
-        img(src={uri("/public/images/icon-stopwatch.png")} width="48" height="48")
-    li
-      a(href="#form")
-        img(src={uri("/public/images/icon-form.png")} width="48" height="48")
-
-  #app(class="tab-pane active")
+  #app(class="tab-pane active face front")
+    a.flip(href="#form")
+      img(src={uri("/public/images/icon-form.png")} class="icon" width="48" height="48")
     #display
       input(id="clock" class="xlarge" type="text" value="00:00:00.0" readonly="readonly")
     #controls
@@ -41,7 +35,9 @@
           source(src="http://dl.dropbox.com/u/3486601/Music/Thunderstruck.mp3" type="audio/mp3")
           | Your browser does not support the audio tag.
 
-  #form(class="tab-pane")
+  #form(class="tab-pane face back")
+    a.flip(href="#app")
+      img(src={uri("/public/images/icon-stopwatch.png")} class="icon" width="48" height="48")
     =include("../Profile/edit.jade")
 
 :plain
@@ -66,7 +62,7 @@
         else
           $("#player")[0].play()
 
-      $('.tabs').bind "change", (e) ->
-        console.log e.target
-        e.relatedTarget
+      $('.flip').click (e) ->
+        e.preventDefault()
+        console.log e
   </script>
