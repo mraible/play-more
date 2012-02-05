@@ -57,7 +57,7 @@ object Profile extends Controller with Scalate {
 
     Validation.valid("workout", workout)
 
-    if (Validation.hasErrors) {
+    if (false) {
       renderArgs.put("template", "Profile/edit")
       edit(id);
     } else {
