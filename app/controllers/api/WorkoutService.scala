@@ -6,7 +6,28 @@ import com.codahale.jerkson.Json._
 
 object WorkoutService extends Controller {
 
-  def workouts() = {
+  def workouts = {
+    response.setContentTypeIfNotSet("application/json")
     generate(Workout.find().list())
   }
+
+  def edit(id: Long) = {
+    generate(Workout.byIdWithAthleteAndComments(id))
+  }
+
+  def create() = {
+    var workout = params.get("workout", classOf[Workout])
+    println(workout)
+  }
+
+  def save(id: Option[Long]) = {
+    var workout = params.get("workout", classOf[Workout])
+    println(workout)
+  }
+
+  def delete(id: Long) = {
+    println("deleting {id}", id)
+    Workout.delete("id={id}").on("id" -> id).executeUpdate()
+  }
+
 }
