@@ -33,6 +33,7 @@ object Profile extends Controller with Scalate with Secure {
   
   def remove(id: Long) = {
     Workout.delete("id={id}").on("id" -> id).executeUpdate()
+    flash.success("Workout removed successfully.");
   }
 
   def postComment(postId:Long) = {
@@ -80,6 +81,10 @@ object Profile extends Controller with Scalate with Secure {
   }
 
   def convertWatchToTime(clock: String):Double = {
-    clock.replaceAll("00:", "").toDouble
+    if (clock != null && clock.trim.length > 0) {
+      clock.replaceAll("00:", "").toDouble
+    } else {
+      0
+    }
   }
 }
