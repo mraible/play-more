@@ -1,5 +1,6 @@
 package controllers
 
+import play.modules.scalate._;
 import play.mvc._
 import models._
 
