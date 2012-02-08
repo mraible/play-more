@@ -17,6 +17,10 @@ GET     /settings                               Settings.settings
 GET     /about                                  Settings.about
 
 GET     /api/workouts                           api.WorkoutService.workouts
+GET     /api/workout/{id}                       api.WorkoutService.edit
+POST    /api/workout                            api.WorkoutService.create
+PUT     /api/workout/{id}                       api.WorkoutService.save
+DELETE  /api/workout/{id}                       api.WorkoutService.delete
 
 # Map favicon requests to public
 GET     /favicon.ico                            staticFile:public/favicon.ico
