@@ -4,7 +4,7 @@ import play.test._
 import org.scalatest._
 import org.scalatest.matchers._
 
-class BasicTests extends UnitFlatSpec with ShouldMatchers with BeforeAndAfterEach {
+class UnitTests extends UnitFlatSpec with ShouldMatchers with BeforeAndAfterEach {
     
   import models._
   import play.db.anorm._
