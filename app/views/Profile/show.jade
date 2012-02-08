@@ -51,28 +51,24 @@ form(method="post" class="form-stacked" id="commentForm"
       button(type="reset" class="btn") Cancel
 
   - errors.foreach { e =>
-    :&plain
-      <script type="text/coffeescript">
+    :coffeescript
         key = 'input[name="#{e.key}"],textarea[name="#{e.key}"]'
         $(key).addClass('error')
         $(key).closest('.clearfix').addClass('error')
-      </script>
   - }
 
-  :&plain
-    <script type="text/coffeescript">
-      $ ->
-        $("button[type='reset']").click ->
-          location.href = '#{action(controllers.Profile.index())}';
+  :coffeescript
+    $ ->
+      $("button[type='reset']").click ->
+        location.href = '#{action(controllers.Profile.index())}';
 
-        $("#commentForm").click ->
-          $("#commentForm").expose(api: true).load()
+      $("#commentForm").click ->
+        $("#commentForm").expose(api: true).load()
 
-        if $("#commentForm .error").size()
-          $("#commentForm").expose(
-            api: true
-            loadSpeed: 0
-          ).load()
-          $("#commentForm input[type=text]").get(0).focus()
-    </script>
+      if $("#commentForm .error").size()
+        $("#commentForm").expose(
+          api: true
+          loadSpeed: 0
+        ).load()
+        $("#commentForm input[type=text]").get(0).focus()
 
