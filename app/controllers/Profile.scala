@@ -29,7 +29,11 @@ object Profile extends Controller with Scalate {
 
   def edit(id: Option[Long]) = {
     val workout = id.flatMap( id => Workout.find("id={id}").onParams(id).first());
-    render('workoug -> workout)
+    render('workout -> workout)
+  }
+  
+  def remove(id: Long) = {
+    Workout.delete("id={id}").on("id" -> id).executeUpdate()
   }
 
   def postComment(postId:Long) = {

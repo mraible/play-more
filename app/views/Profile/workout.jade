@@ -20,6 +20,27 @@ div(class="workout #{mode}")
       = workout._1.description
 
 - if (mode == "full")
+  .actions
+    button#save(class="btn primary" style="display: none" rel={action(controllers.Profile.postWorkout(workout._1.id.get))}) Save
+    button#delete(class="btn danger" rel={action(controllers.Profile.remove(workout._1.id()))}) Delete
+
+  :plain
+      <script type="text/coffeescript">
+      $('.title,.description').attr('contentEditable', 'true');
+      $('.title,.description').click ->
+        $('#save').show()
+
+      $('#delete').click ->
+        $.ajax
+          type: 'POST'
+          url: $(this).attr('rel')
+          error: ->
+            alert('Delete failed, please try again.')
+          success: (data) ->
+            $('.workout').remove()
+            location.href = "/more"
+      </script>
+
   .comments
     h3 #{commentsTitle}
     -#todo - zebra strip

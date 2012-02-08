@@ -6,6 +6,9 @@ require:
     - play -> less 0.3.compatibility
     - upgrades -> scala 0.9.1-20111025
     - upgrades -> play-scalate 0.1
+    - com.codahale -> jerkson_2.8.1 0.4.2:
+        exclude:
+            - org.scala-lang -> scala-library
 
 repositories:
     - upgrades:
@@ -19,3 +22,9 @@ repositories:
         artifact:   "/Users/mraible/dev/play-scalate"
         contains:
             - localModules -> *
+
+    - codahale:
+            type: iBiblio
+            root: "http://repo.codahale.com/"
+            contains:
+                - com.codahale.*
