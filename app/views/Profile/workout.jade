@@ -1,4 +1,4 @@
--import play.modules.scalate.ScalateTemplate._
+-import controllers.ScalateTemplate._
 -@ val workout:(models.Workout,models.Athlete,Seq[models.Comment])
 -@ val mode: String = "full"
 -
@@ -32,7 +32,8 @@ div(class="workout #{mode}")
 
       $('#delete').click ->
         $.ajax
-          type: 'POST'
+          type: 'POST',
+          dataType: 'jsonp'
           url: $(this).attr('rel')
           error: ->
             alert('Delete failed, please try again.')
