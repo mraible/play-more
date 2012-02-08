@@ -9,3 +9,5 @@
 # Modules and libs (dep managed)
 /modules
 /.ivy2
+# IntelliJ files
+*.iws
