@@ -1,3 +1,4 @@
+-import controllers.securesocial.SecureSocial
 -@ val body: String
 -@ val bodyClass: String
 -@ val title: String = "Play More!"
@@ -58,10 +59,13 @@ body(class=bodyClass)
           li(id="nav-about")
             a(href={uri("/about")})
               img(src={uri("/public/images/icon-info.png")} class="icon" width="20" height="20")
-        form(action="" class="pull-right")
-          input(class="input-small" type="text" placeholder="Username")
-          input(class="input-small" type="password" placeholder="Password")
-          button(class="btn" type="submit") Sign in
+        span.panel(class="pull-right" style="color: white; padding-top: 5px")
+          - if (SecureSocial.getCurrentUser() != null) {
+            | #{SecureSocial.getCurrentUser().displayName}
+            img(src={SecureSocial.getCurrentUser().avatarUrl} width="30px" height="30px" style="margin-left: 5px; border-radius: 5px")
+            span.logout(style="position: absolute; right: 10px; top: 5px")
+              a(href={uri("/auth/logout")} id="logout" class="btn danger") Logout
+          - }
 
   .container
     .content

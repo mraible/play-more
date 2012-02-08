@@ -5,7 +5,7 @@ import play.mvc._
 
 import controllers.securesocial.SecureSocial
 
-trait SecureSocialTrait {
+trait Secure {
     self: Controller =>
 
     @Before def checkAccess = {

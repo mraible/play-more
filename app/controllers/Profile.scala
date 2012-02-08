@@ -1,11 +1,11 @@
 package controllers
 
 import play.data.validation._
+import play.modules.scalate._
 import play.mvc.Controller
 import models._
-import play.db.anorm.NotAssigned
 
-object Profile extends Controller with Scalate with SecureSocialTrait {
+object Profile extends Controller with Scalate with Secure {
 
   def index() = {
     val allWorkouts = Workout.allWithAthleteAndComments
