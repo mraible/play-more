@@ -8,7 +8,6 @@ GET     /                                       Home.index
 GET     /more                                   Profile.index
 GET     /workout                                Profile.show
 GET     /workout/{id}                           Profile.edit
-GET     /workout/new                            Profile.edit
 POST    /workouts/{postId}/comments             Profile.postComment
 
 GET     /where                                  Home.where
