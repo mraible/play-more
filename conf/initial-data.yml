@@ -4,14 +4,14 @@
 - !!models.Athlete
     id:             !!Id[Long] 1
     email:          mraible@gmail.com
-    password:       beer
+    password:       Phhn9a7oMEV3X741Xmo84Q==
     firstName:      Matt
     lastName:       Raible
 
 - !!models.Athlete
     id:             !!Id[Long] 2
     email:          trishmcginity@gmail.com
-    password:       whiskey
+    password:       6/0gfyvoc82NU2cSOLldAA==
     firstName:      Trish
     lastName:       McGinity
 

@@ -65,9 +65,12 @@ body(class=bodyClass)
             a(href={uri("/about")})
               img(src={uri("/public/images/icon-info.png")} class="icon" width="20" height="20")
         span.panel(class="pull-right" style="color: white; padding-top: 5px")
-          - if (SecureSocial.getCurrentUser() != null) {
-            | #{SecureSocial.getCurrentUser().displayName}
-            img(src={SecureSocial.getCurrentUser().avatarUrl} width="30px" height="30px" style="margin-left: 5px; border-radius: 5px")
+          - val user = SecureSocial.getCurrentUser()
+          - if (user != null) {
+            | #{user.displayName}
+            - if (user.avatarUrl != null) {
+              img(src={SecureSocial.getCurrentUser().avatarUrl} width="30px" height="30px" style="margin-left: 5px; border-radius: 5px")
+            - }
             span.logout(style="position: absolute; right: 10px; top: 5px")
               a(href={uri("/auth/logout")} id="logout" class="btn danger") Logout
           - }
