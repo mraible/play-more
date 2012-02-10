@@ -7,6 +7,26 @@
         <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/libs/bootstrap.less'}">
         <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/style.less'}">
         #{get 'moreStyles' /}
+        <style type="text/css">
+            .columns {
+                text-align: center
+            }
+
+            .columns p {
+                width: 400px;
+                margin: 10px auto;
+                text-align: left;
+            }
+            
+            p.userpass {
+                margin-top: 5px;
+                color: green;
+            }
+            
+            p.userpass:after {
+                content: " \2192"
+            }
+        </style>
         <script src="@{'/public/javascripts/jquery-1.5.2.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
         #{get 'moreScripts' /}
     </head>
@@ -15,13 +35,32 @@
             <div class="fill">
                 <div class="container">
                     <a class="brand" href="/"><img class="logo" src="@{'/public/images/play-more.png'}" alt="Play More!"></a>
+                    <ul class="nav">
+                      <li id="nav-index">
+                        <a href="/">Play</a>
+                      </li>
+                      <li id="nav-profile">
+                        <a href="/more">More</a>
+                      </li>
+                      <li id="nav-music">
+                        <a href="/music">Music</a>
+                      </li>
+                      <li id="nav-about">
+                        <a href="/about">
+                          <img width="20" height="20" src="@{'/public/images/icon-info.png'}" class="icon">
+                        </a>
+                      </li>
+                    </ul>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="content">
+                <div class="page-header">
+                    <h1>#{get 'heading' /}</h1>
+                </div>
                 <div class="row">
-                    <div class="span10 columns offset2">
+                    <div class="span10 columns">
                         #{doLayout /}
                     </div>
                 </div>

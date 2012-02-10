@@ -1,7 +1,8 @@
 #{extends 'securesocial/SecureSocial/main.html'/}
 #{set title: messages.get('securesocial.loginTitle') /}
+#{set heading: messages.get('securesocial.login') /}
 
-<script language="javascript" type="text/javascript" charset="utf-8">
+<script type="text/javascript" charset="utf-8">
     function openid(type) {
         $('#openid-type').val(type);
         var msg = "&{'securesocial.openIdUser'}";
@@ -11,10 +12,7 @@
     }
 </script>
 
-<div class="span12 columns">
-    <div class="page-header">
-        <h1>&{'securesocial.login'}</h1>
-    </div>
+<div class="span14 columns">
 
     #{if flash.error}
     <div class="alert-message block-message error">
@@ -58,7 +56,7 @@
 
     #{if userPassEnabled }
     <div class="clearfix" >
-        <p>&{'securesocial.useEmailAndPassword'}</p>
+        <p class="userpass">&{'securesocial.useEmailAndPassword'}</p>
         #{form @securesocial.SecureSocial.authenticate(securesocial.provider.ProviderType.userpass), autocomplete:'off'}
             <fieldset>
                  <div class="clearfix #{ifError 'userName'} error #{/ifError}">
