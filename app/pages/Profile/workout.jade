@@ -7,6 +7,7 @@
     commentsTitle = workout._3.size + " comments, lastest by " + workout._3(workout._3.size - 1).author
 
 div(class="workout #{mode}")
+  input(type="hidden" id="workoutId" value={workout._1.id()})
   h2.title
     a(href={action(controllers.Profile.show(workout._1.id()))}) #{if (workout._1.title.isEmpty) "Untitled" else workout._1.title}
   .metadata
@@ -16,27 +17,45 @@ div(class="workout #{mode}")
       .comments #{commentsTitle}
   - if (mode != "teaser")
     .description
-      .about Detail:
       = workout._1.description
 
 - if (mode == "full")
   .actions
     button#save(class="btn primary" style="display: none" rel={action(controllers.Profile.postWorkout(workout._1.id.get))}) Save
     button#delete(class="btn danger" rel={action(controllers.Profile.remove(workout._1.id()))}) Delete
+    a#cancel(class="btn" href={uri("/more")}) Cancel
 
-  :coffeescript
-    $('.title,.description').attr('contentEditable', 'true');
-    $('.title,.description').click ->
-      $('#save').show()
+  :plain
+     <script type="text/coffeescript">
+       $('.title a,.description').attr('contentEditable', 'true');
+       $('.title a,.description').click ->
+         $('#save').show()
 
-    $('#delete').click ->
-      $.ajax
-        type: 'POST'
-        url: $(this).attr('rel')
-        error: ->
-          alert('Delete failed, please try again.')
-        success: (data) ->
-          location.href = "/more"
+       $('#delete').click ->
+         $.ajax
+           type: 'POST'
+           url: $(this).attr('rel')
+           error: ->
+             alert('Delete failed, please try again.')
+           success: (data) ->
+             location.href = "/more"
+
+       $('#save').click ->
+         $.ajax
+           type: 'POST'
+           url: $(this).attr('rel')
+           data:
+             'workout.title': $('.title a').text()
+             'workout.description': $('.description').text()
+           error: ->
+             alert('Update failed, please try again.')
+           success: (data) ->
+             $('.alert-message').remove()
+             msg = 'Your workout was updated.'
+             alert = $('<div class="alert-message success fade in" data-alert="alert">')
+             alert.html('<a class="close" href="#">&times;</a>' + msg);
+             alert.insertBefore($('.span10'))
+     </script>
 
   .comments
     h3 #{commentsTitle}

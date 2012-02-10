@@ -9,7 +9,7 @@ import play.data.validation.Annotations._
 
 case class Workout(
   id: Pk[Long],
-  title: String, description: String,
+  var title: String, var description: String,
   var duration: Double, distance: Double,
   var postedAt: Date, var athleteId: Long
 ) {

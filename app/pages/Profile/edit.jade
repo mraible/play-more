@@ -35,8 +35,10 @@ form(method="post" class="form-stacked" id="workoutForm"
       button(type="submit" class="btn" name="cancel") Cancel
 
   - errors.foreach { e =>
-    :coffeescript
-      key = 'input[name="#{e.key}"],textarea[name="#{e.key}"]'
-      $(key).addClass('error')
-      $(key).closest('.clearfix').addClass('error')
+    :&plain
+      <script type="text/coffeescript">
+        key = 'input[name="#{e.key}"],textarea[name="#{e.key}"]'
+        $(key).addClass('error')
+        $(key).closest('.clearfix').addClass('error')
+      </script>
   - }

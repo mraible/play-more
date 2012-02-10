@@ -42,11 +42,6 @@ head
     For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ 
 
   script(type="text/javascript" src={uri("/public/javascripts/libs/modernizr-2.0.6.min.js")})
-  -# TODO: Move this to bottom once you figure out a way to put inline scripts after it
-  / Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline
-  script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js")
-  :javascript
-    window.jQuery || document.write('<script src="/public/javascripts/libs/jquery-1.6.2.min.js"><\/script>')
 body(class=bodyClass)
   -# from http://twitter.github.com/bootstrap/examples/container-app.html
   .topbar
@@ -94,7 +89,16 @@ body(class=bodyClass)
           = unescape(sidebar)
     footer
       p &copy; <span class="copy-year">2012</span> <a href="http://raibledesigns.com">Raible Designs</a>
-      
+
+  -# JavaScript at the bottom for fast page loading
+  -# TODO: Remove this when Scalate supports CoffeeScript filter
+  script(type="text/javascript" src={uri("/public/javascripts/libs/coffee-script.js")})
+
+  / Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline
+  script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js")
+  :javascript
+    window.jQuery || document.write('<script src="/public/javascripts/libs/jquery-1.6.2.min.js"><\/script>')
+
   -# Import scripts specified in child pages
   - for (script: String <- attributes.list("scripts"))
     script(type="text/javascript" src=script)

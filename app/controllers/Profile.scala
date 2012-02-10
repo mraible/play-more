@@ -54,14 +54,20 @@ object Profile extends Controller with Scalate with Secure {
   def postWorkout(id: Option[Long]) = {
 
     var workout = params.get("workout", classOf[Workout])
+    // handle update from content editable
+    if (id != null && workout.id == null) {
+      val w = Workout.find("id={id}").on("id" -> id).first()
+      w.get.title = workout.title
+      w.get.description = workout.description
+      workout = w.get
+    } else {
+      // change duration to time
+      var duration = params.get("workout.duration")
+      workout.duration = convertWatchToTime(duration)
+      Validation.valid("workout", workout)
+    }
 
-    // change duration to time
-    var duration = params.get("workout.duration")
-    workout.duration = convertWatchToTime(duration)
-
-    Validation.valid("workout", workout)
-
-    if (false) {
+    if (false) { // TODO: Fix me
       renderArgs.put("template", "Profile/edit")
       edit(id);
     } else {
