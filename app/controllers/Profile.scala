@@ -5,7 +5,7 @@ import play.modules.scalate._
 import play.mvc.Controller
 import models._
 
-object Profile extends Controller with Scalate with Secure {
+object Profile extends Controller with Scalate {
 
   def index() = {
     val allWorkouts = Workout.allWithAthleteAndComments
