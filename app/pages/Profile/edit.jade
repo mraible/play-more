@@ -18,18 +18,18 @@ form(method="post" class="form-stacked" id="workoutForm"
     div.clearfix
       label(for="title") Title:
       .input
-        input(type="text" id="title" name="workout.title" class="xlarge" value="#{workout.map(_.title)}")
+        input(type="text" id="workoutTitle" name="workout.title" class="xlarge title" value="#{workout.map(_.title)}")
     div.clearfix
       label(for="content") Description:
       .input
-        textarea(name="workout.description" class="xlarge") #{workout.map(_.description)}
+        textarea(id="workoutDescription" name="workout.description" class="xlarge description") #{workout.map(_.description)}
     div.clearfix
       label(for="duration") Duration:
       .input
-        input(type="text" name="workout.duration" id="duration" class="large" value="#{workout.map(_.duration)}")
+        input(type="text" id="workoutDuration" name="workout.duration" class="large" value="#{workout.map(_.duration)}")
       label(for="distance") Distance:
       .input
-        input(type="text" name="workout.distance" id="distance" class="large" value="#{workout.map(_.distance)}")
+        input(type="text" id="workoutDistance" name="workout.distance" class="large" value="#{workout.map(_.distance)}")
     div.actions
       button(type="submit" class="btn primary") Submit
       button(type="submit" class="btn" name="cancel") Cancel
