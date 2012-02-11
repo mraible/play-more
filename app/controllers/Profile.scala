@@ -52,7 +52,7 @@ object Profile extends Controller with Scalate with Secure {
   }
 
   def postWorkout(id: Option[Long]) = {
-
+    println("posting")
     var workout = params.get("workout", classOf[Workout])
     // handle update from content editable
     if (id != null && workout.id == null) {
@@ -71,6 +71,7 @@ object Profile extends Controller with Scalate with Secure {
       renderArgs.put("template", "Profile/edit")
       edit(id);
     } else {
+      println("Creating workout: " + workout)
       id match {
         case Some(id) => {
           Workout.update(workout)

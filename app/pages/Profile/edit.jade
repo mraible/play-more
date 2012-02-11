@@ -16,11 +16,11 @@ form(method="post" class="form-stacked" id="workoutForm"
   fieldset
     legend Where did you go? &rarr;
     div.clearfix
-      label(for="title") Title:
+      label(for="workoutTitle") Title:
       .input
         input(type="text" id="workoutTitle" name="workout.title" class="xlarge title" value="#{workout.map(_.title)}")
     div.clearfix
-      label(for="content") Description:
+      label(for="workoutDescription") Description:
       .input
         textarea(id="workoutDescription" name="workout.description" class="xlarge description") #{workout.map(_.description)}
     div.clearfix

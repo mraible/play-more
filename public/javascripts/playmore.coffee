@@ -37,6 +37,7 @@ initialize = ->
   $('#save').click ->
     $.ajax
       type: 'POST'
+      dataType: 'jsonp'
       url: $('#save').attr('rel')
       data:
         'workout.id': ''

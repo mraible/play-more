@@ -3,8 +3,9 @@ package controllers.api
 import play.mvc.Controller
 import models._
 import com.codahale.jerkson.Json._
+import controllers.BasicAuth
 
-object WorkoutService extends Controller {
+object WorkoutService extends Controller with BasicAuth {
 
   def workouts = {
     response.setContentTypeIfNotSet("application/json")
