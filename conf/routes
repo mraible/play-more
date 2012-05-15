@@ -2,30 +2,8 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-*       /auth                                   module:securesocial
+# Home page
+GET     /                           controllers.Application.index
 
-GET     /                                       Home.index
-GET     /more                                   Profile.index
-GET     /workout                                Profile.show
-GET     /workout/{id}                           Profile.edit
-POST    /workouts/{postId}/comments             Profile.postComment
-
-GET     /where                                  Home.where
-GET     /track                                  Home.track
-GET     /settings                               Settings.settings
-GET     /about                                  Settings.about
-
-GET     /api/workouts                           api.WorkoutService.workouts
-GET     /api/workout/{id}                       api.WorkoutService.edit
-POST    /api/workout                            api.WorkoutService.create
-PUT     /api/workout/{id}                       api.WorkoutService.save
-DELETE  /api/workout/{id}                       api.WorkoutService.delete
-
-# Map favicon requests to public
-GET     /favicon.ico                            staticFile:public/favicon.ico
-
-# Map static resources from the /app/public folder to the /public path
-GET     /public/                                staticDir:public
-
-# Catch all
-*       /{controller}/{action}                  {controller}.{action}
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

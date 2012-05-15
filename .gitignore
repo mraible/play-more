@@ -1,13 +1,7 @@
-/lib
-/logs
-*.pyc
-/out
-/tmp
-/precompiled
-/test-result
-.DS_Store
-# Modules and libs (dep managed)
-/modules
-/.ivy2
-# IntelliJ files
-*.iws
+logs
+project/project
+project/target
+target
+tmp
+.history
+dist

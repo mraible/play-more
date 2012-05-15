@@ -1,0 +1,9 @@
+This is your new Play 2.0 application
+=====================================
+
+This file will be packaged with your application, when using `play dist`.
+
+Tutorials used when upgrading:
+
+http://www.jamesward.com/2012/02/21/play-framework-2-with-scala-anorm-json-coffeescript-jquery-heroku
+http://janhelwich.wordpress.com/
