@@ -22,11 +22,26 @@ object Athlete {
 
   def apply(firstName: String) = new Athlete(NotAssigned, null, null, firstName, null)
 
-  def connect(email: String, password: String): Athlete = {
+  def connect(email: String, password: String): Option[Athlete] = {
     DB.withConnection {
       implicit connection =>
         SQL("select * from athlete where email = {email} and password = {password}")
-          .on("email" -> email, "password" -> password).using(simple).single();
+          .on("email" -> email, "password" -> password).using(simple).singleOpt()
+    }
+  }
+
+  def count(): Long = {
+    DB.withConnection {
+      implicit connection =>
+        SQL("select count(*) from athlete").as(scalar[Long].single)
+    }
+  }
+
+  def find(field: String, value: String): Seq[Athlete] = {
+    DB.withConnection {
+      implicit connection =>
+        SQL("select * from athlete where " + field + " = {" + field + "}")
+          .on(Symbol(field) -> value).as(Athlete.simple *)
     }
   }
 
@@ -34,7 +49,7 @@ object Athlete {
     DB.withConnection {
       implicit connection =>
         SQL("select * from athlete where id = {id}")
-          .on("id" -> id.get).using(simple).single();
+          .on("id" -> id.get).using(simple).single()
     }
   }
 
@@ -59,8 +74,7 @@ object Athlete {
     }
   }
 
-
-  def insert(athlete: Athlete) = {
+  def create(athlete: Athlete) = {
     DB.withConnection {
       implicit connection =>
         SQL("insert into athlete(email, password, firstName, lastName) values " +
