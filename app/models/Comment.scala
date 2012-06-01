@@ -39,7 +39,7 @@ object Comment {
   def create(comment: Comment) = {
     DB.withConnection {
       implicit connection =>
-        SQL("insert into comment(author, content, postedAt, workoutId) values " +
+        SQL("insert into comment (author, content, postedAt, workoutId) values " +
           "({author}, {content}, {postedAt}, {workoutId})").on(
           'author -> comment.author,
           'content -> comment.content,
