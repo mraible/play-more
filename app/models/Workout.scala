@@ -39,11 +39,11 @@ object Workout {
     }
   }
 
-  val withAthlete = simple ~ Athlete.simple map {
+  lazy val withAthlete = simple ~ Athlete.simple map {
     case workout ~ athlete => (workout, athlete)
   }
 
-  val withAthleteAndComments = {
+  lazy val withAthleteAndComments = {
     (Workout.withAthlete ~ Comment.simple *) map {
       items =>
         items.groupBy(_._1).headOption.map {
@@ -71,7 +71,7 @@ object Workout {
       ).as(Workout.withAthlete *)
   }
 
-  def allWithAthleteAndComments: Option[((Workout, Athlete), List[Comment])] = DB.withConnection {
+  def allWithAthleteAndComments: List[((Workout, Athlete), List[Comment])] = DB.withConnection {
     implicit connection =>
       SQL(
         """
@@ -80,7 +80,7 @@ object Workout {
           left join Comment c on c.workoutId = w.id
           order by w.postedAt desc
         """
-      ).as(Workout.withAthleteAndComments)
+      ).as(Workout.withAthleteAndComments).toList
   }
 
   def byIdWithAthleteAndComments(id: Long): Option[((Workout, Athlete), List[Comment])] = DB.withConnection {
