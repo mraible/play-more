@@ -19,6 +19,7 @@ class EvolutionsTest extends Specification {
           implicit connection =>
             SQL("select count(1) from athlete").execute()
             SQL("select count(1) from workout").execute()
+            SQL("select count(1) from comment").execute()
         }
       }
       success
