@@ -44,10 +44,10 @@ object Workout {
   }
 
   lazy val withAthleteAndComments = {
-    (Workout.withAthlete ~ Comment.simple *) map {
+    (Workout.withAthlete ~ (Comment.simple?) *) map {
       items =>
         items.groupBy(_._1).headOption.map {
-          case (workoutWithAthlete, list) => (workoutWithAthlete, list.map(_._2))
+          case (workoutWithAthlete, list) => (workoutWithAthlete, list.map(_._2).flatten)
         }
     }
   }

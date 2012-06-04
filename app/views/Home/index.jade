@@ -1,0 +1,52 @@
+-@ var athlete: models.Athlete
+-#import play.modules.scalate.ScalateTemplate._
+-@ val workout:Option[models.Workout] = None
+- attributes("title") = "Hello " + athlete.firstName + "!"
+- attributes.list("scripts") += "http://www.google.com/jsapi"
+- attributes.list("scripts") += "http://maps.googleapis.com/maps/api/js?sensor=false"
+- attributes.list("scripts") += uri("/assets/javascripts/map.js")
+- attributes.list("scripts") += uri("/assets/javascripts/stopwatch.js")
+- attributes.list("scripts") += uri("/assets/javascripts/odometer.js")
+- attributes.list("scripts") += uri("/assets/javascripts/playmore.js")
+
+#flipper
+  #card
+    .flip(href="#form")
+    #app(class="tab-pane active front face")
+      #display
+        input(id="clock" class="xlarge" type="text" value="00:00:00.0" readonly="readonly")
+      #controls
+        button(id="start" type="button" class="btn success" disabled style="width: 100%") Start
+        button(id="reset" type="button" class="btn :disabled" disabled style="display: none") Reset
+        #options
+          input#no-music(type="checkbox") No Music Please
+      #dashboard(style="display: none")
+        #track
+          | Distance Traveled: <span id="distance">0</span> mile(s)
+          #actions(style="display: none")
+            form.form-stacked(style="width: 250px")
+              label(for="title") Title
+              input(id="title" name="title" class="title")
+              label(form="description") Description
+              textarea(id="description" name="description" style="margin-bottom: 10px" class="description")
+            -#button(rel={action(controllers.Profile.postWorkout(None))} id="save" type="submit" class="btn primary") Save
+        #where
+          #map(class="odometer-map")
+          p(id="location")
+            span(class="label success") New
+            | Fetching your location with HTML 5 geolocation...
+
+        #music
+          audio(controls="controls" id="player" preload="auto" autobuffer="true")
+            source(src="http://dl.dropbox.com/u/3486601/Music/Thunderstruck.ogg" type="audio/ogg")
+            source(src="http://dl.dropbox.com/u/3486601/Music/Thunderstruck.mp3" type="audio/mp3")
+            | Your browser does not support the audio tag.
+
+    #form(class="tab-pane back face")
+      -#=include("../Profile/edit.jade")
+
+:plain
+  <script type="text/coffeescript">
+    $(document).ready ->
+      PlayMore.initialize()
+  </script>

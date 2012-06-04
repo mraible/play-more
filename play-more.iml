@@ -421,6 +421,33 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///opt/tools/play/repository/cache/org.fusesource.scalate/scalate-core/bundles/scalate-core-1.5.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///opt/tools/play/repository/cache/org.fusesource.scalate/scalate-util/bundles/scalate-util-1.5.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///opt/tools/play/framework/sbt/boot/scala-2.9.1/lib/scala-compiler.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
@@ -820,6 +847,33 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
+          <root url="jar:///opt/tools/play/repository/cache/org.fusesource.scalate/scalate-core/bundles/scalate-core-1.5.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///opt/tools/play/repository/cache/org.fusesource.scalate/scalate-util/bundles/scalate-util-1.5.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
+          <root url="jar:///opt/tools/play/framework/sbt/boot/scala-2.9.1/lib/scala-compiler.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="TEST">
+      <library>
+        <CLASSES>
           <root url="jar:///opt/tools/play/repository/local/play/play-test_2.9.1/2.0.1/jars/play-test_2.9.1.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -1195,7 +1249,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="scala-compiler-2.9.1" level="application" />
   </component>
 </module>
 

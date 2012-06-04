@@ -17,3 +17,10 @@ YAML:
 
 https://groups.google.com/forum/#!topic/play-framework/a5MseP_hdUQ
 https://groups.google.com/forum/#!topic/play-framework/4pVUPZIRFFM
+
+Notes:
+
+Anorm
+
+Coffee:
+Have to rename files to have underscore if you don't want them compiled.

@@ -1,0 +1,34 @@
+-import controllers.Scalate._
+-#@ val params: play.mvc.Scope.Params
+-@ val workout:Option[models.Workout] = None
+-#@ val errors:Map[String,play.data.validation.Error]
+
+-# if (!errors.isEmpty() && !workout.map(_.id).isEmpty) {
+  div(class="alert-message error fade in" data-alert="alert")
+    a(class="close" href="#") &times;
+    |  Please correct the errors below.
+-# }
+
+form(method="post" class="form-stacked" id="workoutForm" action="")
+  input(type="hidden" name="workout.id" value="#{workout.map(_.id)}")
+
+  fieldset
+    legend Where did you go? &rarr;
+    div.clearfix
+      label(for="workoutTitle") Title:
+      .input
+        input(type="text" id="workoutTitle" name="workout.title" class="xlarge title" value="#{workout.map(_.title)}")
+    div.clearfix
+      label(for="workoutDescription") Description:
+      .input
+        textarea(id="workoutDescription" name="workout.description" class="xlarge description") #{workout.map(_.description)}
+    div.clearfix
+      label(for="duration") Duration:
+      .input
+        input(type="text" id="workoutDuration" name="workout.duration" class="large" value="#{workout.map(_.duration)}")
+      label(for="distance") Distance:
+      .input
+        input(type="text" id="workoutDistance" name="workout.distance" class="large" value="#{workout.map(_.distance)}")
+    div.actions
+      button(type="submit" class="btn primary") Submit
+      button(type="submit" class="btn" name="cancel") Cancel
