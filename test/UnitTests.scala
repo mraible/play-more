@@ -104,7 +104,10 @@ class UnitTests extends Specification {
 
         Workout.allWithAthlete.foreach { o =>
           Workout.delete(o._1.id.get)
-          Athlete.delete(o._2.id.get)
+        }
+
+        Athlete.findAll().foreach { o =>
+          Athlete.delete(o.id.get)
         }
 
         InitialData.insert()
@@ -122,7 +125,7 @@ class UnitTests extends Specification {
 
         allWorkoutsWithAthleteAndComments.size must be_==(3)
 
-        val (workout, athlete, comments) = allWorkoutsWithAthleteAndComments(0)
+        val (workout, athlete, comments) = allWorkoutsWithAthleteAndComments(2)
 
         workout.title must be_==("Monarch Lake Trail")
         athlete.firstName must be_==("Matt")

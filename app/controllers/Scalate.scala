@@ -5,6 +5,7 @@ import http.{Writeable, ContentTypeOf, ContentTypes}
 import mvc.Codec
 import play.api.Play.current
 import org.fusesource.scalate.layout.DefaultLayoutStrategy
+import play.mvc.Http
 
 object Scalate {
 
@@ -32,6 +33,7 @@ object Scalate {
   case class Template(name: String) {
 
     def render(args: (Symbol, Any)*) = {
+
       ScalateContent{
         scalateEngine.layout(name, args.map {
           case (k, v) => k.name -> v
@@ -56,12 +58,10 @@ object Scalate {
     ""
   }
 
-  /*
-  implicit def validationErrors:Map[String,play.data.validation.Error] = {
+  implicit def validationErrors:Map[String,play.api.data.validation.ValidationError] = {
     import scala.collection.JavaConverters._
-    Map.empty[String,play.data.validation.Error] ++
-      Validation.errors.asScala.map( e => (e.getKey, e) )
-  }*/
+    Map.empty[String,play.api.data.validation.ValidationError] //      Validation.errors.asScala.map( e => (e.getKey, e) )
+  }
 
   def asset(path:String) = "";//  play.mvc.Router.reverse(play.Play.getVirtualFile(path))
 

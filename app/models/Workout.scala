@@ -18,12 +18,12 @@ case class Workout(id: Pk[Long], var title: String, var description: String,
         val result = SQL(
           """
                 (
-                    select p.*, 'next' as pos from workout w
+                    select w.*, 'next' as pos from workout w
                     where postedAt < {date} order by postedAt desc limit 1
                 )
                     union
                 (
-                    select p.*, 'prev' as pos from workout w
+                    select w.*, 'prev' as pos from workout w
                     where postedAt > {date} order by postedAt asc limit 1
                 )
 
@@ -33,11 +33,11 @@ case class Workout(id: Pk[Long], var title: String, var description: String,
           Workout.withPrevNext *).partition(_._2 == "prev")
 
         (result._1 match {
-          case List((post, "prev")) => Some(post)
+          case List((workout, "prev")) => Some(workout)
           case _ => None
         },
           result._2 match {
-            case List((post, "next")) => Some(post)
+            case List((workout, "next")) => Some(workout)
             case _ => None
           })
     }
@@ -184,7 +184,7 @@ object Workout {
           'description -> workout.description,
           'duration -> workout.duration,
           'distance -> workout.distance,
-          'postedAt -> new Date(),
+          'postedAt -> workout.postedAt,
           'athleteId -> workout.athleteId
         ).executeInsert()
       workout

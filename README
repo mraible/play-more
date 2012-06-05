@@ -25,3 +25,16 @@ https://github.com/kenichiro22/yabe-play20-scala
 
 Coffee:
 Have to rename files to have underscore if you don't want them compiled.
+
+TODO:
+* Validation
+* UI / Body CSS Class
+* Heroku
+* iPhone Client
+* Security
+* Map Coords / Map URL
+
+TODO-LATER:
+* Fix Scalate's :coffeescript when new version is released
+* 404
+* Scalate Error

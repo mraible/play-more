@@ -1,0 +1,39 @@
+-# http://www.html5rocks.com/en/tutorials/geolocation/trip_meter/
+- attributes("title") = "How far have I gone?"
+
+:css
+  #tripmeter {
+    padding: 10px;
+    margin: 10px 0;
+  }
+  
+  p {
+    color: #222;
+    font: 14px Arial;
+  }
+  
+  span {
+    color: #00C;
+  }
+
+#tripmeter
+  p
+    | Starting Location (lat, lon):<br/>
+    span#startLat< ???
+    | &deg;, 
+    span#startLon ???
+    | &deg;
+  p
+    | Current Location (lat, lon):<br/>
+    span#currentLat< ???
+    | &deg;, 
+    span#currentLon ???
+    | &deg;
+  p
+    | Distance from starting location:<br/>
+    span#distance 0 mi
+    
+script(type="text/javascript" src={uri("/assets/javascripts/odometer.js")})
+
+:javascript
+  Odometer.start(true);

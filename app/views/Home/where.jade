@@ -1,0 +1,24 @@
+-# http://merged.ca/iphone/html5-geolocation
+
+script(type="text/javascript" src="http://www.google.com/jsapi")
+script(type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false")
+
+:css
+  .demo-map {
+    border: 1px solid silver;
+    height: 200px;
+    margin: 10px auto;
+    width: 280px;
+  }
+
+#map(class="demo-map")
+
+p(id="location")
+  span(class="label success") New
+  | Fetching your location with HTML 5 geolocation...
+
+script(type="text/javascript" src={uri("/assets/javascripts/odometer.js")})
+script(type="text/javascript" src={uri("/assets/javascripts/map.js")})
+
+:javascript
+    Map.start();

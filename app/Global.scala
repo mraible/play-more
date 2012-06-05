@@ -7,7 +7,7 @@ import anorm._
 object Global extends GlobalSettings {
 
   override def onStart(app: Application) {
-    if (Play.isProd) {
+    if (!Play.isTest) {
       println("inserting seed data...")
       InitialData.insert()
     }

@@ -1,12 +1,12 @@
 package controllers
 
 import play.api.data.validation._
-import play.api.mvc.Controller
 import models._
+import play.api.mvc.{Action, Controller}
 
 object Profile extends Controller {
 
-  def index() = {
+  def index() = Action {
     val allWorkouts = Workout.allWithAthleteAndComments
     Ok(Scalate("/Profile/index.jade").render(
       'front -> allWorkouts.headOption,
@@ -14,30 +14,30 @@ object Profile extends Controller {
     ))
   }
 
-  def show(id: Long) = {
+  def show(id: Long) = Action {
     Workout.byIdWithAthleteAndComments(id).map { w =>
       Ok(Scalate("/Profile/show.jade").render(
         'workout -> w,
-        'pagination -> w._1 //.prevNext
+        'pagination -> w._1.prevNext
       ))
     } getOrElse {
       NotFound("No such Profile")
     }
   }
 
-  def edit(id: Option[Long]) = {
+  def edit(id: Option[Long]) = Action {
     val workout = Workout.find("id", "" + id)
     Ok(Scalate("/Profile/edit.jade").render('workout -> workout))
   }
 
-  def remove(id: Long) = {
+  def remove(id: Long) = Action {
     Workout.delete(id)
     //flash.success("Workout removed successfully.");
+    Ok
   }
 
-  /*
-  def postComment(postId:Long) = {
-    val author = params.get("author")
+  def postComment(postId:Long) = Action {
+    /*val author = params.get("author")
     val content = params.get("content")
     Validation.required("author", author)
     Validation.required("content", content)
@@ -48,12 +48,13 @@ object Profile extends Controller {
       Comment.create(Comment(postId, author, content))
       flash += "success" -> ("Thanks for posting " + author + "!")
       Action(show(postId))
-    }
+    }  */
+    NotImplemented
   }
 
-  def postWorkout(id: Option[Long]) = {
+  def postWorkout(id: Option[Long]) = Action {
     println("posting")
-    var workout = params.get("workout", classOf[Workout])
+    /*var workout = params.get("workout", classOf[Workout])
     // handle update from content editable
     if (id != null && workout.id == null) {
       val w = Workout.find("id={id}").on("id" -> id).first()
@@ -84,7 +85,8 @@ object Profile extends Controller {
         }
       }
       Action(index())
-    }
+    }*/
+    Ok
   }
 
   def convertWatchToTime(clock: String):Double = {
@@ -93,5 +95,5 @@ object Profile extends Controller {
     } else {
       0
     }
-  } */
+  }
 }

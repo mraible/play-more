@@ -1,13 +1,12 @@
 -import controllers.Scalate._
--#@ val params: play.mvc.Scope.Params
 -@ val workout:Option[models.Workout] = None
--#@ val errors:Map[String,play.data.validation.Error]
+-#@ val errors:Map[String,play.api.data.validation.Error]
 
--# if (!errors.isEmpty() && !workout.map(_.id).isEmpty) {
+-#if (!errors.isEmpty() && !workout.map(_.id).isEmpty) {
   div(class="alert-message error fade in" data-alert="alert")
     a(class="close" href="#") &times;
     |  Please correct the errors below.
--# }
+-#}
 
 form(method="post" class="form-stacked" id="workoutForm" action="")
   input(type="hidden" name="workout.id" value="#{workout.map(_.id)}")
@@ -32,3 +31,12 @@ form(method="post" class="form-stacked" id="workoutForm" action="")
     div.actions
       button(type="submit" class="btn primary") Submit
       button(type="submit" class="btn" name="cancel") Cancel
+
+    - errors.foreach { e =>
+      :&plain
+        <script type="text/coffeescript">
+          key = 'input[name="#{e.key}"],textarea[name="#{e.key}"]'
+          $(key).addClass('error')
+          $(key).closest('.clearfix').addClass('error')
+        </script>
+    - }

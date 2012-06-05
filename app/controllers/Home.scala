@@ -10,11 +10,11 @@ object Home extends Controller {
     Ok(Scalate("/Home/index.jade").render('athlete -> athlete))
   }
 
-  def where = {
+  def where = Action {
     Ok(Scalate("/Home/where").render())
   }
   
-  def track = {
+  def track = Action {
     Ok(Scalate("/Home/track").render())
   }
 }
