@@ -9,8 +9,8 @@ class UnitTests extends Specification {
   import models._
   import anorm._
 
-  "Athlete" should {
-    "create and retrieve itself" in {
+  "Athlete model" should {
+    "create and find itself" in {
       running(FakeApplication(additionalConfiguration = inMemoryDatabase())) {
         var user = Athlete(NotAssigned, "jim@gmail.com", "secret", "Jim", "Smith")
         Athlete.create(user)
@@ -33,7 +33,7 @@ class UnitTests extends Specification {
     }
   }
 
-  "Workout" should {
+  "Workout model" should {
     "create a Workout" in {
       running(FakeApplication(additionalConfiguration = inMemoryDatabase())) {
         Athlete.create(Athlete(Id(1), "bob@gmail.com", "secret", "Bob", "Johnson"))
@@ -81,13 +81,19 @@ class UnitTests extends Specification {
         Workout.count() must be_==(1)
         Comment.count() must be_==(2)
 
-        /*val ((workout, athlete), comments) = Workout.byIdWithAthleteAndComments(1)
+        val list = Workout.allWithAthleteAndComments
+        list.size must beEqualTo(1)
+
+        val comments = list(0)._3
+        comments.size must beEqualTo(2)
+
+        val Some((workout, athlete, comments2)) = Workout.byIdWithAthleteAndComments(1)
 
         workout.title must be_==("My first workout")
         athlete.firstName must be_==("Bob")
-        comments.length must be_==(2)
-        comments(0).author must be_==("Jim")
-        comments(1).author must be_==("Bryan")*/
+        comments2.length must beEqualTo(2)
+        comments2(0).author must be_==("Jim")
+        comments2(1).author must be_==("Bryan")
       }
     }
   }
@@ -95,6 +101,11 @@ class UnitTests extends Specification {
   "Global" should {
     "load seed data into DB" in {
       running(FakeApplication()) {
+
+        Workout.allWithAthlete.foreach { o =>
+          Workout.delete(o._1.id.get)
+          Athlete.delete(o._2.id.get)
+        }
 
         InitialData.insert()
 
@@ -109,20 +120,18 @@ class UnitTests extends Specification {
 
         val allWorkoutsWithAthleteAndComments = Workout.allWithAthleteAndComments
 
-        allWorkoutsWithAthleteAndComments must be_==(3)
+        allWorkoutsWithAthleteAndComments.size must be_==(3)
 
-        val ((workout, athlete), comments) = allWorkoutsWithAthleteAndComments(1)
+        val (workout, athlete, comments) = allWorkoutsWithAthleteAndComments(0)
+
         workout.title must be_==("Monarch Lake Trail")
         athlete.firstName must be_==("Matt")
         comments.length must be_==(2)
 
         // We have a referential integrity error
-        /*evaluating {
-        Athlete.delete("email={email}")
-          .on("email" -> "mraible@gmail.com").executeUpdate()
-      } should produce[java.sql.SQLException]*/
+        Athlete.delete(athlete.id.get) must throwA[java.sql.SQLException]
 
-        Workout.delete(1) must be_==(2)
+        Workout.deleteByAthlete(1) must be_==(2)
 
         Athlete.delete(1) must be_==(1)
 

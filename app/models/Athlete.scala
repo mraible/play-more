@@ -11,11 +11,11 @@ case class Athlete(id: Pk[Long], email: String, password: String, firstName: Str
 object Athlete {
 
   val simple = {
-    get[Pk[Long]]("id") ~
-      get[String]("email") ~
-      get[String]("password") ~
-      get[String]("firstName") ~
-      get[String]("lastName") map {
+    get[Pk[Long]]("athlete.id") ~
+      get[String]("athlete.email") ~
+      get[String]("athlete.password") ~
+      get[String]("athlete.firstName") ~
+      get[String]("athlete.lastName") map {
       case id ~ email ~ password ~ firstName ~ lastName => Athlete(id, email, password, firstName, lastName)
     }
   }
@@ -77,8 +77,9 @@ object Athlete {
   def create(athlete: Athlete) = {
     DB.withConnection {
       implicit connection =>
-        SQL("insert into athlete(email, password, firstName, lastName) values " +
-          "({email}, {password}, {firstName}, {lastName})").on(
+        SQL("insert into athlete(id, email, password, firstName, lastName) values " +
+          "({id}, {email}, {password}, {firstName}, {lastName})").on(
+          'id -> athlete.id,
           'email -> athlete.email,
           'password -> athlete.password,
           'firstName -> athlete.firstName,

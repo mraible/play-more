@@ -10,8 +10,7 @@ import play.api.Play.current
 
 case class Comment(
   id: Pk[Long],
-  author: String, content: String, postedAt: Date, workoutId: Long
-)
+  author: String, content: String, postedAt: Date, workoutId: Long)
 
 object Comment {
   def apply(workoutId: Long, author: String, content: String) = {
@@ -22,10 +21,10 @@ object Comment {
     get[Pk[Long]]("comment.id") ~
     get[String]("comment.author") ~
     get[String]("comment.content") ~
-    get[Long]("comment.postedAt") ~
+    get[Date]("comment.postedAt") ~
     get[Long]("comment.workoutId") map {
       case id~author~content~postedAt~workoutId =>
-        Comment(id, author, content, new Date(postedAt), workoutId)
+        Comment(id, author, content, postedAt, workoutId)
     }
   }
 
@@ -36,7 +35,7 @@ object Comment {
     }
   }
 
-  def create(comment: Comment) = {
+  def create(comment: Comment): Comment = {
     DB.withConnection {
       implicit connection =>
         SQL("insert into comment (author, content, postedAt, workoutId) values " +
@@ -46,6 +45,7 @@ object Comment {
           'postedAt -> new Date(),
           'workoutId -> comment.workoutId
         ).executeInsert()
+      comment
     }
   }
 }

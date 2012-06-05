@@ -11,14 +11,37 @@ import java.util.Date
 case class Workout(id: Pk[Long], var title: String, var description: String,
                    var duration: Double, distance: Double, var postedAt: Date,
                    var athleteId: Long) {
-}
 
-/**
- * Helper for pagination.
- */
-case class Page[A](items: List[A], page: Int, offset: Long, total: Long) {
-  lazy val prev = Option(page - 1).filter(_ >= 0)
-  lazy val next = Option(page + 1).filter(_ => (offset + items.size) < total)
+  def prevNext: (Option[Workout], Option[Workout]) = {
+    DB.withConnection {
+      implicit connection =>
+        val result = SQL(
+          """
+                (
+                    select p.*, 'next' as pos from workout w
+                    where postedAt < {date} order by postedAt desc limit 1
+                )
+                    union
+                (
+                    select p.*, 'prev' as pos from workout w
+                    where postedAt > {date} order by postedAt asc limit 1
+                )
+
+                order by postedAt desc
+
+          """).on("date" -> postedAt).as(
+          Workout.withPrevNext *).partition(_._2 == "prev")
+
+        (result._1 match {
+          case List((post, "prev")) => Some(post)
+          case _ => None
+        },
+          result._2 match {
+            case List((post, "next")) => Some(post)
+            case _ => None
+          })
+    }
+  }
 }
 
 object Workout {
@@ -43,13 +66,16 @@ object Workout {
     case workout ~ athlete => (workout, athlete)
   }
 
-  lazy val withAthleteAndComments = {
-    (Workout.withAthlete ~ (Comment.simple?) *) map {
-      items =>
-        items.groupBy(_._1).headOption.map {
-          case (workoutWithAthlete, list) => (workoutWithAthlete, list.map(_._2).flatten)
-        }
+  lazy val withPrevNext = {
+    get[Pk[Long]]("id") ~ get[String]("title") ~ get[String]("description") ~ get[Double]("duration") ~
+      get[Double]("distance") ~ get[Date]("postedAt") ~ get[Long]("athleteId") ~ get[String]("pos") map {
+      case id ~ title ~ description ~ duration ~ distance ~ postedAt ~ athleteId ~ pos =>
+        (Workout(id, title, description, duration, distance, postedAt, athleteId), pos)
     }
+  }
+
+  val withAthleteAndComments = Workout.simple ~ Athlete.simple ~ (Comment.simple ?) map {
+    case workout ~ athlete ~ comments => (workout, athlete, comments)
   }
 
   def find(field: String, value: String): Seq[Workout] = {
@@ -71,74 +97,40 @@ object Workout {
       ).as(Workout.withAthlete *)
   }
 
-  def allWithAthleteAndComments: List[((Workout, Athlete), List[Comment])] = DB.withConnection {
+  def allWithAthleteAndComments: List[(Workout, Athlete, List[Comment])] = DB.withConnection {
     implicit connection =>
       SQL(
         """
-          select * from Workout w
+          select w.*, a.*, c.* from Workout w
           join Athlete a on w.athleteId = a.id
           left join Comment c on c.workoutId = w.id
           order by w.postedAt desc
         """
-      ).as(Workout.withAthleteAndComments).toList
+      ).as(withAthleteAndComments *)
+        .groupBy(row => (row._1, row._2))
+        .mapValues(_.unzip3._3.map(_.orNull))
+        .map(row => row._2 match {
+          case List(null) => (row._1._1, row._1._2, List())
+          case comments => (row._1._1, row._1._2, comments)
+        }).toList
   }
 
-  def byIdWithAthleteAndComments(id: Long): Option[((Workout, Athlete), List[Comment])] = DB.withConnection {
+  def byIdWithAthleteAndComments(id: Long): Option[(Workout, Athlete, List[Comment])] = DB.withConnection {
     implicit connection =>
-      SQL(
+      Some(SQL(
         """
           select * from Workout w
           join Athlete a on w.athleteId = a.id
           left join Comment c on c.workoutId = w.id
           where w.id = {id}
         """
-      ).on('id -> id).as(Workout.withAthleteAndComments)
-  }
-
-
-  /**
-   * Return a page of (Workout,Athlete).
-   *
-   * @param page Page to display
-   * @param pageSize Number of workouts per page
-   * @param orderBy workout property used for sorting
-   * @param filter Filter applied on the name column
-   */
-  def list(page: Int = 0, pageSize: Int = 10, orderBy: Int = 1, filter: String = "%"): Page[(Workout, Athlete)] = {
-
-    val offset = pageSize * page
-
-    DB.withConnection {
-      implicit connection =>
-
-        val workouts = SQL(
-          """
-          select * from workout
-          left join athlete on workout.athleteId = athlete.id
-          where workout.title like {filter}
-          order by {orderBy} nulls last
-          limit {pageSize} offset {offset}
-          """
-        ).on(
-          'pageSize -> pageSize,
-          'offset -> offset,
-          'filter -> filter,
-          'orderBy -> orderBy
-        ).as(Workout.withAthlete *)
-
-        val totalRows = SQL(
-          """
-          select count(*) from workout
-          left join athlete on workout.athleteId = athlete.id
-          where workout.title like {filter}
-          """
-        ).on(
-          'filter -> filter
-        ).as(scalar[Long].single)
-
-        Page(workouts, page, offset, totalRows)
-
-    }
+      ).on('id -> id).as(withAthleteAndComments *)
+       .groupBy(row => (row._1, row._2))
+       .mapValues(_.unzip3._3.map(_.orNull))
+       .map(row => row._2 match {
+         case List(null) => (row._1._1, row._1._2, List())
+         case comments => (row._1._1, row._1._2, comments)
+       }).head)
   }
 
   def count(): Long = {
@@ -178,15 +170,16 @@ object Workout {
    *
    * @param workout The workout values.
    */
-  def create(workout: Workout) = {
+  def create(workout: Workout): Workout = {
     DB.withConnection {
       implicit connection =>
         SQL(
           """
-          insert into workout(title, description, duration, distance, postedAt, athleteId)
-          values ({title}, {description}, {duration}, {distance}, {postedAt}, {athleteId})
+          insert into workout(id, title, description, duration, distance, postedAt, athleteId)
+          values ({id}, {title}, {description}, {duration}, {distance}, {postedAt}, {athleteId})
           """
         ).on(
+          'id -> workout.id,
           'title -> workout.title,
           'description -> workout.description,
           'duration -> workout.duration,
@@ -194,6 +187,7 @@ object Workout {
           'postedAt -> new Date(),
           'athleteId -> workout.athleteId
         ).executeInsert()
+      workout
     }
   }
 
@@ -206,6 +200,18 @@ object Workout {
     DB.withConnection {
       implicit connection =>
         SQL("delete from workout where id = {id}").on('id -> id).executeUpdate()
+    }
+  }
+
+  /**
+   * Delete a workout.
+   *
+   * @param id Id of the athlete to delete workouts for.
+   */
+  def deleteByAthlete(id: Long) = {
+    DB.withConnection {
+      implicit connection =>
+        SQL("delete from workout where athleteId = {id}").on('id -> id).executeUpdate()
     }
   }
 }
