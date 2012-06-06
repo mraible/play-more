@@ -4,7 +4,6 @@ import play.api.db.DB
 import play.api.Play.current
 
 import anorm._
-import anorm.SqlParser._
 
 import play.api.test._
 import play.api.test.Helpers._
