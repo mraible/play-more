@@ -21,8 +21,8 @@ div(class="workout #{mode}")
 
 - if (mode == "full")
   .actions
-    -#button#save(class="btn primary" style="display: none" rel={action(controllers.Profile.postWorkout(workout._1.id.get))}) Save
-    -#button#delete(class="btn danger" rel={action(controllers.Profile.remove(workout._1.id()))}) Delete
+    button#save(class="btn primary" style="display: none" rel={routes.Profile.postWorkout(Some(workout._1.id.get))}) Save
+    button#delete(class="btn danger" rel={routes.Profile.remove(workout._1.id.get)}) Delete
     a#cancel(class="btn" href={uri("/more")}) Cancel
 
   :plain
