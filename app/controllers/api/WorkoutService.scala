@@ -10,7 +10,7 @@ object WorkoutService extends Controller  {
     Ok(Json.generate(Workout.allWithAthlete)).as("application/json")
   }
 
-  def edit(id: Long) = Action {
+  def show(id: Long) = Action {
     Ok(Json.generate(Workout.byIdWithAthleteAndComments(id)))
   }
 

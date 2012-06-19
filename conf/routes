@@ -16,10 +16,10 @@ GET     /settings                               controllers.Settings.settings
 GET     /about                                  controllers.Settings.about
 
 GET     /api/workouts                           controllers.api.WorkoutService.workouts
-GET     /api/workout/:id                        controllers.api.WorkoutService.edit(id: Long)
+GET     /api/workout/:id                        controllers.api.WorkoutService.show(id: Long)
 POST    /api/workout                            controllers.api.WorkoutService.create
 PUT     /api/workout/:id                        controllers.api.WorkoutService.save(id: Option[Long])
 DELETE  /api/workout/:id                        controllers.api.WorkoutService.delete(id: Long)
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /assets/*file                           controllers.Assets.at(path="/public", file)
