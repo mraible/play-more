@@ -1,4 +1,5 @@
 -import controllers.Scalate._
+-import controllers._
 -@ val workout:Option[models.Workout] = None
 -#@ val errors:Map[String,play.api.data.validation.Error]
 
@@ -8,7 +9,8 @@
     |  Please correct the errors below.
 -#}
 
-form(method="post" class="form-stacked" id="workoutForm" action="")
+form(method="post" class="form-stacked" id="workoutForm"
+  action="{routes(Profile.postWorkout(workout.flatMap(_.id.get)))}")
   input(type="hidden" name="workout.id" value="#{workout.map(_.id)}")
 
   fieldset
@@ -32,11 +34,11 @@ form(method="post" class="form-stacked" id="workoutForm" action="")
       button(type="submit" class="btn primary") Submit
       button(type="submit" class="btn" name="cancel") Cancel
 
-    - errors.foreach { e =>
+    -# errors.foreach { e =>
       :&plain
         <script type="text/coffeescript">
           key = 'input[name="#{e.key}"],textarea[name="#{e.key}"]'
           $(key).addClass('error')
           $(key).closest('.clearfix').addClass('error')
         </script>
-    - }
+    -# }
