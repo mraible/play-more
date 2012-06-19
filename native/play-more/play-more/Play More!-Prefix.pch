@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'play-more' target in the 'play-more' project
-//
-
-#ifdef __OBJC__
-    #import <UIKit/UIKit.h>
-#endif
