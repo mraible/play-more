@@ -1,4 +1,5 @@
-.content {
+#home .content {
     background-image: none;
     background-color: white;
+    min-height: 380px;
 }

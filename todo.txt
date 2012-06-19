@@ -1,0 +1,13 @@
+Play More TODO
+==============
+
+Get Forms working on Web UI
+Integration Security to Web UI
+Capture coordinates to display map
+
+Hide Password in JSON
+
+Add title and description to mobile
+Add login to mobile
+
+Add local storage for API calls

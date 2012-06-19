@@ -11,16 +11,24 @@
     <script type="text/javascript" src="assets/js/modernizr-2.0.6.min.js"></script>
     
     <style type="text/css" media="screen">@import "assets/themes/css/jqtouch.css";</style>
+    <style type="text/css" media="screen">@import "assets/js/jqt.bars/themes/jqt/theme.css";</style>
     <script type="text/javascript" charset="utf-8" src="cordova-1.8.1.js"></script>
 
-    <script src="assets/js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/js/jqtouch.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/jqtouch-jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/jqt.autotitles.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/jqt.bars/jqt.bars.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/webtoolkit.base64.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="assets/js/jqt.bars/jqt.bars.css"/>
+    
     <script type="text/javascript" charset="utf-8">
         var jQT = new $.jQTouch({
             icon:'assets/images/play-more.png',
             addGlossToIcon:false,
             startupScreen:'assets/images/play-more-splash.png',
-            statusBar:'black'
+            statusBar:'black',
+            useFastTouch: true
         });
 
         function onBodyLoad() {
@@ -76,7 +84,48 @@
                     }
                 });
             });
+
+            // Page animations end with AJAX callback event, example 1 (load remote HTML only first time)
+            $('#workouts').bind('pageAnimationEnd', function(e, info){
+                // Make sure the data hasn't already been loaded (we'll set 'loaded' to true a couple lines further down)
+                if (!$(this).data('loaded')) {
+                    $.get('http://play-more.com/api/workouts', function(data) {
+                        var holder = $("<ul/>").addClass("rounded");
+
+                        for (var key in data) {
+                            var link = $("<a/>").attr('href', '#workout').attr('data-id', data[key]._1.id.id).append(data[key]._1.title)
+                            $("<li/>").append(link).appendTo(holder);
+                        }
+                        holder.appendTo("#workouts")
+                    });
+                    $(this).data('loaded', true);
+                }
+            });
+
+            $('#workout').bind('pageAnimationStart', function(e, info){
+                var id = $(this).data('referrer').data('id');
+                $.get('http://play-more.com/api/workout/' + id, function(data) {
+                    var list = $("<ul/>").addClass('edit rounded');
+                    var form = $("<form/>").addClass('scroll').append(list);
+                    var workout = $.parseJSON(data);
+                    for (var key in workout._1) {
+                        if (key != "id") {
+                            $("<li/>").append(key + ": " + workout._1[key]).appendTo(list);
+                        }
+                    }
+                    $('#workout .fun').html(form);
+                });
+            });
         }
+
+        function makeBasicAuth(user, password) {
+            var tok = user + ':' + pass;
+            var hash = Base64.encode(tok);
+            return "Basic " + hash;
+        }
+
+        var auth = makeBasicAuth('mraible@gmail.com','beer');
+
     </script>
     <style type="text/css" media="screen">
         #jqt.fullscreen #home .info {
@@ -101,9 +150,22 @@
     </style>
 </head>
 <body class="home index" onload="onBodyLoad()">
+
+<!--<div id="tabbar">
+    <div>
+        <ul>
+            <li>
+                <a href="#about" mask="assets/images/icon-info-24x24.png" mask2x="assets/images/icon-info-48x48.png" animation="slideup">
+                    <strong>About</strong>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>-->
+
 <div id="jqt">
     <div id="about" class="selectable">
-        <p><img src="assets/images/play-more.png" /></p>
+        <p style="margin-top: -20px"><img src="assets/images/play-more.png" /></p>
         <p><strong>Play More!</strong><br>Version 1.0 beta<br>
         <a href="http://www.raibledesigns.com">By Matt Raible</a></p>
         <p><em>An HTML5 Fitness Tracker application<br/>created with HTML5, CoffeeScript,<br/>Play Framework, PhoneGap.</em></p>
@@ -118,48 +180,64 @@
             <a class="button slideup" id="infoButton" href="#about">About</a>
         </div>
 
-      <div class="container">
-          <div class="content">
-              <div class="row">
-                  <div class="span10">
-                      <div id="display">
-                          <input id="clock" class="xlarge" type="text" value="00:00:00.0" readonly="readonly"/>
-                      </div>
-                      <div id="controls">
-                          <button id="start" type="button" class="btn primary" disabled>Start</button>
-                          <button id="reset" type="button" class="btn :disabled" disabled>Reset</button>
-                          <div id="options"><input type="checkbox" id="no-music" checked> No Music Please</div>
-                      </div>
-                      <div id="loading"><img src="assets/images/ajax-loader.gif" alt="Loading"> Loading...</div>
-                      <div id="app" style="display: none">
-                          <div id="track">
-                              Distance Traveled: <span id="distance">0</span> mile(s)
-                              <div id="actions">
-                                  <button id="save" type="submit" class="btn success"
-                                      rel="http://play-more.com/profile/postworkout">Save</button>
-                              </div>
-                          </div>
-                          <div id="where">
-                              <div id="map" class="odometer-map"></div>
-                              <p id="location">
-                                  <span class="label success">New</span>
-                                  Fetching your location with HTML 5 geolocation...
-                              </p>
-                          </div>
-                          <div id="music">
-                              <audio controls="controls" id="player" preload="auto" autobuffer="true">
-                                  <source src="http://dl.dropbox.com/u/3486601/Music/Thunderstruck.ogg"
-                                          type="audio/ogg"></source>
-                                  <source src="http://dl.dropbox.com/u/3486601/Music/Thunderstruck.mp3"
-                                          type="audio/mp3"></source>
-                                  Your browser does not support the audio tag.
-                              </audio>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+        <div class="container scroll">
+            <div class="content">
+                <div id="display">
+                    <input id="clock" class="xlarge" type="text" value="00:00:00.0" readonly="readonly"/>
+                </div>
+                <div id="controls">
+                    <button id="start" type="button" class="btn primary" disabled>Start</button>
+                    <button id="reset" type="button" class="btn :disabled" disabled>Reset</button>
+                    <div id="options"><input type="checkbox" id="no-music" checked> No Music Please</div>
+                </div>
+                <div id="loading"><img src="assets/images/ajax-loader.gif" alt="Loading"> Loading...</div>
+                <div id="app" style="display: none">
+                    <div id="track">
+                        Distance Traveled: <span id="distance">0</span> mile(s)
+                        <div id="actions">
+                            <button id="save" type="submit" class="btn success"
+                                    rel="http://play-more.com/profile/postworkout">Save
+                            </button>
+                        </div>
+                    </div>
+                    <div id="where">
+                        <div id="map" class="odometer-map"></div>
+                        <p id="location">
+                            <span class="label success">New</span>
+                            Fetching your location with HTML 5 geolocation...
+                        </p>
+                    </div>
+                    <div id="music">
+                        <audio controls="controls" id="player" preload="auto" autobuffer="true">
+                            <source src="http://dl.dropbox.com/u/3486601/Music/Thunderstruck.ogg"
+                                    type="audio/ogg"></source>
+                            <source src="http://dl.dropbox.com/u/3486601/Music/Thunderstruck.mp3"
+                                    type="audio/mp3"></source>
+                            Your browser does not support the audio tag.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ul class="rounded">
+            <li class="arrow"><a href="#workouts">My Workouts</a></li>
+        </ul>
+    </div>
+
+    <div id="workouts">
+        <div class="toolbar">
+            <a href="#" class="back">Back</a>
+            <h1><!-- Will be filled in --></h1>
+        </div>
+    </div>
+
+    <div id="workout">
+        <div class="toolbar">
+            <a href="#" class="back">Back</a>
+            <h1><!-- Will be filled in --></h1>
+            <div class="fun"></div>
+        </div>
     </div>
 </div>
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>

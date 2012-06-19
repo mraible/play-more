@@ -2,59 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4989f4d-1eca-41b6-9093-c122a07d7253" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/icon@2x.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/Play More!.xcodeproj/project.pbxproj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/Play More!.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/Play More!.xcodeproj/project.xcworkspace/xcuserdata/mraible.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/Play More!.xcodeproj/project.xcworkspace/xcuserdata/mraible.xcuserdatad/WorkspaceSettings.xcsettings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/Play More!.xcodeproj/xcuserdata/mraible.xcuserdatad/xcschemes/play-more.xcscheme" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/Play More!.xcodeproj/xcuserdata/mraible.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Classes/AppDelegate.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Classes/AppDelegate.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/PhoneGap.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Play More!-Info.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Play More!-Prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Plugins/README" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/Capture.bundle/controls_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/Capture.bundle/controls_bg@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/Capture.bundle/controls_bg~ipad.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/Capture.bundle/microphone.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/Capture.bundle/microphone@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/Capture.bundle/microphone~ipad.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/Capture.bundle/record_button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/Capture.bundle/record_button@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/Capture.bundle/record_button~ipad.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/Capture.bundle/recording_bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/Capture.bundle/recording_bg@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/Capture.bundle/recording_bg~ipad.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/Capture.bundle/stop_button.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/Capture.bundle/stop_button@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/Capture.bundle/stop_button~ipad.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/en.lproj/Localizable.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/es.lproj/Localizable.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/icons/icon-72.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/icons/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/icons/icon@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/splash/Default.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/Resources/splash/Default@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/en.lproj/InfoPlist.strings" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/play-more/main.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/www/images/ajax-loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/www/images/play-more-72.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/www/images/play-more-hi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/www/images/play-more-splash-hi.graffle/data.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/www/images/play-more-splash-hi.graffle/image3.tiff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/www/images/play-more-splash-hi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/www/images/play-more-splash.graffle/data.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/www/images/play-more-splash.graffle/image10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/www/images/play-more-splash.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/www/images/play-more.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/www/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/native/play-more/www/phonegap-1.2.0.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Profile/edit.jade" afterPath="$PROJECT_DIR$/app/views/Profile/edit.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/Profile/workout.jade" afterPath="$PROJECT_DIR$/app/views/Profile/workout.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/.idea/.name" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/www/assets/images/icon-info-24x24.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/www/assets/images/icon-info-48x48.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/.idea/mobile.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/.idea/scopes/scope_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/.idea/xcode.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/www/assets/js/jqt.autotitles.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/www/assets/js/jqt.bars/iscroll-lite-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/www/assets/js/jqt.bars/iscroll-lite.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/www/assets/js/jqt.bars/iscroll-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/www/assets/js/jqt.bars/iscroll.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/www/assets/js/jqt.bars/jqt.bars.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/www/assets/js/jqt.bars/jqt.bars.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/www/assets/js/jqt.bars/themes/apple/theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/www/assets/js/jqt.bars/themes/jqt/theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/www/assets/js/jqtouch-jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/www/assets/js/jquery-1.7.2.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mobile/www/assets/js/webtoolkit.base64.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/todo.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mobile/www/assets/images/icon-info.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/play-more.xcodeproj/project.xcworkspace/xcuserdata/mraible.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/mobile/play-more.xcodeproj/project.xcworkspace/xcuserdata/mraible.xcuserdatad/UserInterfaceState.xcuserstate" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/play-more.xcodeproj/xcuserdata/mraible.xcuserdatad/xcschemes/play-more.xcscheme" afterPath="$PROJECT_DIR$/mobile/play-more.xcodeproj/xcuserdata/mraible.xcuserdatad/xcschemes/play-more.xcscheme" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/play-more/Cordova.plist" afterPath="$PROJECT_DIR$/mobile/play-more/Cordova.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/www/assets/css/iphone.css" afterPath="$PROJECT_DIR$/mobile/www/assets/css/iphone.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile/www/index.html" afterPath="$PROJECT_DIR$/mobile/www/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/play-more.iws" afterPath="$PROJECT_DIR$/play-more.iws" />
     </list>
     <ignored path="play-more.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -113,33 +91,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Workout.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/Workout.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="28" selection-start="0" selection-end="6409" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.conf" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/application.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EvolutionsTest.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/EvolutionsTest.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="6" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="UnitTests.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/UnitTests.scala">
           <provider selected="true" editor-type-id="text-editor">
@@ -185,10 +136,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.jade" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="default.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/default.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="2" selection-start="1337" selection-end="1432" vertical-scroll-proportion="0.031982943">
+            <state line="33" column="2" selection-start="1337" selection-end="1432" vertical-scroll-proportion="-0.625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WorkoutService.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/api/WorkoutService.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="10" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/routes">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="102" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="map.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mobile/www/assets/js/map.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="94" column="97" selection-start="2988" selection-end="2988" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="todo.txt" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/todo.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -210,27 +197,26 @@
         <option value="$PROJECT_DIR$/test/UnitTests.scala" />
         <option value="$PROJECT_DIR$/app/views/Home/track.jade" />
         <option value="$PROJECT_DIR$/app/views/Home/where.jade" />
-        <option value="$PROJECT_DIR$/app/controllers/api/WorkoutService.scala" />
         <option value="$PROJECT_DIR$/test/WebTests.scala" />
         <option value="$PROJECT_DIR$/app/controllers/Profile.scala" />
         <option value="$PROJECT_DIR$/app/views/Profile/show.jade" />
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/app/views/layouts/default.jade" />
         <option value="$PROJECT_DIR$/app/views/Profile/edit.jade" />
-        <option value="$PROJECT_DIR$/conf/routes" />
         <option value="$PROJECT_DIR$/app/views/Profile/workout.jade" />
         <option value="$PROJECT_DIR$/test/EvolutionsTest.scala" />
         <option value="$PROJECT_DIR$/app/Global.scala" />
         <option value="$PROJECT_DIR$/app/models/Workout.scala" />
         <option value="$PROJECT_DIR$/test/ApiTests.scala" />
+        <option value="$PROJECT_DIR$/app/controllers/api/WorkoutService.scala" />
+        <option value="$PROJECT_DIR$/conf/routes" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="36" />
     <option name="y" value="22" />
-    <option name="width" value="1541" />
-    <option name="height" value="1264" />
+    <option name="width" value="1680" />
+    <option name="height" value="995" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -258,6 +244,30 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -304,28 +314,178 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="play-more" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="play-more" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -335,17 +495,17 @@
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Modules" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="181" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="189" />
     <property name="project.structure.proportion" value="0.0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="189" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="186" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="193" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="987" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="985" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="987" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="191" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="188" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -361,11 +521,11 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -395,7 +555,6 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="false" />
-      <setting name="useOlderScalaTestVersion" value="false" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
@@ -413,7 +572,6 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="false" />
-      <setting name="useOlderScalaTestVersion" value="false" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="" />
         <option name="TRANSPORT" value="0" />
@@ -435,7 +593,6 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="false" />
-      <setting name="useOlderScalaTestVersion" value="false" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
@@ -453,7 +610,6 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="false" />
-      <setting name="useOlderScalaTestVersion" value="false" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
@@ -471,10 +627,22 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="false" />
-      <setting name="useOlderScalaTestVersion" value="false" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
     </configuration>
     <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -489,25 +657,11 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="false" />
-      <setting name="useOlderScalaTestVersion" value="false" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-        <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -550,6 +704,17 @@
         <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" runner="idea" />
       <module name="" />
@@ -575,17 +740,6 @@
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
         <option name="PhingTarget" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
     <list size="5">
@@ -689,15 +843,39 @@
       <created>1338946950585</created>
       <updated>1338946950585</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Changed method name from edit to show since it makes more sense in an API.">
+      <created>1340129851266</created>
+      <updated>1340129851266</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="36" y="22" width="1541" height="1264" extended-state="0" />
+    <frame x="0" y="22" width="1680" height="995" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5258093" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.52517164" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -707,16 +885,16 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996893" sideWeight="0.6719577" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32837528" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272311" sideWeight="0.9922041" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951945" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30073678" sideWeight="0.4741907" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3002451" sideWeight="0.47482836" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32804233" sideWeight="0.96772194" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299748" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272311" sideWeight="0.9922041" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -758,7 +936,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed unused import." />
+    <option name="LAST_COMMIT_MESSAGE" value="View workouts and details." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -786,6 +964,8 @@
     <MESSAGE value="Got Play 2 Anorm working and tests passing thanks to https://github.com/kenichiro22/yabe-play20-scala." />
     <MESSAGE value="Added Scalate templates and configured routing. Also added Workout API and wrote tests to prove it works." />
     <MESSAGE value="Removed unused import." />
+    <MESSAGE value="Changed method name from edit to show since it makes more sense in an API." />
+    <MESSAGE value="View workouts and details." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -795,11 +975,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/conf/routes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="96" selection-start="506" selection-end="506" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/Profile/workout.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="114" selection-start="892" selection-end="892" vertical-scroll-proportion="0.0" />
@@ -817,7 +992,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Workout.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="28" selection-start="0" selection-end="6409" vertical-scroll-proportion="0.0" />
+        <state line="12" column="28" selection-start="0" selection-end="6409" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/conf/application.conf">
@@ -837,21 +1014,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/WebTests.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="40" selection-start="348" selection-end="348" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="12" column="40" selection-start="348" selection-end="348" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/ApiTests.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="59" selection-start="720" selection-end="720" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="21" column="59" selection-start="720" selection-end="720" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Global.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="28" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0" />
+        <state line="13" column="28" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/Profile/edit.jade">
@@ -861,7 +1036,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/default.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="2" selection-start="1337" selection-end="1432" vertical-scroll-proportion="0.031982943">
+        <state line="33" column="2" selection-start="1337" selection-end="1432" vertical-scroll-proportion="-0.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/WorkoutService.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="10" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/routes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="102" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/www/assets/js/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="97" selection-start="2988" selection-end="2988" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="10" selection-start="10" selection-end="10" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

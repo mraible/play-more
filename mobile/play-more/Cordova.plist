@@ -29,6 +29,7 @@
 		<string>dl.dropbox.com</string>
 		<string>twitter.com</string>
 		<string>*.raibledesigns.com</string>
+		<string>localhost</string>
 	</array>
 	<key>Plugins</key>
 	<dict>
