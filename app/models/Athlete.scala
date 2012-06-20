@@ -5,8 +5,9 @@ import play.api.Play.current
 
 import anorm._
 import anorm.SqlParser._
+import org.codehaus.jackson.annotate.JsonIgnore
 
-case class Athlete(id: Pk[Long], email: String, password: String, firstName: String, lastName: String)
+case class Athlete(id: Pk[Long], email: String, @JsonIgnore password: String, firstName: String, lastName: String)
 
 object Athlete {
 

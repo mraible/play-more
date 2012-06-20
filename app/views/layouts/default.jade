@@ -5,7 +5,7 @@
 -@ val pageHeader: String = ""
 -@ val pageTagline: String = ""
 -@ val sidebar: String = ""
--#@ val flash: play.mvc.Scope.Flash
+-#@ val flash: play.api.mvc.Flash
 -#@ val params: play.mvc.Scope.Params
 -#@ val config: java.util.Properties
 !!! 5
@@ -31,7 +31,7 @@ head
   -# Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons
 
   -# CSS: implied media=all
-  link(rel="stylesheet" type="text/css" href={uri("/assets/stylesheets/libs/bootstrap.min.css")})
+  link(rel="stylesheet" type="text/css" href={uri("/assets/stylesheets/bootstrap.min.css")})
   link(rel="stylesheet" type="text/css" href={uri("/assets/stylesheets/style.min.css")})
   -# end CSS
 
@@ -43,11 +43,10 @@ head
 
   script(type="text/javascript" src={uri("/assets/javascripts/libs/modernizr-2.0.6.min.js")})
 body(class=bodyClass)
-  -# from http://twitter.github.com/bootstrap/examples/container-app.html
-  .topbar
-    .fill
+  div(class="navbar navbar-fixed-top")
+    .navbar-inner
       .container
-        a(class="brand" href={uri("/#app")})
+        a(class="brand" href={uri("/")})
           img(src={uri("/assets/images/play-more.png")} alt="Play More!" class="logo")
         ul.nav(data-tabs="tabs")
           li(id="nav-index")
@@ -78,15 +77,15 @@ body(class=bodyClass)
           = pageHeader
           small
             = pageTagline
-      .row
-        .span10
-          -# if (flash.get("success") != null) {
-            div(class="alert-message success" data-alert="alert")
+      .row-fluid
+        .span9
+          -# if (!flash.get("success").isEmpty) {
+            div(class="alert alert-success" data-alert="alert")
               a(class="close" href="#") &times;
               | #{flash.get("success")}
           -# }
           !~~ body
-        .span4
+        .span3
           = unescape(sidebar)
     footer
       p &copy; <span class="copy-year">2012</span> <a href="http://raibledesigns.com">Raible Designs</a>
@@ -96,16 +95,15 @@ body(class=bodyClass)
   script(type="text/javascript" src={uri("/assets/javascripts/libs/coffee-script.js")})
 
   / Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline
-  script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js")
+  script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
   :javascript
-    window.jQuery || document.write('<script src="/assets/javascripts/libs/jquery-1.6.2.min.js"><\/script>')
+    window.jQuery || document.write('<script src="/assets/javascripts/jquery-1.7.2.min.js"><\/script>')
 
   -# Import scripts specified in child pages
   - for (script: String <- attributes.list("scripts"))
     script(type="text/javascript" src=script)
 
-  script(type="text/javascript" src={uri("/assets/javascripts/libs/bootstrap-alerts.js")})
-  script(type="text/javascript" src={uri("/assets/javascripts/libs/bootstrap-tabs.js")})
+  script(type="text/javascript" src={uri("/assets/javascripts/libs/bootstrap.min.js")})
 
   -# Change UA-XXXXX-X to be your site's ID
   :javascript
@@ -113,9 +111,8 @@ body(class=bodyClass)
     Modernizr.load({
       load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
     });
-    $('.nav').tabs()
     var year = (new Date()).getFullYear();
-    if (year > 2012) {
+    if (year > 2011) {
       $('.copy-year').html(year);
     }
 

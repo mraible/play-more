@@ -11,7 +11,7 @@
  */
 
 /* Variables from Bootstrap */
-@import "libs/_variables.less";
+@import "_variables.less";
 
 /* =============================================================================
    HTML5 display definitions
@@ -100,7 +100,6 @@ sub { bottom: -0.25em; }
    Lists
    ========================================================================== */
 
-ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 
@@ -242,7 +241,7 @@ body {
 }
 
 footer {
-  padding-top: 0;
+  padding-top: 10px;
   a, a:visited { color: @black }
   a:hover { color: @linkColorHover }
 }
@@ -250,21 +249,22 @@ footer {
 /* Page header tweaks */
 .page-header {
   background-color: #f5f5f5;
-  padding: 20px 20px 0px;
+  padding: 20px 20px 5px;
   margin: -20px -20px 0px;
+  margin-bottom: 10px;
 }
 
-.content .span10,
-.content .span4 {
+.content .span9,
+.content .span3 {
   min-height: 250px;
 }
       
 /* Give a quick and non-cross-browser friendly divider */
-.content .span4 {
+/*.content .span3 {
   margin-left: 0;
   padding-left: 19px;
   border-left: 1px solid #eee;
-}
+}*/
 
 /* Customizations for app */
 .brand {
@@ -275,7 +275,8 @@ footer {
 
 #controls, #actions {
   .btn {
-    font-size: @basefont * 2.5;
+    font-size: @baseFontSize * 2.5;
+    padding: 20px 0;
   }
 }
 
@@ -283,6 +284,7 @@ footer {
   color: @black;
   margin: 10px auto 20px auto;
   font-size: 4em;
+  width: 275px;
   height: 60px;
   border: 0;
   text-align: center
@@ -310,7 +312,7 @@ footer {
 }
 
 #track {
-  font-size: @basefont * 1.2;
+  font-size: @baseFontSize * 1.2;
 }
 
 .odometer-map {
@@ -409,11 +411,18 @@ footer {
   margin-left: 0
 }
 
+.older-workouts .workout .title {
+  font-size: 18px;
+}
+
 .workout {
   padding: 10px;
 
   .title {
-    font-size: 20px;
+    line-height: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   .metadata {
@@ -468,7 +477,7 @@ footer {
 .older-workouts {
   h3 {
     text-transform: capitalize;
-    line-height: @baseline * 1.2;
+    line-height: @baseLineHeight * 1.2;
     margin-top: 10px;
     width: 98%;
     .from {
@@ -514,88 +523,8 @@ footer {
 
 form {
   width: 400px;
-  margin: 0 auto;
+  margin-left: 180px;
   text-align: left
-}
-
-a.flip {
-  position: absolute;
-  margin-right: 200px;
-}
-
-.face.back {
-  display: none;
-}
-
-.face.back {
-  display: none;
-}
-
-.flip {
-  height: 48px;
-  width: 48px;
-  background-image: url('/assets/images/icon-form.png');
-  position: absolute;
-  z-index: 1000
-}
-
-.flipback {
-  background-image: url('/assets/images/icon-stopwatch.png')
-}
-
-#flipper {
-  -webkit-perspective: 1000;
-}
-
-#flipper {
-  width: 100%;
-  height: 100%;
-  -webkit-transform-style: preserve-3d;
-  -webkit-transition: all 1.0s linear;
-  -moz-transform-style: preserve-3d;
-  -moz-transition: all 1.0s linear;
-  -o-transform-style: preserve-3d;
-  -o-transition: all 1.0s linear;
-  -ms-transform-style: preserve-3d;
-  -ms-transition: all 1.0s linear;
-  transform-style: preserve-3d;
-  transition: all 1.0s linear;
-}
-
-.flipped {
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-}
-
-.face {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		-webkit-backface-visibility: hidden;
-		-moz-backface-visibility: hidden;
-		-o-backface-visibility: hidden;
-		-ms-backface-visibility: hidden;
-		backface-visibility: hidden;
-}
-.face.back {
-		display: block;
-		-webkit-transform: rotateY(180deg);
-		-webkit-box-sizing: border-box;
-		-moz-transform: rotateY(180deg);
-		-moz-box-sizing: border-box;
-		-o-transform: rotateY(180deg);
-		-o-box-sizing: border-box;
-		-ms-transform: rotateY(180deg);
-		-ms-box-sizing: border-box;
-		transform: rotateY(180deg);
-		box-sizing: border-box;
-		padding: 10px;
-		color: white;
-		text-align: center;
-	  height: 400px
 }
 
 // iphone http://broadcast.oreilly.com/2010/04/using-css-media-queries-ipad.html

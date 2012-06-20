@@ -55,36 +55,17 @@ initialize = ->
         alert.insertBefore($('.span10'))
         reset()
 
-  flipForm = ->
-    flipper = $('#flipper')
-    if (flipper.hasClass('flipped'))
-      $(this).removeClass('flipback')
-      flipper.removeClass('flipped')
-      $('.front.face').show()
-      $('.face').css('-webkit-backface-visibility', 'hidden');
-    else
-      $(this).addClass('flipback')
-      flipper.addClass('flipped')
-      $('.content').height(400)
-    setTimeout toggleForm, 1000
-
-  toggleForm = ->
-    if ($('#flipper').hasClass('flipped'))
-      $('.face').css('-webkit-backface-visibility', 'visible');
-      $('.front.face').hide()
-    else
-      $('.face').css('-webkit-backface-visibility', 'hidden');
-      $('.front.face').show()
-      $('.content').height('auto')
-
-  $('.flip').click (e) ->
-    flipForm()
-
   #- Keep forms in sync
   $('.title').keyup ->
     $('.title').val $(this).val()
   $('.description').keyup ->
     $('.description').val $(this).val()
+
+  $('a[data-toggle="tab"]').on('shown', (e) ->
+    if ($(e.target).attr('id') == 'form')
+      $('#workoutDuration').val $('#clock').val()
+      $('#workoutDistance').val $('#distance').text()
+  )
 
 @PlayMore = {
   initialize: initialize

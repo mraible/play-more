@@ -5,11 +5,12 @@
 GET     /                                       controllers.Home.index
 GET     /more                                   controllers.Profile.index
 GET     /music                                  controllers.MusicController.index
+GET     /workout                                controllers.Profile.edit(id: Option[Long])
 GET     /workout/:id                            controllers.Profile.show(id: Long)
 GET     /workout/:id                            controllers.Profile.edit(id: Option[Long])
-POST    /workout/:id                            controllers.Profile.postWorkout(id: Option[Long])
+POST    /workout/postWorkout                    controllers.Profile.postWorkout(id: Option[Long])
 POST    /workouts/:postId/comments              controllers.Profile.postComment(postId: Long)
-DELETE  /workout/:id                            controllers.Profile.remove(id: Long)
+DELETE  /workout/remove/:id                     controllers.Profile.remove(id: Long)
 
 GET     /where                                  controllers.Home.where
 GET     /track                                  controllers.Home.track

@@ -3,11 +3,15 @@ package controllers.api
 import models._
 import play.api.mvc.{Action, Controller}
 import com.codahale.jerkson._
+import org.codehaus.jackson.JsonNode
 
 object WorkoutService extends Controller  {
 
   def workouts = Action { implicit request =>
-    Ok(Json.generate(Workout.allWithAthlete)).as("application/json")
+    var json = Json.generate(Workout.allWithAthlete)
+    // todo: figure out regex to replace passwords in json
+    json = json.replaceAll("beer|whiskey", "XXX")
+    Ok(json).as("application/json")
   }
 
   def show(id: Long) = Action {

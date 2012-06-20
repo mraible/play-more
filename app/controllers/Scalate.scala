@@ -2,10 +2,10 @@ package controllers
 
 import play.api._
 import http.{Writeable, ContentTypeOf, ContentTypes}
-import mvc.Codec
+import mvc.{RequestHeader, Request, AnyContent, Codec}
 import play.api.Play.current
 import org.fusesource.scalate.layout.DefaultLayoutStrategy
-import play.mvc.Http
+import collection.mutable
 
 object Scalate {
 
@@ -32,12 +32,12 @@ object Scalate {
 
   case class Template(name: String) {
 
-    def render(args: (Symbol, Any)*) = {
+    def render(implicit request: RequestHeader, args: (Symbol, Any)*) = {
 
-      ScalateContent{
-        scalateEngine.layout(name, args.map {
-          case (k, v) => k.name -> v
-        } toMap)
+      val argsMap = populateRenderArgs(name, args: _*)
+
+      ScalateContent {
+        scalateEngine.layout(name, argsMap)
       }
     }
   }
@@ -52,17 +52,27 @@ object Scalate {
     ContentTypeOf[ScalateContent](Some(ContentTypes.HTML))
   }
 
-  // --- ROUTERS
-  def action(action: => Any) = {
-    //new play.api.mvc.Action(action).actionDefinition.url
-    ""
+
+  implicit def validationErrors: Map[String, play.api.data.validation.ValidationError] = {
+    Map.empty[String, play.api.data.validation.ValidationError] //      Validation.errors.asScala.map( e => (e.getKey, e) )
   }
 
-  implicit def validationErrors:Map[String,play.api.data.validation.ValidationError] = {
-    import scala.collection.JavaConverters._
-    Map.empty[String,play.api.data.validation.ValidationError] //      Validation.errors.asScala.map( e => (e.getKey, e) )
-  }
+  def populateRenderArgs(name: String, args: (Symbol, Any)*): Map[String, Any] = {
+    val renderArgs = new mutable.HashMap[String, Any]
 
-  def asset(path:String) = "";//  play.mvc.Router.reverse(play.Play.getVirtualFile(path))
+    args.foreach {
+      o =>
+        renderArgs.put(o._1.name, o._2)
+    }
+
+    // todo: figure out how to add flash to args
+
+    // CSS class to add to body
+    var bodyClass = name.replace("/", " ").toLowerCase
+    bodyClass = bodyClass.replace("." + format, "").trim
+
+    renderArgs.put("bodyClass", bodyClass)
+    renderArgs.toMap
+  }
 
 }

@@ -86,6 +86,14 @@ object Workout {
     }
   }
 
+  def findBy(id: Option[Long]): Workout = {
+    DB.withConnection {
+      implicit connection =>
+        SQL("select * from workout where id = {id}")
+          .on("id" -> id.get).using(simple).single()
+    }
+  }
+
   def allWithAthlete: List[(Workout, Athlete)] = DB.withConnection {
     implicit connection =>
       SQL(
@@ -146,7 +154,7 @@ object Workout {
    * @param id The workout id
    * @param workout The workout values.
    */
-  def update(id: Long, workout: Workout) = {
+  def update(workout: Workout) = {
     DB.withConnection {
       implicit connection =>
         SQL(
@@ -156,7 +164,7 @@ object Workout {
           where id = {id}
           """
         ).on(
-          'id -> id,
+          'id -> workout.id,
           'title -> workout.title,
           'description -> workout.description,
           'duration -> workout.duration,
@@ -175,11 +183,10 @@ object Workout {
       implicit connection =>
         SQL(
           """
-          insert into workout(id, title, description, duration, distance, postedAt, athleteId)
-          values ({id}, {title}, {description}, {duration}, {distance}, {postedAt}, {athleteId})
+          insert into workout(title, description, duration, distance, postedAt, athleteId)
+          values ({title}, {description}, {duration}, {distance}, {postedAt}, {athleteId})
           """
         ).on(
-          'id -> workout.id,
           'title -> workout.title,
           'description -> workout.description,
           'duration -> workout.duration,

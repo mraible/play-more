@@ -1,42 +1,69 @@
 package controllers
 
-import play.api.data.validation._
 import models._
 import play.api.mvc.{Action, Controller}
+import play.api.data._
+import play.api.data.Forms._
+import anorm.NotAssigned
 
 object Profile extends Controller {
 
+  val workoutForm = Form(
+    mapping(
+      "id" -> ignored(NotAssigned: anorm.Pk[Long]),
+      "title" -> text,
+      "description" -> text,
+      "duration" -> nonEmptyText,
+      "distance" -> nonEmptyText,
+      "postedAt" -> optional(date),
+      "athleteId" -> optional(longNumber)
+    )((id, title, description, duration, distance, postedAt, athleteId) =>
+      Workout(id, title, description, duration.toDouble, distance.toDouble, null, 0))
+      ((w: Workout) =>
+        Some((w.id, w.title, w.description, w.duration.toString, w.distance.toString, null, Some(0))))
+  )
+
   def index() = Action {
-    val allWorkouts = Workout.allWithAthleteAndComments
-    Ok(Scalate("/Profile/index.jade").render(
-      'front -> allWorkouts.headOption,
-      'older -> allWorkouts.drop(1)
-    ))
+    implicit request =>
+      val allWorkouts = Workout.allWithAthleteAndComments
+      Ok(Scalate("/Profile/index.jade").render(request,
+        'front -> allWorkouts.headOption,
+        'older -> allWorkouts.drop(1)
+      ))
   }
 
   def show(id: Long) = Action {
-    Workout.byIdWithAthleteAndComments(id).map { w =>
-      Ok(Scalate("/Profile/show.jade").render(
-        'workout -> w,
-        'pagination -> w._1.prevNext
-      ))
-    } getOrElse {
-      NotFound("No such Profile")
-    }
+    request =>
+      Workout.byIdWithAthleteAndComments(id).map {
+        w =>
+          Ok(Scalate("/Profile/show.jade").render(request,
+            'workout -> w,
+            'pagination -> w._1.prevNext
+          ))
+      } getOrElse {
+        NotFound("No such Profile")
+      }
   }
 
   def edit(id: Option[Long]) = Action {
-    val workout = Workout.find("id", "" + id)
-    Ok(Scalate("/Profile/edit.jade").render('workout -> workout))
+    request =>
+      if (id != None) {
+        val workout = Workout.find("id", id.get.toString)
+        Ok(Scalate("/Profile/edit.jade").render(request, 'workout -> workout))
+      } else {
+        Ok(Scalate("/Profile/edit.jade").render(request))
+      }
+
   }
 
-  def remove(id: Long) = Action {
-    Workout.delete(id)
-    //flash.success("Workout removed successfully.");
-    Ok
+  def remove(id: Long) = Action { implicit request =>
+      Workout.delete(id)
+      Ok {
+        flash.get("success").getOrElse("Workout removed successfully.")
+      }
   }
 
-  def postComment(postId:Long) = Action {
+  def postComment(postId: Long) = Action {
     /*val author = params.get("author")
     val content = params.get("content")
     Validation.required("author", author)
@@ -53,43 +80,33 @@ object Profile extends Controller {
   }
 
   def postWorkout(id: Option[Long]) = Action {
-    println("posting")
-    /*var workout = params.get("workout", classOf[Workout])
-    // handle update from content editable
-    if (id != null && workout.id == null) {
-      val w = Workout.find("id={id}").on("id" -> id).first()
-      w.get.title = workout.title
-      w.get.description = workout.description
-      workout = w.get
-    } else {
-      // change duration to time
-      var duration = params.get("workout.duration")
-      workout.duration = convertWatchToTime(duration)
-      Validation.valid("workout", workout)
-    }
+    implicit request =>
+      println("posting")
+      workoutForm.bindFromRequest.fold(
+        form => {
+          println(form)
+          Ok(Scalate("/Profile/edit.jade").render(request, 'errors -> form.errors))
+        },
+        workout => {
+          println("Creating workout: " + workout)
+          id match {
+            case Some(id) => {
+              Workout.update(workout)
+            }
+            case None => {
+              workout.postedAt = new java.util.Date
+              workout.athleteId = 1
+              Workout.create(workout)
+              flash.get("success").getOrElse("Nice workout!")
+            }
 
-    if (false) { // TODO: Fix me
-      renderArgs.put("template", "Profile/edit")
-      edit(id);
-    } else {
-      println("Creating workout: " + workout)
-      id match {
-        case Some(id) => {
-          Workout.update(workout)
+          }
+          Redirect(routes.Profile.index())
         }
-        case None => {
-          workout.postedAt = new java.util.Date
-          workout.athleteId = 1
-          Workout.create(workout)
-          flash += "success" -> ("Nice workout!")
-        }
-      }
-      Action(index())
-    }*/
-    Ok
+      )
   }
 
-  def convertWatchToTime(clock: String):Double = {
+  def convertWatchToTime(clock: String): Double = {
     if (clock != null && clock.trim.length > 0) {
       clock.replaceAll("00:", "").toDouble
     } else {

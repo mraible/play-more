@@ -33,7 +33,7 @@ div(class="workout #{mode}")
 
       $('#delete').click ->
         $.ajax
-          type: 'POST'
+          type: 'DELETE'
           url: $(this).attr('rel')
           error: ->
             alert('Delete failed, please try again.')

@@ -1,44 +1,44 @@
 -import controllers.Scalate._
 -import controllers._
 -@ val workout:Option[models.Workout] = None
--#@ val errors:Map[String,play.api.data.validation.Error]
+-@ val errors:Seq[play.api.data.FormError] = List()
 
--#if (!errors.isEmpty() && !workout.map(_.id).isEmpty) {
-  div(class="alert-message error fade in" data-alert="alert")
+-if (!errors.isEmpty()) {
+  div(class="alert alert-error fade in" data-alert="alert")
     a(class="close" href="#") &times;
     |  Please correct the errors below.
--#}
+-}
 
 form(method="post" class="form-stacked" id="workoutForm"
-  action="{routes(Profile.postWorkout(workout.flatMap(_.id.get)))}")
+  action={routes.Profile.postWorkout(workout.map(_.id.get))})
   input(type="hidden" name="workout.id" value="#{workout.map(_.id)}")
 
   fieldset
     legend Where did you go? &rarr;
-    div.clearfix
-      label(for="workoutTitle") Title:
-      .input
-        input(type="text" id="workoutTitle" name="workout.title" class="xlarge title" value="#{workout.map(_.title)}")
-    div.clearfix
-      label(for="workoutDescription") Description:
-      .input
-        textarea(id="workoutDescription" name="workout.description" class="xlarge description") #{workout.map(_.description)}
-    div.clearfix
-      label(for="duration") Duration:
-      .input
-        input(type="text" id="workoutDuration" name="workout.duration" class="large" value="#{workout.map(_.duration)}")
-      label(for="distance") Distance:
-      .input
-        input(type="text" id="workoutDistance" name="workout.distance" class="large" value="#{workout.map(_.distance)}")
+    div.control-group
+      label.control-label(for="workoutTitle") Title:
+      .controls
+        input(type="text" id="workoutTitle" name="title" class="xlarge title" value="#{workout.map(_.title)}")
+    div.control-group
+      label.control-label(for="workoutDescription") Description:
+      .controls
+        textarea(id="workoutDescription" name="description" class="xlarge description") #{workout.map(_.description)}
+    div.control-group
+      label.control-label(for="duration") Duration:
+      .controls
+        input(type="number" step="any" id="workoutDuration" name="duration" class="large" value="#{workout.map(_.duration)}")
+      label.control-label(for="distance") Distance:
+      .controls
+        input(type="number" step="any" id="workoutDistance" name="distance" class="large" value="#{workout.map(_.distance)}")
     div.actions
       button(type="submit" class="btn primary") Submit
       button(type="submit" class="btn" name="cancel") Cancel
 
-    -# errors.foreach { e =>
+    - errors.foreach { e =>
       :&plain
         <script type="text/coffeescript">
           key = 'input[name="#{e.key}"],textarea[name="#{e.key}"]'
           $(key).addClass('error')
-          $(key).closest('.clearfix').addClass('error')
+          $(key).closest('.control-group').addClass('error')
         </script>
-    -# }
+    - }
