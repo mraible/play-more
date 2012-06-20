@@ -151,7 +151,6 @@ object Workout {
   /**
    * Update a workout.
    *
-   * @param id The workout id
    * @param workout The workout values.
    */
   def update(workout: Workout) = {
