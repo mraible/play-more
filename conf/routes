@@ -4,6 +4,7 @@
 
 GET     /                                       controllers.Home.index
 GET     /more                                   controllers.Profile.index
+GET     /music                                  controllers.MusicController.index
 GET     /workout/:id                            controllers.Profile.show(id: Long)
 GET     /workout/:id                            controllers.Profile.edit(id: Option[Long])
 POST    /workout/:id                            controllers.Profile.postWorkout(id: Option[Long])
