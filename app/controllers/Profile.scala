@@ -18,7 +18,7 @@ object Profile extends Controller {
       "postedAt" -> optional(date),
       "athleteId" -> optional(longNumber)
     )((id, title, description, duration, distance, postedAt, athleteId) =>
-      Workout(id, title, description, duration.toDouble, distance.toDouble, null, 0))
+      Workout(id, title, description, convertWatchToTime(duration), distance.toDouble, null, 0))
       ((w: Workout) =>
         Some((w.id, w.title, w.description, w.duration.toString, w.distance.toString, null, Some(0))))
   )
@@ -81,29 +81,50 @@ object Profile extends Controller {
 
   def postWorkout(id: Option[Long]) = Action {
     implicit request =>
-      println("posting")
-      workoutForm.bindFromRequest.fold(
-        form => {
-          println(form)
-          Ok(Scalate("/Profile/edit.jade").render(request, 'errors -> form.errors))
-        },
-        workout => {
-          println("Creating workout: " + workout)
-          id match {
-            case Some(id) => {
-              Workout.update(workout)
-            }
-            case None => {
-              workout.postedAt = new java.util.Date
-              workout.athleteId = 1
-              Workout.create(workout)
-              flash.get("success").getOrElse("Nice workout!")
+      // Necessary if you want to run mobile app in local browser
+      if (request.method == "OPTIONS") {
+        println("OPTIONS")
+        Ok.withHeaders(
+          "Access-Control-Allow-Origin" -> "*",
+          "Access-Control-Allow-Methods" -> "GET,POST",
+          "Access-Control-Max-Age" -> "360",
+          "Access-Control-Allow-Headers" -> "x-requested-with"
+        )
+      } else {
+        workoutForm.bindFromRequest.fold(
+          form => {
+            println(form)
+            Ok(Scalate("/Profile/edit.jade").render(request, 'errors -> form.errors))
+          },
+          workout => {
+            println("Creating workout: " + workout)
+            id match {
+              case Some(id) => {
+                Workout.update(workout)
+              }
+              case None => {
+                workout.postedAt = new java.util.Date
+                workout.athleteId = 1
+                Workout.create(workout)
+                flash.get("success").getOrElse("Nice workout!")
+              }
             }
 
+            request.headers.get("X-Requested-With") match {
+              case Some("XMLHttpRequest") =>
+                println("ajax")
+                Created.as("application/json").withHeaders(
+                          "Access-Control-Allow-Origin" -> "*",
+                          "Access-Control-Allow-Methods" -> "GET,POST",
+                          "Access-Control-Max-Age" -> "360",
+                          "Access-Control-Allow-Headers" -> "x-requested-with"
+                        )
+              case None =>
+                Redirect(routes.Profile.index())
+            }
           }
-          Redirect(routes.Profile.index())
-        }
-      )
+        )
+      }
   }
 
   def convertWatchToTime(clock: String): Double = {

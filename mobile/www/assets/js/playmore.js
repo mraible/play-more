@@ -7,7 +7,6 @@
     return $("#player")[0].currentTime = 0;
   };
   initialize = function() {
-    var flipForm, toggleForm;
     $("#start,#reset").removeAttr("disabled");
     $('#start').click(function() {
       if ($(this).text() === 'Stop') {
@@ -38,65 +37,45 @@
         return $("#player")[0].play();
       }
     });
+    $.ajaxSetup({
+      headers: {"X-Requested-With":"XMLHttpRequest"}
+    });
     $('#save').click(function() {
       return $.ajax({
         type: 'POST',
-        dataType: 'jsonp',
         url: $('#save').attr('rel'),
         data: {
-          'workout.id': '',
-          'workout.title': $('#title').val(),
-          'workout.description': $('#description').val(),
-          'workout.duration': $('#clock').val(),
-          'workout.distance': $('#distance').text()
+          'title': $('#title').val(),
+          'description': $('#description').val(),
+          'duration': $('#clock').val(),
+          'distance': $('#distance').text()
         },
-        error: function() {
+        error: function(jqXHR, textStatus, errorThrown) {
           return alert('Posting failed, please try again.');
         },
-        success: function(data) {
+        success: function(data, textStatus) {
           var alert, msg;
-          $('.alert-message').remove();
+          $('.alert').remove();
           msg = 'Your workout was successfully recorded.';
-          alert = $('<div class="alert-message success fade in" data-alert="alert">');
-          alert.html('<a class="close" href="#">&times;</a>' + msg);
-          alert.insertBefore($('.span10'));
+          alert = $('<div class="alert alert-success fade in" data-alert="alert">');
+          alert.html('<a class="close" data-dismiss="alert">&times;</a>' + msg);
+          alert.insertBefore($('#display'));
+          $('.content form').get(0).reset();
           return reset();
         }
       });
     });
-    flipForm = function() {
-      var flipper;
-      flipper = $('#flipper');
-      if (flipper.hasClass('flipped')) {
-        $(this).removeClass('flipback');
-        flipper.removeClass('flipped');
-        $('.front.face').show();
-        $('.face').css('-webkit-backface-visibility', 'hidden');
-      } else {
-        $(this).addClass('flipback');
-        flipper.addClass('flipped');
-        $('.content').height(400);
-      }
-      return setTimeout(toggleForm, 1000);
-    };
-    toggleForm = function() {
-      if ($('#flipper').hasClass('flipped')) {
-        $('.face').css('-webkit-backface-visibility', 'visible');
-        return $('.front.face').hide();
-      } else {
-        $('.face').css('-webkit-backface-visibility', 'hidden');
-        $('.front.face').show();
-        return $('.content').height('auto');
-      }
-    };
-    $('.flip').click(function(e) {
-      return flipForm();
-    });
     $('.title').keyup(function() {
       return $('.title').val($(this).val());
     });
-    return $('.description').keyup(function() {
+    $('.description').keyup(function() {
       return $('.description').val($(this).val());
+    });
+    return $('a[data-toggle="tab"]').on('shown', function(e) {
+      if ($(e.target).attr('id') === 'form') {
+        $('#workoutDuration').val($('#clock').val());
+        return $('#workoutDistance').val($('#distance').text());
+      }
     });
   };
   this.PlayMore = {

@@ -35,3 +35,7 @@ GET     /signup                                 securesocial.controllers.Registr
 POST    /signup                                 securesocial.controllers.Registration.handleSignUp
 
 GET     /authenticate/:provider                 securesocial.controllers.LoginPage.authenticate(provider)
+
+# Necessary if you want to run mobile app in local browser
+#OPTIONS /workout/postWorkout                    controllers.Profile.postWorkout(id: Option[Long])
+#OPTIONS /api/workouts                           controllers.api.WorkoutService.workouts

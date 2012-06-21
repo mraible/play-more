@@ -37,22 +37,21 @@ initialize = ->
   $('#save').click ->
     $.ajax
       type: 'POST'
-      dataType: 'jsonp'
       url: $('#save').attr('rel')
       data:
-        'workout.id': ''
-        'workout.title': $('#title').val()
-        'workout.description': $('#description').val()
-        'workout.duration': $('#clock').val()
-        'workout.distance': $('#distance').text()
-      error: ->
+        'title': $('#title').val()
+        'description': $('#description').val()
+        'duration': $('#clock').val()
+        'distance': $('#distance').text()
+      error: (jqXHR, textStatus, errorThrown) ->
         alert('Posting failed, please try again.')
-      success: (data) ->
+      success: (data, textStatus) ->
         $('.alert-message').remove()
         msg = 'Your workout was successfully recorded.'
-        alert = $('<div class="alert-message success fade in" data-alert="alert">')
-        alert.html('<a class="close" href="#">&times;</a>' + msg);
-        alert.insertBefore($('.span10'))
+        alert = $('<div class="alert alert-success fade in" data-alert="alert">')
+        alert.html('<a class="close" data-dismiss="alert">&times;</a>' + msg);
+        alert.insertBefore($('.span9'))
+        $('#app form').get(0).reset()
         reset()
 
   #- Keep forms in sync
