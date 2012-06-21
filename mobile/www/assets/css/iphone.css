@@ -1,5 +1,16 @@
 #home .content {
     background-image: none;
     background-color: white;
-    min-height: 380px;
+    min-height: 320px;
+    overflow: auto;
+}
+
+form {
+    width: 250px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form input, form textarea {
+    width: 100%;
 }
