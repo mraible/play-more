@@ -6,3 +6,6 @@ target
 tmp
 .history
 dist
+mobile/.idea/workspace.xml
+
+mobile/play-more.xcodeproj/project.xcworkspace/xcuserdata/mraible.xcuserdatad/UserInterfaceState.xcuserstate
