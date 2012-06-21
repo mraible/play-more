@@ -12,10 +12,6 @@ object ApplicationBuild extends Build {
       "org.fusesource.scalate" % "scalate-core" % "1.5.3"
     )
 
-    val secureSocial = PlayProject(
-      appName + "-securesocial", appVersion, mainLang = SCALA, path = file("modules/securesocial")
-    )
-
     val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA).settings(
       // Add your own project settings here
     )
