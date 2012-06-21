@@ -1,7 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40441d53-7881-48dd-a94e-9c0fd80a13b7" name="Default" comment="" />
+    <list default="true" id="40441d53-7881-48dd-a94e-9c0fd80a13b7" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/services/SecureService.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/conf/play.plugins" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/conf/securesocial.conf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/controllers/LoginPage.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/controllers/Registration.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/AccessDeniedException.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/AuthenticationException.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/AuthenticationMethod.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/IdentityProvider.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/OAuth1Provider.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/OAuth2Provider.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/ProviderRegistry.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/SecureSocial.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/SocialUser.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/UserService.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/java/AuthenticationMethod.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/java/BaseUserService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/java/OAuth1Info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/java/OAuth2Info.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/java/SecureSocial.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/java/SocialUser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/java/UserId.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/providers/FacebookProvider.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/providers/GoogleProvider.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/core/providers/TwitterProvider.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/views/Registration/signUp.scala.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/views/login.scala.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/views/main.scala.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/app/securesocial/views/protectedAction.scala.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/conf/messages" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/conf/routes" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/conf/securesocial/defaults.conf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/project/Build.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/project/build.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/project/plugins.sbt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/public/bootstrap/css/bootstrap-responsive.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/public/bootstrap/css/bootstrap-responsive.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/public/bootstrap/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/public/bootstrap/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/public/bootstrap/img/glyphicons-halflings-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/public/bootstrap/img/glyphicons-halflings.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/public/bootstrap/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/public/bootstrap/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/public/images/favicon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/public/images/providers/facebook.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/public/images/providers/google.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/public/images/providers/twitter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/securesocial/public/javascripts/jquery-1.7.1.min.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/application.conf" afterPath="$PROJECT_DIR$/conf/application.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/routes" afterPath="$PROJECT_DIR$/conf/routes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/play-more.iws" afterPath="$PROJECT_DIR$/play-more.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/Build.scala" afterPath="$PROJECT_DIR$/project/Build.scala" />
+    </list>
     <ignored path="play-more.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,26 +111,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routes" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/routes">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="2" selection-start="2303" selection-end="2359" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Profile.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Profile.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="35" selection-start="2549" selection-end="2549" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#21#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="plugins.sbt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/plugins.sbt">
           <provider selected="true" editor-type-id="text-editor">
@@ -90,61 +123,52 @@
       <file leaf-file-name="build.sbt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.sbt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="90" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0">
+            <state line="14" column="90" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Scalate.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Scalate.scala">
+      <file leaf-file-name="Build.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/Build.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="64" selection-start="1083" selection-end="1083" vertical-scroll-proportion="0.0">
+            <state line="21" column="15" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="about.jade" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/Settings/about.jade">
+      <file leaf-file-name="prod.conf" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/prod.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="83" selection-start="590" selection-end="590" vertical-scroll-proportion="0.38011697">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/Profile/edit.jade">
+      <file leaf-file-name="routes" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/conf/routes">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="64" selection-start="849" selection-end="849" vertical-scroll-proportion="-14.375">
+            <state line="12" column="51" selection-start="826" selection-end="826" vertical-scroll-proportion="0.32200357">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/default.jade">
+      <file leaf-file-name="application.log" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logs/application.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="22" selection-start="3229" selection-end="3239" vertical-scroll-proportion="-8.75">
+            <state line="3" column="0" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WorkoutService.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/api/WorkoutService.scala">
+      <file leaf-file-name="application.conf" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/application.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="63" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HeaderNames.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///opt/tools/play/repository/local/play/play_2.9.1/2.0.1/jars/play_2.9.1.jar!/play/api/http/HeaderNames.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="6" selection-start="650" selection-end="650" vertical-scroll-proportion="-6.6">
+            <state line="59" column="30" selection-start="1487" selection-end="1487" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -163,15 +187,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/javascripts/odometer.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/playmore.coffee" />
-        <option value="$PROJECT_DIR$/mobile/www/assets/js/map.js" />
         <option value="$PROJECT_DIR$/mobile/www/assets/js/odometer.js" />
         <option value="$PROJECT_DIR$/mobile/www/assets/js/stopwatch.js" />
         <option value="$PROJECT_DIR$/app/views/Home/index.jade" />
         <option value="$PROJECT_DIR$/mobile/www/index.html" />
         <option value="$PROJECT_DIR$/mobile/www/assets/js/playmore.js" />
-        <option value="$PROJECT_DIR$/conf/routes" />
         <option value="$PROJECT_DIR$/app/controllers/api/WorkoutService.scala" />
         <option value="$PROJECT_DIR$/app/controllers/Profile.scala" />
         <option value="$PROJECT_DIR$/app/controllers/Scalate.scala" />
@@ -179,6 +199,10 @@
         <option value="$PROJECT_DIR$/project/plugins.sbt" />
         <option value="$PROJECT_DIR$/app/views/Profile/edit.jade" />
         <option value="$PROJECT_DIR$/app/views/Settings/about.jade" />
+        <option value="$PROJECT_DIR$/project/Build.scala" />
+        <option value="$PROJECT_DIR$/conf/application.conf" />
+        <option value="$PROJECT_DIR$/conf/play.plugins" />
+        <option value="$PROJECT_DIR$/conf/routes" />
       </list>
     </option>
   </component>
@@ -214,16 +238,12 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="play-more" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="play-more" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -270,7 +290,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Build.scala" />
+              <option name="myItemType" value="org.jetbrains.plugins.scala.components.ScalaDefsProjectViewProvider$ScalaFileTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="play-more" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -285,98 +337,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Settings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="play-more" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="play-more" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Profile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="play-more" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="play-more" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="play-more" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="play-more" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="play-more" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="play-more" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="errors" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -398,40 +358,35 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="play-more" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="play-more" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="194" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="203" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="199" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="206" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1001" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="999" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1001" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="205" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="201" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -478,6 +433,24 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -511,24 +484,6 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -546,17 +501,6 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -586,6 +530,17 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="false" name="Play Debug" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -611,6 +566,7 @@
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="40441d53-7881-48dd-a94e-9c0fd80a13b7" name="Default" comment="" />
       <created>1340239783496</created>
       <updated>1340239783496</updated>
     </task>
@@ -689,29 +645,29 @@
     <frame x="869" y="416" width="1680" height="995" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32951945" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951945" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32951945" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993135" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951945" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951945" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.249694" sideWeight="0.67048055" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24938725" sideWeight="0.67048055" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951945" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -779,69 +735,23 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mobile/www/assets/js/odometer.js">
+    <entry file="file://$PROJECT_DIR$/app/controllers/Scalate.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="29" selection-start="2844" selection-end="2844" vertical-scroll-proportion="0.0">
+        <state line="33" column="64" selection-start="1084" selection-end="1084" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/Home/index.jade">
+    <entry file="file://$PROJECT_DIR$/app/views/Profile/edit.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="95" selection-start="1516" selection-end="1516" vertical-scroll-proportion="-5.75">
+        <state line="23" column="64" selection-start="849" selection-end="849" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobile/www/index.html">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/default.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="35" selection-start="6647" selection-end="6647" vertical-scroll-proportion="18.125">
-          <folding>
-            <marker date="1340251570000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1340251570000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1340251570000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1340251570000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1340251570000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1340251570000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1340251570000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1340251570000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1340251570000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1340251570000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mobile/www/assets/js/stopwatch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="12" selection-start="573" selection-end="573" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/playmore.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="37" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mobile/www/assets/js/playmore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="21" selection-start="1235" selection-end="1235" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/tools/play/repository/local/play/play_2.9.1/2.0.1/jars/play_2.9.1.jar!/play/api/http/HeaderNames.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="6" selection-start="650" selection-end="650" vertical-scroll-proportion="-6.6">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/routes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="2" selection-start="2303" selection-end="2359" vertical-scroll-proportion="0.0">
+        <state line="76" column="22" selection-start="3229" selection-end="3239" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -853,25 +763,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Profile.scala">
+    <entry file="jar:///opt/tools/play/repository/local/play/play_2.9.1/2.0.1/jars/play_2.9.1.jar!/play/api/http/HeaderNames.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="35" selection-start="2549" selection-end="2549" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#21#36#0" expanded="true" />
-          </folding>
+        <state line="11" column="6" selection-start="650" selection-end="650" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Scalate.scala">
+    <entry file="file://$PROJECT_DIR$/app/views/Settings/about.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="64" selection-start="1083" selection-end="1083" vertical-scroll-proportion="0.0">
+        <state line="13" column="83" selection-start="590" selection-end="590" vertical-scroll-proportion="-8.125">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.sbt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="90" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0">
+        <state line="14" column="90" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -883,23 +791,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/Profile/edit.jade">
+    <entry file="file://$PROJECT_DIR$/conf/prod.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="64" selection-start="849" selection-end="849" vertical-scroll-proportion="-14.375">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/default.jade">
+    <entry file="file://$PROJECT_DIR$/logs/application.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="22" selection-start="3229" selection-end="3239" vertical-scroll-proportion="-8.75">
+        <state line="3" column="0" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/Settings/about.jade">
+    <entry file="file://$PROJECT_DIR$/project/Build.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="83" selection-start="590" selection-end="590" vertical-scroll-proportion="0.38011697">
+        <state line="21" column="15" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/application.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="30" selection-start="1487" selection-end="1487" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/routes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="51" selection-start="826" selection-end="826" vertical-scroll-proportion="0.32200357">
           <folding />
         </state>
       </provider>
