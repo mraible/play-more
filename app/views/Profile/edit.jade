@@ -11,7 +11,7 @@
 
 form(method="post" class="form-stacked" id="workoutForm"
   action={routes.Profile.postWorkout(workout.map(_.id.get))})
-  input(type="hidden" name="workout.id" value="#{workout.map(_.id)}")
+  input(type="hidden" name="id" value="#{workout.map(_.id)}")
 
   fieldset
     legend Where did you go? &rarr;
