@@ -1,7 +1,6 @@
+-import controllers._
 -@ var athlete: models.Athlete
--#import play.modules.scalate.ScalateTemplate._
 -@ val workout:Option[models.Workout] = None
--# attributes("title") = "Hello " + athlete.firstName + "!"
 - attributes.list("scripts") += "http://www.google.com/jsapi"
 - attributes.list("scripts") += "http://maps.googleapis.com/maps/api/js?sensor=false"
 - attributes.list("scripts") += uri("/assets/javascripts/map.js")
@@ -25,9 +24,9 @@
           form.form-vertical(style="width: 250px")
             label(for="title") Title
             input(id="title" name="title" class="title")
-            label(form="description") Description
+            label(for="description") Description
             textarea(id="description" name="description" style="margin-bottom: 10px" class="description")
-          -#button(rel={action(controllers.Profile.postWorkout(None))} id="save" type="submit" class="btn primary") Save
+          button(rel={routes.Profile.postWorkout(None)} id="save" type="submit" class="btn btn-primary") Save
       #where
         #map(class="odometer-map")
         p(id="location")
