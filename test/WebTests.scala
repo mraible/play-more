@@ -9,7 +9,7 @@ class WebTests extends Specification {
       running(TestServer(3333), HTMLUNIT) {
         browser =>
           browser.goTo("http://localhost:3333")
-          browser.title() must equalTo("Hello Matt!")
+          browser.title() must equalTo("Play More!")
       }
     }
   }

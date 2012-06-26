@@ -100,16 +100,8 @@ class UnitTests extends Specification {
 
   "Global" should {
     "load seed data into DB" in {
-      running(FakeApplication()) {
-
-        Workout.allWithAthlete.foreach { o =>
-          Workout.delete(o._1.id.get)
-        }
-
-        Athlete.findAll().foreach { o =>
-          Athlete.delete(o.id.get)
-        }
-
+      running(FakeApplication(additionalConfiguration = inMemoryDatabase())) {
+        
         InitialData.insert()
 
         Athlete.count() must be_==(2)
